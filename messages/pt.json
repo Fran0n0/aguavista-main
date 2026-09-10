@@ -111,10 +111,11 @@
     "goToPhoto": "Ir para a foto {n}"
   },
   "comingSoon": {
-    "badge": "Em breve",
-    "title": "Percorra o AguaVista em 360°",
-    "body": "Esta é a prévia do masterplan: toque em cada setor para conhecê-lo. Enquanto isso finalizamos o tour virtual, para você sobrevoar o condomínio e ver a disponibilidade real de cada lote sem sair de casa.",
-    "mapAlt": "Maquete ilustrada do masterplan do AguaVista com seus cinco setores",
+    "badge": "Vista aérea",
+    "title": "Conheça o condomínio do alto",
+    "body": "Os cinco setores do AguaVista e como se conectam entre si. Toque em cada um para ver o que espera por você. O tour virtual em 360° chega mais adiante.",
+    "mapAlt": "Vista aérea ilustrada do condomínio AguaVista com seus cinco setores",
+    "mapPending": "Planta em preparação",
     "hint": "Escolha um setor",
     "sector": "Setor",
     "reset": "Ver planta completa",

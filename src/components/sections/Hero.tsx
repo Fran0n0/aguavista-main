@@ -159,24 +159,28 @@ export function Hero({
               1ª  negrita
               2ª  regular, un punto más chica
               3ª  negrita itálica  */}
-        <h1 className="font-display text-[clamp(2.1rem,6.6vw,4.5rem)] leading-[1.08] tracking-[-0.015em] text-white drop-shadow-[0_2px_20px_rgba(5,13,9,0.55)]">
+        {/* El tamaño se ata al ancho de pantalla (vw) sin un mínimo en rem
+            que lo trabe: así cada línea entra entera y no se parte a la
+            mitad en el teléfono. Quién corta la línea lo decide el texto
+            de cada clave, no el navegador — de ahí el `text-nowrap`. */}
+        <h1 className="font-display text-[clamp(1rem,5.8vw,2.5rem)] leading-[1.12] tracking-[-0.015em] text-white drop-shadow-[0_2px_20px_rgba(5,13,9,0.55)] md:text-[clamp(2.5rem,4.9vw,4.2rem)]">
           <SplitText
             text={t("titleLine1")}
             immediate
             delay={0.35}
-            className="block font-bold"
+            className="block whitespace-nowrap font-bold"
           />
           <SplitText
             text={t("titleLine2")}
             immediate
             delay={0.5}
-            className="block text-[0.86em] font-normal"
+            className="block whitespace-nowrap text-[0.9em] font-normal"
           />
           <SplitText
             text={t("titleLine3")}
             immediate
             delay={0.65}
-            className="block font-bold italic"
+            className="block whitespace-nowrap font-bold italic"
           />
         </h1>
 

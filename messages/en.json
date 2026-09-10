@@ -111,10 +111,11 @@
     "goToPhoto": "Go to photo {n}"
   },
   "comingSoon": {
-    "badge": "Coming soon",
-    "title": "Explore AguaVista in 360°",
-    "body": "Here's an early look at the masterplan — tap any sector to explore it. Meanwhile we're finishing the virtual tour, so you'll be able to fly over the grounds and check real lot availability without leaving home.",
-    "mapAlt": "Illustrated model of the AguaVista masterplan showing its five sectors",
+    "badge": "Aerial view",
+    "title": "See the estate from above",
+    "body": "AguaVista's five sectors and how they connect. Tap any one to see what waits there. The 360° virtual tour comes later.",
+    "mapAlt": "Illustrated aerial view of the AguaVista estate showing its five sectors",
+    "mapPending": "Plan in preparation",
     "hint": "Pick a sector",
     "sector": "Sector",
     "reset": "View full plan",

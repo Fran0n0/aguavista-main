@@ -111,10 +111,11 @@
     "goToPhoto": "Ir a la foto {n}"
   },
   "comingSoon": {
-    "badge": "Próximamente",
-    "title": "Recorré AguaVista en 360°",
-    "body": "Este es el anticipo del masterplan: tocá cada sector para conocerlo. Mientras tanto terminamos el recorrido virtual, para que puedas volar sobre el predio y ver la disponibilidad real de cada lote sin moverte de tu casa.",
-    "mapAlt": "Maqueta ilustrada del masterplan de AguaVista con sus cinco sectores",
+    "badge": "Vista aérea",
+    "title": "Conocé el predio desde el aire",
+    "body": "Los cinco sectores de AguaVista y cómo se conectan entre sí. Tocá cada uno para ver qué te espera. El recorrido virtual en 360° llega más adelante.",
+    "mapAlt": "Vista aérea ilustrada del predio de AguaVista con sus cinco sectores",
+    "mapPending": "Plano en preparación",
     "hint": "Elegí un sector",
     "sector": "Sector",
     "reset": "Ver plano completo",

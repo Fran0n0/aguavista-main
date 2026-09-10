@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { Flag, Leaf, Maximize2, Plane, Sailboat, TreePine } from "lucide-react";
+import { Compass, Flag, Leaf, Maximize2, Plane, Sailboat, TreePine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
@@ -21,17 +21,21 @@ import { SplitText } from "@/components/motion/SplitText";
  * ─────────────────────────────────────────────────────────────────
  *  PARA CAMBIAR EL MAPA
  *  1. Guardá el render en /public con el nombre de MAP_IMAGE.
- *  2. Poné en MAP_ASPECT el ancho/alto REALES del archivo. Es lo que
- *     hace que los puntos calientes caigan donde tienen que caer: el
- *     contenedor copia esa proporción, así que la imagen lo llena
- *     exacto y los porcentajes de HOTSPOTS son los de la imagen.
- *  3. Ajustá x/y de cada hotspot (porcentaje desde arriba-izquierda).
- *  4. Corré `npm run optimize:media`.
+ *  2. Ajustá x/y de cada zona en ZONES (porcentaje desde la esquina
+ *     superior izquierda de la imagen).
+ *  3. Corré `npm run optimize:media`.
+ *  La proporción no hay que tocarla: el contenedor la copia de la
+ *  imagen apenas carga, así que los porcentajes de ZONES son siempre
+ *  los de la imagen, se recorte como se recorte.
  * ─────────────────────────────────────────────────────────────────
  */
 const MAP_IMAGE = "/masterplan-3d.webp";
 
-/** Proporción del archivo de MAP_IMAGE. Ver punto 2 de arriba. */
+/**
+ * Proporción de arranque, solo para reservar el hueco antes de que la
+ * imagen cargue y que no salte el layout. Apenas carga se reemplaza por
+ * la proporción real del archivo.
+ */
 const MAP_ASPECT = "1209 / 1620";
 
 /**
@@ -71,6 +75,8 @@ export function ComingSoon() {
       primero que tiene que ver el visitante es el predio entero. */
   const [activeId, setActiveId] = useState<string | null>(null);
   const [imageFailed, setImageFailed] = useState(false);
+  /** Proporción real del archivo, leída al cargar. Ver MAP_ASPECT. */
+  const [mapAspect, setMapAspect] = useState(MAP_ASPECT);
 
   const active = ZONES.find((z) => z.id === activeId) ?? null;
 
@@ -149,7 +155,7 @@ export function ComingSoon() {
               <Reveal>
                 <div
                   className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--av-glass-brd)] bg-[color:var(--av-surface)]"
-                  style={{ aspectRatio: MAP_ASPECT }}
+                  style={{ aspectRatio: mapAspect }}
                 >
                   <motion.div
                     className="absolute inset-0"
@@ -157,7 +163,29 @@ export function ComingSoon() {
                     transition={{ duration: 0.9, ease: EASE_LUX }}
                     style={{ willChange: "transform" }}
                   >
-                    {!imageFailed && (
+                    {imageFailed ? (
+                      /* El archivo de MAP_IMAGE todavía no está en /public.
+                         Antes esto dejaba la caja vacía con los pines
+                         flotando en la nada; ahora se ve que falta la
+                         imagen, y en desarrollo se dice cuál. */
+                      <div className="absolute inset-0 grid place-items-center bg-[color:var(--av-elevated)] px-6 text-center">
+                        <div>
+                          <Compass
+                            className="mx-auto size-8 text-lux"
+                            strokeWidth={1}
+                            aria-hidden="true"
+                          />
+                          <p className="mt-4 font-sans text-xs font-light uppercase tracking-[0.2em] text-ink-muted">
+                            {t("mapPending")}
+                          </p>
+                          {process.env.NODE_ENV !== "production" && (
+                            <code className="mt-3 block font-mono text-[11px] text-ink-faint">
+                              public{MAP_IMAGE}
+                            </code>
+                          )}
+                        </div>
+                      </div>
+                    ) : (
                       <Image
                         src={MAP_IMAGE}
                         alt={t("mapAlt")}
@@ -167,6 +195,14 @@ export function ComingSoon() {
                         quality={82}
                         className="object-cover"
                         onError={() => setImageFailed(true)}
+                        /* El contenedor adopta la proporción real del
+                           archivo: así object-cover no recorta nada y los
+                           % de ZONES son exactamente los de la imagen,
+                           sin importar con qué medidas se guarde. */
+                        onLoad={(e) => {
+                          const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
+                          if (w && h) setMapAspect(`${w} / ${h}`);
+                        }}
                       />
                     )}
 
