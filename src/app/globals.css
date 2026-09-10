@@ -1,0 +1,437 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════
+   AGUAVISTA — SISTEMA DE DISEÑO "BOSQUE AGUAVISTA"
+   ───────────────────────────────────────────────────────────────────
+   Las fuentes NO se importan acá: las inyecta next/font en layout.tsx
+   (self-hosted, sin request render-blocking a fonts.googleapis.com).
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── TOKENS: DARK (default) ─────────────────────────────────────── */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Superficies — nunca negro puro. Verde bosque profundo. */
+  --av-base:        #0A1A14;
+  --av-surface:     #10251D;
+  --av-elevated:    #163027;
+  --av-overlay:     #0A1A14EE;
+  --av-border:      #204034;
+  --av-border-soft: #1A3329;
+
+  /* Texto */
+  --av-text:       #F0F4EF;
+  --av-text-mid:   #C3D0C4;
+  --av-text-muted: #93A89A;
+  --av-text-faint: #5F7568;
+
+  /* Acentos */
+  --av-vivo:       #A3D45B; /* lima — CTAs, subrayados, energía */
+  --av-vivo-deep:  #7FB53A; /* hover del lima */
+  --av-lux:        #C9A962; /* oro — detalles finos, serif */
+  --av-lux-light:  #E8D5A3;
+
+  /* Luces de fondo (glows) — dan profundidad, matan el "fondo liso" */
+  --av-glow-vivo: rgba(163, 212, 91, 0.10);
+  --av-glow-lux:  rgba(201, 169, 98, 0.07);
+  --av-glow-cool: rgba(47, 168, 156, 0.06);
+
+  /* Vidrio / blur */
+  /* Velo del navbar mientras sobrevuela el hero. Son rgba literales y
+     no color-mix() a proposito: color-mix obliga a lightningcss a
+     emitir un fallback @supports con el color OPACO, y un fallback
+     opaco justo aca taparia la franja superior del video. */
+  --av-scrim-strong: rgba(10, 26, 20, 0.88);
+  --av-scrim-soft:   rgba(10, 26, 20, 0.50);
+
+  --av-glass:     rgba(16, 37, 29, 0.72);
+  --av-glass-brd: rgba(163, 212, 91, 0.14);
+
+  /* Skeleton shimmer */
+  --av-skeleton:    #15281F;
+  --av-skeleton-hl: #1F3A2D;
+
+  --av-shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.4);
+  --av-shadow-md:   0 8px 24px -6px rgba(0, 0, 0, 0.55);
+  --av-shadow-lg:   0 24px 64px -12px rgba(0, 0, 0, 0.7);
+  --av-shadow-glow: 0 0 40px -8px rgba(163, 212, 91, 0.35);
+}
+
+/* ── TOKENS: LIGHT ──────────────────────────────────────────────── */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --av-base:        #F7F4EC; /* crema, no blanco puro */
+  --av-surface:     #FFFFFF;
+  --av-elevated:    #FDFBF5;
+  --av-overlay:     #F7F4ECEE;
+  --av-border:      #E0DACA;
+  --av-border-soft: #EDE8DC;
+
+  --av-text:       #0A1A14;
+  --av-text-mid:   #2C4136;
+  --av-text-muted: #5A6B5F;
+  --av-text-faint: #8B978D;
+
+  --av-vivo:      #4F7F16; /* lima oscurecido: contraste AA sobre crema */
+  --av-vivo-deep: #3D6410;
+  --av-lux:       #9C7B33;
+  --av-lux-light: #C9A962;
+
+  --av-glow-vivo: rgba(79, 127, 22, 0.06);
+  --av-glow-lux:  rgba(156, 123, 51, 0.05);
+  --av-glow-cool: rgba(47, 168, 156, 0.04);
+
+  /* Velo del navbar mientras sobrevuela el hero. Son rgba literales y
+     no color-mix() a proposito: color-mix obliga a lightningcss a
+     emitir un fallback @supports con el color OPACO, y un fallback
+     opaco justo aca taparia la franja superior del video. */
+  --av-scrim-strong: rgba(247, 244, 236, 0.90);
+  --av-scrim-soft:   rgba(247, 244, 236, 0.52);
+
+  --av-glass:     rgba(255, 255, 255, 0.78);
+  --av-glass-brd: rgba(10, 26, 20, 0.08);
+
+  --av-skeleton:    #EDE8DC;
+  --av-skeleton-hl: #F7F4EC;
+
+  --av-shadow-sm:   0 1px 2px rgba(10, 26, 20, 0.06);
+  --av-shadow-md:   0 8px 24px -6px rgba(10, 26, 20, 0.1);
+  --av-shadow-lg:   0 24px 64px -12px rgba(10, 26, 20, 0.14);
+  --av-shadow-glow: 0 0 40px -8px rgba(79, 127, 22, 0.22);
+}
+
+/* Respeta la preferencia del SO cuando el usuario no eligió tema. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --av-base: #F7F4EC;
+    --av-surface: #FFFFFF;
+    --av-elevated: #FDFBF5;
+    --av-overlay: #F7F4ECEE;
+    --av-border: #E0DACA;
+    --av-border-soft: #EDE8DC;
+    --av-text: #0A1A14;
+    --av-text-mid: #2C4136;
+    --av-text-muted: #5A6B5F;
+    --av-text-faint: #8B978D;
+    --av-vivo: #4F7F16;
+    --av-vivo-deep: #3D6410;
+    --av-lux: #9C7B33;
+    --av-lux-light: #C9A962;
+    --av-glow-vivo: rgba(79, 127, 22, 0.06);
+    --av-glow-lux: rgba(156, 123, 51, 0.05);
+    --av-glow-cool: rgba(47, 168, 156, 0.04);
+    --av-scrim-strong: rgba(247, 244, 236, 0.90);
+    --av-scrim-soft: rgba(247, 244, 236, 0.52);
+    --av-glass: rgba(255, 255, 255, 0.78);
+    --av-glass-brd: rgba(10, 26, 20, 0.08);
+    --av-skeleton: #EDE8DC;
+    --av-skeleton-hl: #F7F4EC;
+    --av-shadow-sm: 0 1px 2px rgba(10, 26, 20, 0.06);
+    --av-shadow-md: 0 8px 24px -6px rgba(10, 26, 20, 0.1);
+    --av-shadow-lg: 0 24px 64px -12px rgba(10, 26, 20, 0.14);
+    --av-shadow-glow: 0 0 40px -8px rgba(79, 127, 22, 0.22);
+  }
+}
+
+/* ── PUENTE A TAILWIND v4 ───────────────────────────────────────── */
+@theme inline {
+  --color-base:      var(--av-base);
+  --color-surface:   var(--av-surface);
+  --color-elevated:  var(--av-elevated);
+  --color-line:      var(--av-border);
+  --color-line-soft: var(--av-border-soft);
+
+  --color-ink:       var(--av-text);
+  --color-ink-mid:   var(--av-text-mid);
+  --color-ink-muted: var(--av-text-muted);
+  --color-ink-faint: var(--av-text-faint);
+
+  --color-vivo:      var(--av-vivo);
+  --color-vivo-deep: var(--av-vivo-deep);
+  --color-lux:       var(--av-lux);
+  --color-lux-light: var(--av-lux-light);
+
+  /* Toda la tipografía es Montserrat. `--font-montserrat` la inyecta
+     next/font en <html>; los alias --font-cormorant / --font-josefin se
+     definen más abajo para los componentes que aún referencian esos nombres. */
+  --font-display: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-av-sm:   var(--av-shadow-sm);
+  --shadow-av-md:   var(--av-shadow-md);
+  --shadow-av-lg:   var(--av-shadow-lg);
+  --shadow-av-glow: var(--av-shadow-glow);
+
+  /* Curvas de easing "de lujo" — desaceleran al final, nunca lineales */
+  --ease-lux:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── BASE ───────────────────────────────────────────────────────── */
+
+/* Alias de compatibilidad: varios componentes todavía piden
+   var(--font-cormorant) / var(--font-josefin) directamente. Ahora las tres
+   apuntan a Montserrat, así que no hace falta editar cada archivo. */
+:root {
+  --font-cormorant: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-josefin: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--av-base);
+  /* Lenis maneja el smooth scroll; scroll-behavior nativo lo pelearía. */
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--av-border) var(--av-base);
+  scrollbar-width: thin;
+}
+
+body {
+  background: var(--av-base);
+  color: var(--av-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* clip en vez de hidden: corta el overflow sin romper position:sticky */
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* El ancla de sección no queda tapada por el navbar fijo. */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+::selection {
+  background: var(--av-vivo);
+  color: var(--av-base);
+}
+
+/* Foco visible y elegante — accesibilidad sin arruinar la estética. */
+:focus-visible {
+  outline: 2px solid var(--av-vivo);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--av-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--av-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--av-vivo);
+}
+
+/* ── UTILIDADES DE PROFUNDIDAD ──────────────────────────────────── */
+
+/* Luz de fondo radial. Se aplica al contenedor de una sección para que
+   el dark mode no se lea como un rectángulo liso y muerto. */
+.av-glow {
+  position: relative;
+  isolation: isolate;
+}
+.av-glow::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 15% 0%, var(--av-glow-vivo) 0%, transparent 70%),
+    radial-gradient(50% 45% at 85% 100%, var(--av-glow-lux) 0%, transparent 70%);
+}
+
+/* Grano fino sobre superficies planas — mata el banding de los gradientes. */
+.av-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Riel horizontal (amenities). Oculta la barra de scroll nativa: la
+   afordancia la dan las flechas y la tarjeta cortada del borde derecho,
+   como en el carrusel de Porsche. `overscroll-behavior-x: contain` evita
+   que al llegar al final el gesto se propague y dispare el "atras" del
+   navegador o el rebote horizontal de la pagina. */
+.av-rail {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+.av-rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* Alternativa barata al vidrio, para cuando el navbar pasa por encima del
+   video del hero. `backdrop-filter` obliga al compositor a desenfocar su
+   fondo en cada frame, y si ese fondo es metraje en reproduccion el costo
+   se paga 25 veces por segundo: es de donde salian las caidas de FPS al
+   scrollear el hero. Este degradado da la misma separacion visual con
+   cero filtros. */
+.av-scrim-top {
+  background: linear-gradient(
+    to bottom,
+    var(--av-scrim-strong) 0%,
+    var(--av-scrim-soft) 55%,
+    transparent 100%
+  );
+}
+
+/* Vidrio esmerilado para navbar / drawer / cards flotantes. */
+.av-glass {
+  background: var(--av-glass);
+  border: 1px solid var(--av-glass-brd);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+
+/* Filo luminoso — separador premium entre secciones. */
+.av-hairline {
+  height: 1px;
+  opacity: 0.35;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--av-vivo) 25%,
+    var(--av-lux) 75%,
+    transparent
+  );
+}
+
+.av-text-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--av-text) 20%,
+    var(--av-lux-light) 60%,
+    var(--av-vivo) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Kicker: el micro-label que va sobre cada título de sección. */
+.av-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--av-vivo);
+}
+
+/* Logo AguaVista · Solari.
+   `brightness(0)` aplasta cualquier color del archivo a negro puro
+   conservando el alfa, e `invert(1)` lo lleva a blanco. Así el logo sale
+   sólido y con el color del tema sin importar de qué tono venga el
+   original — el .avif tiene el trazo en gris medio por el antialiasing
+   de un archivo chico, y sin esto se veía lavado en los dos temas. */
+.av-logo {
+  filter: brightness(0) invert(1); /* oscuro → blanco */
+  transition: filter 0.3s ease;
+}
+:root[data-theme="light"] .av-logo {
+  filter: brightness(0); /* claro → negro */
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .av-logo {
+    filter: brightness(0);
+  }
+}
+
+/* ── SKELETONS ──────────────────────────────────────────────────── */
+.av-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--av-skeleton);
+  border-radius: 4px;
+}
+.av-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--av-skeleton-hl),
+    transparent
+  );
+  animation: av-shimmer 1.6s var(--ease-soft) infinite;
+}
+@keyframes av-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ── ANIMACIONES COMPARTIDAS ────────────────────────────────────── */
+@keyframes av-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes av-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes av-pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  70%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ── ACCESIBILIDAD: MOVIMIENTO REDUCIDO ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Lo revelado por scroll debe quedar VISIBLE, no invisible para siempre. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

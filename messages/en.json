@@ -1,0 +1,390 @@
+{
+  "common": {
+    "loading": "Loading",
+    "close": "Close",
+    "menu": "Menu",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light mode",
+    "themeDark": "Dark mode",
+    "skipToContent": "Skip to main content",
+    "backToTop": "Back to top",
+    "scroll": "Scroll",
+    "whatsapp": "Message us on WhatsApp"
+  },
+  "preloader": {
+    "line1": "Land, river and sky",
+    "line2": "connected in one place"
+  },
+  "nav": {
+    "inicio": "Home",
+    "nosotros": "About",
+    "amenities": "Amenities",
+    "lotes": "Lots",
+    "contacto": "Contact",
+    "faq": "FAQ",
+    "cta": "Enquire"
+  },
+  "hero": {
+    "kicker": "A CLASS OF ITS OWN",
+    "title": "There are places to live.",
+    "titleAccent": "And places that define how you want to live.",
+    "subtitle": "Championship golf, a private marina and an executive airstrip, 40 minutes from Asunción.",
+    "videoAlt": "Aerial view of the AguaVista community on the Paraná River"
+  },
+  "stats": {
+    "kicker": "Available lots",
+    "title": "YOUR NEXT DECISION",
+    "titleAccent": "CAN CHANGE HOW YOU LIVE.",
+    "surface": {
+      "value": "800 m²",
+      "label": "Minimum lot size"
+    },
+    "installments": {
+      "value": "72",
+      "label": "Interest-free instalments"
+    },
+    "downpayment": {
+      "value": "5%",
+      "label": "Down payment"
+    },
+    "hectares": {
+      "value": "1,200",
+      "label": "Hectares of land"
+    },
+    "cta": "View available lots"
+  },
+  "amenities": {
+    "kicker": "AN EXCEPTIONAL LIFESTYLE",
+    "title": "The extraordinary is part of the everyday.",
+    "subtitle": "Golf, marina, aviation, nature and river. All inside AguaVista.",
+    "items": {
+      "golf": {
+        "title": "Golf",
+        "description": "Championship 18-hole course with driving range and academy.",
+        "descriptionLong": "Eighteen par-72 holes designed around the natural slope of the land towards the river. Floodlit driving range, putting green, academy with certified instructors, and a club house with changing rooms and club storage. Owners play with no green fee and no booking required on weekdays."
+      },
+      "nautica": {
+        "title": "Marina",
+        "description": "Private marina with moorings and direct access to the Paraná River.",
+        "descriptionLong": "Private marina with moorings for vessels up to 12 metres, its own launch ramp, covered dry storage and a fuel pump inside the grounds. Direct access to the main Paraná channel: twenty minutes and you are in open water."
+      },
+      "playa": {
+        "title": "Beach",
+        "description": "Private sand beach on the river, with full bar service.",
+        "descriptionLong": "Three hundred metres of imported, maintained sand along the riverbank, with parasols, loungers and full bar and food service in season. Marked swimming area, lifeguards in summer and a separate zone for children's play."
+      },
+      "tenis": {
+        "title": "Tennis House",
+        "description": "Floodlit clay courts and a dedicated club house.",
+        "descriptionLong": "Four clay courts with LED floodlighting for night play and two hard courts. The club house has changing rooms, a functional gym, a canteen and a terrace looking straight onto the centre courts."
+      },
+      "spa": {
+        "title": "Spa & Wellness",
+        "description": "Hydrotherapy circuit, treatment rooms and a fully equipped gym.",
+        "descriptionLong": "Full hydrotherapy circuit with heated pool, dry sauna, steam room and Scottish shower. Three massage rooms, a facial treatment room and a gym fitted with latest-generation equipment plus space for functional classes."
+      },
+      "aeropuerto": {
+        "title": "Executive airport",
+        "description": "Private airstrip and hangars inside the community.",
+        "descriptionLong": "A 1,200-metre paved runway approved for general aviation, with night lighting, wind sock and its own frequency. Hangars for rent or purchase and an apron for parking. Twelve minutes' flight from Asunción."
+      },
+      "jardin": {
+        "title": "Japanese garden",
+        "description": "Landscaping, water and quiet for an unhurried walk.",
+        "descriptionLong": "One hectare of Japanese landscaping with an artificial lake, red bridge, stone paths and more than forty species chosen to flower at different times of the year. Made for an early walk or one at dusk, with no noise and no traffic."
+      },
+      "agua": {
+        "title": "Water treatment plant",
+        "description": "Our own drinking water infrastructure serving the whole community.",
+        "descriptionLong": "Our own water treatment plant drawing from the river, with multi-layer filtration, automatic chlorination and monthly bacteriological testing. Two elevated tanks guarantee constant pressure across the whole property and seventy-two hours of reserve."
+      }
+    },
+    "open": "View details for {name}",
+    "close": "Close details",
+    "hint": "Tap to see the details",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "goToPhoto": "Go to photo {n}"
+  },
+  "comingSoon": {
+    "badge": "Coming soon",
+    "title": "Explore AguaVista in 360°",
+    "body": "We're putting the finishing touches on the virtual masterplan tour: you'll be able to fly over the grounds, step into every block and check real lot availability without leaving home.",
+    "highlights": {
+      "tour": {
+        "title": "360° tour",
+        "body": "Navigate the whole property from the air and from street level."
+      },
+      "lots": {
+        "title": "Live lot data",
+        "body": "Size, price and status for every lot, updated daily."
+      },
+      "explore": {
+        "title": "Home tours",
+        "body": "Step inside the finished residences and walk through them room by room."
+      }
+    },
+    "cta": "Notify me"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Book your visit",
+    "subtitle": "Leave your details and an advisor will get back to you within 24 business hours.",
+    "form": {
+      "name": {
+        "label": "Full name",
+        "placeholder": "Jane Smith"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "jane@example.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+1 555 234 567"
+      },
+      "interest": {
+        "label": "I'm interested in",
+        "placeholder": "Choose an option",
+        "options": {
+          "lote": "Buying a lot",
+          "visita": "Booking a visit",
+          "inversion": "Investment opportunities",
+          "otro": "Something else"
+        }
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us what you're looking for…",
+        "optional": "optional"
+      },
+      "privacy": "I accept the <link>privacy policy</link> and the processing of my data.",
+      "submit": "Send enquiry",
+      "submitting": "Sending…"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name",
+      "nameShort": "Your name must be at least 2 characters",
+      "nameLong": "That name is too long",
+      "emailRequired": "Please enter your email",
+      "emailInvalid": "That email doesn't look valid",
+      "phoneRequired": "Please enter your phone number",
+      "phoneInvalid": "Enter a valid phone number including country code",
+      "interestRequired": "Please choose an option",
+      "messageLong": "Your message can't be longer than 1000 characters",
+      "privacyRequired": "We need your consent in order to contact you"
+    },
+    "toast": {
+      "successTitle": "Enquiry sent!",
+      "successBody": "An AguaVista advisor will get in touch within the next 24 business hours.",
+      "errorTitle": "We couldn't send your enquiry",
+      "errorBody": "Check your connection and try again. If it keeps failing, message us on WhatsApp.",
+      "rateLimitTitle": "Too many attempts",
+      "rateLimitBody": "Please wait a few minutes before sending another enquiry."
+    },
+    "direct": {
+      "title": "Or reach us directly",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    }
+  },
+  "faq": {
+    "kicker": "Additional information",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "What is AguaVista?",
+        "a": "AguaVista is a residential country club in Paraguay combining real estate, golf, beach, marina, sports, and an executive airport. If you'd like to explore available options, I can put you in touch with an advisor."
+      },
+      {
+        "q": "Where is AguaVista located?",
+        "a": "It's in San Juan del Paraná, very close to Encarnación and the border with Argentina. Let me know where you're coming from, and an advisor can explain the best way to get here."
+      },
+      {
+        "q": "What properties are available to buy?",
+        "a": "There are different options for lots, houses, and other properties, and availability changes constantly. To receive current options and prices, it's best to speak directly with an advisor."
+      },
+      {
+        "q": "How much does a property in AguaVista cost?",
+        "a": "It depends on the location, size, and type of property. We have alternatives for different budgets. Would you like an advisor to send you today's available options?"
+      },
+      {
+        "q": "Can a foreigner buy?",
+        "a": "Yes, there are transactions with foreign buyers, though requirements may vary depending on nationality and property. An advisor can review your case and explain the process."
+      },
+      {
+        "q": "Do I need Paraguayan residency to buy?",
+        "a": "Not necessarily. The situation depends on each buyer and the property. If you let me know your nationality, I can refer you to an advisor to guide you properly."
+      },
+      {
+        "q": "Can the purchase be financed?",
+        "a": "Some properties may offer different payment terms or financing. To find out about current options, speak with an advisor."
+      },
+      {
+        "q": "How much are the HOA/maintenance fees?",
+        "a": "The amount can depend on the property and current club conditions. An advisor can give you the updated fee and explain what it includes."
+      },
+      {
+        "q": "Does AguaVista have a golf course?",
+        "a": "Yes. Golf is one of AguaVista's great differentiators, along with the beach, the marina, and its sports facilities. If you want to know about properties near or overlooking the golf course, I can connect you with an advisor."
+      },
+      {
+        "q": "Does AguaVista have its own airport?",
+        "a": "Yes. AguaVista features AVA – AguaVista Airport Executive. For information on flight operations or to arrange a visit, speak directly with an advisor."
+      },
+      {
+        "q": "Does it have a beach and river access?",
+        "a": "Yes. AguaVista offers a lifestyle linked to the Paraná River, with a beach and nautical activities. If you want to see the club in person, we can arrange a visit."
+      },
+      {
+        "q": "Can I rent out my property?",
+        "a": "There are properties within AguaVista intended for short-term rental. Conditions depend on the property and current regulations. An advisor can explain which properties are best suited for investment."
+      },
+      {
+        "q": "What return on investment can a property generate?",
+        "a": "Profitability depends on purchase price, property type, rates, occupancy, and expenses. To run real numbers on a specific property, speak with an advisor."
+      },
+      {
+        "q": "Can I visit AguaVista before buying?",
+        "a": "Yes. We can arrange a visit so you can see the club, its amenities, and available properties. Let me know what day you'd like to come, and I'll connect you with an advisor."
+      },
+      {
+        "q": "I want to buy or invest, who do I talk to?",
+        "a": "With an advisor from Solari Bienes Raíces."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "A 1,200-hectare private community on the Paraná River.",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "legalTitle": "Legal",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "rights": "All rights reserved.",
+    "socialLabel": "Follow us on social media",
+    "developedBy": "Developed by"
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "updated": "Last updated: {date}",
+    "intro": "At AguaVista we treat your personal data with the same care we give the property itself. This policy explains what information we collect, what we use it for, and what rights you have over it.",
+    "sections": [
+      {
+        "title": "AguaVista S.A., with registered address at Antequera esquina 25 de mayo, local 1., Encarnación, Paraguay, is the controller",
+        "body": "AguaVista S.A., with registered address at San Juan del Paraná, Itapúa, Paraguay, is the controller of the personal data collected through this website. You can reach us at info@aguavista.com.py with any question about this policy."
+      },
+      {
+        "title": "2. What data we collect",
+        "body": "We only collect the data you give us voluntarily through the contact form: full name, email, phone number, enquiry type and the message you write. We also record anonymous technical browsing data (pages visited, device type, language) for statistical purposes."
+      },
+      {
+        "title": "3. What we use your data for",
+        "body": "We use your data exclusively to answer your enquiry, arrange visits to the property, send you the commercial information about lots and amenities you requested, and improve the site experience. We do not make automated decisions that produce legal effects on you."
+      },
+      {
+        "title": "4. Legal basis and consent",
+        "body": "Processing is based on the consent you give by ticking the checkbox on the contact form. You can withdraw that consent at any time, without affecting the lawfulness of processing carried out beforehand."
+      },
+      {
+        "title": "5. Who we share your data with",
+        "body": "We do not sell or transfer your personal data to third parties for commercial purposes. We only share it with service providers that help us operate the site (hosting, database and email delivery), acting as processors under contractual confidentiality obligations."
+      },
+      {
+        "title": "6. How long we keep it",
+        "body": "We keep contact data for the duration of the commercial relationship and for up to 24 months after your last interaction with us, unless you request deletion earlier or a legal obligation requires us to keep it longer."
+      },
+      {
+        "title": "7. Your rights",
+        "body": "You have the right to access your data, correct it if inaccurate, request its deletion, object to its processing and request data portability. To exercise these rights, write to info@aguavista.com.py stating your full name and the right you wish to exercise. We respond within 10 business days."
+      },
+      {
+        "title": "8. Cookies",
+        "body": "This site uses technical cookies needed to remember your language and your theme preference (light or dark). We do not use advertising or cross-site tracking cookies. You can delete them from your browser settings at any time."
+      },
+      {
+        "title": "9. Security",
+        "body": "We apply reasonable technical and organisational measures to protect your data: encryption in transit via HTTPS, access control on the admin panel, and regular database backups."
+      },
+      {
+        "title": "10. Changes to this policy",
+        "body": "We may update this policy to reflect legal or process changes. When we do, we will update the last-updated date shown at the top. We recommend reviewing it periodically."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms and conditions",
+    "updated": "Last updated: {date}",
+    "intro": "These terms govern your use of the AguaVista website. By browsing it or sending us an enquiry, you accept the conditions below. Please read them carefully.",
+    "sections": [
+      {
+        "title": "This site is operated by AguaVista S.A., with registered address at Antequera esquina 25 de mayo, local 1., Encarnación, Paraguay",
+        "body": "This site is operated by AguaVista S.A., with registered address at San Juan del Paraná, Itapúa, Paraguay. Any question about these terms can be sent to info@aguavista.com.py."
+      },
+      {
+        "title": "2. Informational nature of the content",
+        "body": "Information published about lots, sizes, prices, amenities, construction timelines and financing plans is informational and commercial in nature. It does not constitute a binding contractual offer under Paraguayan civil law, nor does it replace the formal documentation of a transaction."
+      },
+      {
+        "title": "3. Availability and pricing",
+        "body": "Lot availability and prices are subject to change without notice and are confirmed only when the purchase agreement is signed. Images, renders and virtual tours are illustrative: finishes, landscaping and furnishings may differ from the completed work."
+      },
+      {
+        "title": "4. Permitted use",
+        "body": "You may browse the site and consult its content for personal, informational purposes. Automated data extraction, reproduction of content for commercial purposes, and use of the AguaVista name, logos or photographs without prior written authorisation are not permitted."
+      },
+      {
+        "title": "5. Intellectual property",
+        "body": "The texts, photographs, videos, plans, renders, site design and the AguaVista brand are the property of AguaVista S.A. or are used under licence. All rights reserved."
+      },
+      {
+        "title": "6. Contact form",
+        "body": "By submitting the form you confirm that the data you provide is accurate and that you are the holder of the email address and phone number given. We use that data in line with our privacy policy. Submitting an enquiry does not reserve any lot nor create any obligation to sell on our part."
+      },
+      {
+        "title": "7. Third-party links",
+        "body": "The site may link to third-party services such as social networks or WhatsApp. We do not control those services and are not responsible for their content, availability or privacy practices."
+      },
+      {
+        "title": "8. Service availability",
+        "body": "We aim to keep the site continuously available, but we do not guarantee uninterrupted or error-free operation. We may suspend it temporarily for maintenance or due to events beyond our control, without that giving rise to any right to compensation."
+      },
+      {
+        "title": "9. Limitation of liability",
+        "body": "To the extent permitted by law, AguaVista S.A. is not liable for indirect damages arising from the use of, or inability to use, this site. Nothing here limits the rights consumer protection legislation grants you as a user."
+      },
+      {
+        "title": "10. Changes",
+        "body": "We may update these terms at any time. The version in force is always the one published on this page, with the last-updated date shown at the top. We recommend reviewing it periodically."
+      },
+      {
+        "title": "11. Governing law and jurisdiction",
+        "body": "These terms are governed by the laws of the Republic of Paraguay. Any dispute shall be submitted to the ordinary courts of the city of Asunción, waiving any other jurisdiction."
+      }
+    ]
+  },
+  "notFound": {
+    "code": "404",
+    "title": "This page doesn't exist",
+    "body": "The link may be broken, or the page may have moved.",
+    "cta": "Back to home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "body": "We had a problem loading this section. Please try again in a few seconds.",
+    "retry": "Try again"
+  },
+  "metadata": {
+    "title": "AguaVista | Private community on the Paraná River",
+    "titleTemplate": "%s | AguaVista",
+    "description": "A 1,200-hectare private community on the Paraná River. Championship golf, marina, executive airport and lots from 800 m² with 72-instalment financing.",
+    "privacyTitle": "Privacy policy",
+    "privacyDescription": "How AguaVista collects, uses and protects your personal data.",
+    "termsTitle": "Terms and conditions",
+    "termsDescription": "Conditions of use for the AguaVista website and the scope of the commercial information published."
+  }
+}

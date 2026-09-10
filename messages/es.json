@@ -1,0 +1,390 @@
+{
+  "common": {
+    "loading": "Cargando",
+    "close": "Cerrar",
+    "menu": "Menú",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación",
+    "language": "Idioma",
+    "theme": "Tema",
+    "themeLight": "Modo claro",
+    "themeDark": "Modo oscuro",
+    "skipToContent": "Saltar al contenido principal",
+    "backToTop": "Volver arriba",
+    "scroll": "Scroll",
+    "whatsapp": "Escribinos por WhatsApp"
+  },
+  "preloader": {
+    "line1": "Tierra, río y aire conectados en un mismo lugar",
+    "line2": "Golf profesional, náutica privada y pista de aterrizaje."
+  },
+  "nav": {
+    "inicio": "Inicio",
+    "nosotros": "Nosotros",
+    "amenities": "Amenities",
+    "lotes": "Lotes",
+    "contacto": "Contacto",
+    "faq": "Preguntas frecuentes",
+    "cta": "Consultar"
+  },
+  "hero": {
+    "kicker": "",
+    "title": "",
+    "titleAccent": "Hay lugares para vivir. Y lugares que definen cómo querés vivir.",
+    "subtitle": "",
+    "videoAlt": "Vista aérea del condominio AguaVista sobre el Río Paraná"
+  },
+  "stats": {
+    "kicker": "Lotes disponibles",
+    "title": "TU PRÓXIMA DECISIÓN PUEDE CAMBIAR TU FORMA DE VIVIR.",
+    "titleAccent": "Invertí en AguaVista.",
+    "surface": {
+      "value": "800 m²",
+      "label": "Superficie mínima"
+    },
+    "installments": {
+      "value": "72",
+      "label": "Cuotas sin interés"
+    },
+    "downpayment": {
+      "value": "5%",
+      "label": "Entrega inicial"
+    },
+    "hectares": {
+      "value": "1.200",
+      "label": "Hectáreas de predio"
+    },
+    "cta": "Ver lotes disponibles"
+  },
+  "amenities": {
+    "kicker": "UN ESTILO DE VIDA EXCEPCIONAL",
+    "title": "Lo extraordinario forma parte de lo cotidiano.",
+    "subtitle": "Golf, náutica, aviación, naturaleza y río. Todo dentro de AguaVista.",
+    "items": {
+      "golf": {
+        "title": "Golf",
+        "description": "Cancha profesional de 18 hoyos con driving range y academia.",
+        "descriptionLong": "Dieciocho hoyos par 72 diseñados para aprovechar el desnivel natural del terreno hacia el río. Driving range iluminado, putting green, academia con profesores certificados y club house con vestuarios y guardapalos. Los propietarios juegan sin green fee y sin reserva previa entre semana."
+      },
+      "nautica": {
+        "title": "Náutica",
+        "description": "Marina privada con amarras y acceso directo al Río Paraná.",
+        "descriptionLong": "Marina privada con amarras para embarcaciones de hasta 12 metros, rampa de botado propia, guardería náutica techada y surtidor de combustible dentro del predio. Acceso directo al canal principal del Paraná: en veinte minutos estás navegando aguas abiertas."
+      },
+      "playa": {
+        "title": "Playa",
+        "description": "Playa privada de arena sobre el río, con servicio de bar.",
+        "descriptionLong": "Trescientos metros de arena traída y mantenida sobre la costa del río, con sombrillas, reposeras y servicio de bar y comidas durante la temporada. Zona de baño delimitada, guardavidas en verano y un sector separado para juegos de los chicos."
+      },
+      "tenis": {
+        "title": "House del Tenis",
+        "description": "Canchas de polvo de ladrillo iluminadas y club house propio.",
+        "descriptionLong": "Cuatro canchas de polvo de ladrillo con iluminación LED para jugar de noche y dos de superficie rápida. El club house tiene vestuarios, gimnasio funcional, cantina y una terraza que da directamente sobre las canchas centrales."
+      },
+      "spa": {
+        "title": "Spa & Bienestar",
+        "description": "Circuito húmedo, sala de masajes y gimnasio equipado.",
+        "descriptionLong": "Circuito húmedo completo con piscina climatizada, sauna seco, baño de vapor y ducha escocesa. Tres salas de masajes, sala de tratamientos faciales y un gimnasio equipado con máquinas de última generación y espacio para clases funcionales."
+      },
+      "aeropuerto": {
+        "title": "Aeropuerto ejecutivo",
+        "description": "Pista de aterrizaje privada y hangares dentro del predio.",
+        "descriptionLong": "Pista asfaltada de 1.200 metros habilitada para aviación general, con balizamiento nocturno, manga de viento y frecuencia propia. Hangares en alquiler o venta y plataforma de estacionamiento. Doce minutos de vuelo desde Asunción."
+      },
+      "jardin": {
+        "title": "Jardín japonés",
+        "description": "Paisajismo, agua y calma para caminar sin apuro.",
+        "descriptionLong": "Un hectárea de paisajismo japonés con lago artificial, puente rojo, senderos de piedra y más de cuarenta especies seleccionadas para florecer en distintas épocas del año. Pensado para caminar temprano o al atardecer, sin ruido ni tránsito."
+      },
+      "agua": {
+        "title": "Planta potabilizadora",
+        "description": "Infraestructura propia de agua potable para todo el condominio.",
+        "descriptionLong": "Planta potabilizadora propia con toma sobre el río, filtrado multicapa, cloración automática y análisis bacteriológico mensual. Dos tanques elevados garantizan presión constante en todo el predio y reserva para setenta y dos horas de consumo."
+      }
+    },
+    "open": "Ver detalle de {name}",
+    "close": "Cerrar detalle",
+    "hint": "Tocá para ver el detalle",
+    "prevPhoto": "Foto anterior",
+    "nextPhoto": "Foto siguiente",
+    "goToPhoto": "Ir a la foto {n}"
+  },
+  "comingSoon": {
+    "badge": "Próximamente",
+    "title": "Recorré AguaVista en 360°",
+    "body": "Estamos terminando el recorrido virtual del masterplan: vas a poder volar sobre el predio, entrar a cada manzana y ver la disponibilidad real de cada lote sin moverte de tu casa.",
+    "highlights": {
+      "tour": {
+        "title": "Recorrido 360°",
+        "body": "Navegá el predio completo desde el aire y desde el nivel de calle."
+      },
+      "lots": {
+        "title": "Lotes en vivo",
+        "body": "Superficie, precio y estado de cada lote, actualizados al día."
+      },
+      "explore": {
+        "title": "Tours de casas",
+        "body": "Entrá a las residencias terminadas y recorrelas habitación por habitación."
+      }
+    },
+    "cta": "Quiero que me avisen"
+  },
+  "contact": {
+    "kicker": "Contacto",
+    "title": "Agendá tu visita",
+    "subtitle": "Dejanos tus datos y un asesor te contacta dentro de las 24 horas hábiles.",
+    "form": {
+      "name": {
+        "label": "Nombre y apellido",
+        "placeholder": "Juan Pérez"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "juan@ejemplo.com"
+      },
+      "phone": {
+        "label": "Teléfono",
+        "placeholder": "+595 981 234 567"
+      },
+      "interest": {
+        "label": "Me interesa",
+        "placeholder": "Elegí una opción",
+        "options": {
+          "lote": "Comprar un lote",
+          "visita": "Agendar una visita",
+          "inversion": "Oportunidades de inversión",
+          "otro": "Otra consulta"
+        }
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Contanos qué estás buscando…",
+        "optional": "opcional"
+      },
+      "privacy": "Acepto la <link>política de privacidad</link> y el tratamiento de mis datos.",
+      "submit": "Enviar consulta",
+      "submitting": "Enviando…"
+    },
+    "errors": {
+      "nameRequired": "Escribí tu nombre",
+      "nameShort": "El nombre tiene que tener al menos 2 caracteres",
+      "nameLong": "El nombre es demasiado largo",
+      "emailRequired": "Escribí tu email",
+      "emailInvalid": "Ese email no parece válido",
+      "phoneRequired": "Escribí tu teléfono",
+      "phoneInvalid": "Ingresá un teléfono válido con código de país",
+      "interestRequired": "Elegí una opción",
+      "messageLong": "El mensaje no puede superar los 1000 caracteres",
+      "privacyRequired": "Necesitamos tu consentimiento para contactarte"
+    },
+    "toast": {
+      "successTitle": "¡Consulta enviada!",
+      "successBody": "Un asesor de AguaVista te va a escribir dentro de las próximas 24 horas hábiles.",
+      "errorTitle": "No pudimos enviar tu consulta",
+      "errorBody": "Revisá tu conexión y probá de nuevo. Si sigue fallando, escribinos por WhatsApp.",
+      "rateLimitTitle": "Demasiados intentos",
+      "rateLimitBody": "Esperá unos minutos antes de enviar otra consulta."
+    },
+    "direct": {
+      "title": "O escribinos directo",
+      "phone": "Teléfono",
+      "email": "Email",
+      "address": "Dirección"
+    }
+  },
+  "faq": {
+    "kicker": "Información adicional",
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Qué es AguaVista?",
+        "a": "AguaVista es un club de campo residencial en Paraguay que combina propiedades, golf, playa, náutica, deportes y aeropuerto ejecutivo. Si querés conocer las opciones disponibles, puedo ponerte en contacto con una asesora."
+      },
+      {
+        "q": "¿Dónde está ubicado AguaVista?",
+        "a": "Está en San Juan del Paraná, muy cerca de Encarnación y de la frontera con Argentina. Si me decís desde dónde venís, una asesora puede explicarte la mejor forma de llegar."
+      },
+      {
+        "q": "¿Qué propiedades hay disponibles para comprar?",
+        "a": "Hay diferentes alternativas de terrenos, casas y otras propiedades, y la disponibilidad cambia constantemente. Para recibir las opciones actuales y precios, lo mejor es hablar directamente con una asesora."
+      },
+      {
+        "q": "¿Cuánto cuesta una propiedad en AguaVista?",
+        "a": "Depende de la ubicación, superficie y tipo de propiedad. Tenemos alternativas para distintos presupuestos. ¿Querés que una asesora te envíe las opciones disponibles hoy?"
+      },
+      {
+        "q": "¿Puede comprar un extranjero?",
+        "a": "Sí existen operaciones con compradores extranjeros, aunque los requisitos pueden variar según nacionalidad y propiedad. Una asesora puede revisar tu caso y explicarte el proceso."
+      },
+      {
+        "q": "¿Necesito residencia paraguaya para comprar?",
+        "a": "No necesariamente. La situación depende de cada comprador y del inmueble. Si me indicás tu nacionalidad, puedo derivarte con una asesora para orientarte correctamente."
+      },
+      {
+        "q": "¿Se puede financiar la compra?",
+        "a": "Algunas propiedades pueden ofrecer diferentes condiciones de pago o financiación. Para conocer las alternativas vigentes, hablá con una asesora."
+      },
+      {
+        "q": "¿Cuánto se paga de expensas?",
+        "a": "El valor puede depender de la propiedad y de las condiciones vigentes del club. Una asesora puede darte el importe actualizado y explicarte qué incluye."
+      },
+      {
+        "q": "¿AguaVista tiene campo de golf?",
+        "a": "Sí. El golf es uno de los grandes diferenciales de AguaVista, junto con la playa, la náutica y sus instalaciones deportivas. Si querés conocer propiedades cercanas o con vista al golf, puedo conectarte con una asesora."
+      },
+      {
+        "q": "¿AguaVista tiene aeropuerto propio?",
+        "a": "Sí. AguaVista cuenta con AVA – AguaVista Airport Executive. Para información sobre la operación de vuelos o para coordinar una visita, hablá directamente con una asesora."
+      },
+      {
+        "q": "¿Tiene playa y acceso al río?",
+        "a": "Sí. AguaVista ofrece un estilo de vida vinculado al río Paraná, con playa y actividades náuticas. Si querés conocer personalmente el club, podemos coordinar una visita."
+      },
+      {
+        "q": "¿Puedo alquilar mi propiedad?",
+        "a": "Existen propiedades dentro de AguaVista destinadas a alquiler temporario. Las condiciones dependen del inmueble y del reglamento vigente. Una asesora puede explicarte qué propiedades son más adecuadas para inversión."
+      },
+      {
+        "q": "¿Qué rentabilidad puede generar una propiedad?",
+        "a": "La rentabilidad depende del precio de compra, tipo de propiedad, tarifa, ocupación y gastos. Para hacer números reales sobre una propiedad concreta, hablá con una asesora."
+      },
+      {
+        "q": "¿Puedo visitar AguaVista antes de comprar?",
+        "a": "Sí. Podemos coordinar una visita para que conozcas el club, sus amenities y las propiedades disponibles. Decime qué día te gustaría venir y te contacto con una asesora."
+      },
+      {
+        "q": "¿Quiero comprar o invertir, con quién hablo?",
+        "a": "Con una asesora de Solari Bienes Raíces."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Condominio privado de 1.200 hectáreas sobre el Río Paraná.",
+    "navTitle": "Navegación",
+    "contactTitle": "Contacto",
+    "legalTitle": "Legal",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones",
+    "rights": "Todos los derechos reservados.",
+    "socialLabel": "Seguinos en redes sociales",
+    "developedBy": "Desarrollado por"
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "updated": "Última actualización: {date}",
+    "intro": "En AguaVista tratamos tus datos personales con el mismo cuidado con el que cuidamos el predio. Esta política explica qué información recolectamos, para qué la usamos y qué derechos tenés sobre ella.",
+    "sections": [
+      {
+        "title": "1. Responsable del tratamiento",
+        "body": "AguaVista S.A., con domicilio en San Juan del Paraná, Itapúa, Paraguay, es responsable del tratamiento de los datos personales recolectados a través de este sitio. Podés contactarnos en info@aguavista.com.py para cualquier consulta sobre esta política."
+      },
+      {
+        "title": "2. Qué datos recolectamos",
+        "body": "Recolectamos únicamente los datos que nos entregás de forma voluntaria en el formulario de contacto: nombre y apellido, email, teléfono, tipo de consulta y el mensaje que escribas. Adicionalmente registramos datos técnicos anónimos de navegación (páginas visitadas, tipo de dispositivo, idioma) con fines estadísticos."
+      },
+      {
+        "title": "3. Para qué usamos tus datos",
+        "body": "Usamos tus datos exclusivamente para responder tu consulta, coordinar visitas al predio, enviarte información comercial sobre lotes y amenities que hayas solicitado, y mejorar la experiencia del sitio. No tomamos decisiones automatizadas que produzcan efectos jurídicos sobre vos."
+      },
+      {
+        "title": "4. Base legal y consentimiento",
+        "body": "El tratamiento se basa en el consentimiento que otorgás al marcar la casilla del formulario de contacto. Podés retirar ese consentimiento en cualquier momento, sin que eso afecte la licitud del tratamiento previo."
+      },
+      {
+        "title": "5. Con quién compartimos tus datos",
+        "body": "No vendemos ni cedemos tus datos personales a terceros con fines comerciales. Solo los compartimos con proveedores de servicios que nos ayudan a operar el sitio (hosting, base de datos y envío de emails), que actúan como encargados del tratamiento bajo obligaciones contractuales de confidencialidad."
+      },
+      {
+        "title": "6. Cuánto tiempo los conservamos",
+        "body": "Conservamos los datos de contacto mientras dure la relación comercial y hasta 24 meses después de tu última interacción con nosotros, salvo que solicites su eliminación antes o que una obligación legal exija conservarlos por más tiempo."
+      },
+      {
+        "title": "7. Tus derechos",
+        "body": "Tenés derecho a acceder a tus datos, rectificarlos si son inexactos, solicitar su eliminación, oponerte a su tratamiento y pedir la portabilidad de la información. Para ejercerlos, escribinos a info@aguavista.com.py indicando tu nombre completo y el derecho que querés ejercer. Respondemos dentro de los 10 días hábiles."
+      },
+      {
+        "title": "8. Cookies",
+        "body": "Este sitio usa cookies técnicas necesarias para recordar tu idioma y tu preferencia de tema (claro u oscuro). No usamos cookies publicitarias ni de seguimiento entre sitios. Podés borrarlas desde la configuración de tu navegador en cualquier momento."
+      },
+      {
+        "title": "9. Seguridad",
+        "body": "Aplicamos medidas técnicas y organizativas razonables para proteger tus datos: cifrado en tránsito mediante HTTPS, control de acceso al panel de administración y copias de seguridad periódicas de la base de datos."
+      },
+      {
+        "title": "10. Cambios en esta política",
+        "body": "Podemos actualizar esta política para reflejar cambios legales o en nuestros procesos. Cuando lo hagamos, vamos a modificar la fecha de última actualización que figura al inicio. Te recomendamos revisarla periódicamente."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Términos y condiciones",
+    "updated": "Última actualización: {date}",
+    "intro": "Estos términos regulan el uso del sitio web de AguaVista. Al navegarlo o al enviarnos una consulta, aceptás las condiciones que siguen. Te pedimos que las leas con atención.",
+    "sections": [
+      {
+        "title": "1. Titularidad del sitio",
+        "body": "Este sitio es operado por AguaVista S.A., con domicilio en San Juan del Paraná, Itapúa, Paraguay. Cualquier consulta sobre estos términos puede dirigirse a info@aguavista.com.py."
+      },
+      {
+        "title": "2. Carácter informativo del contenido",
+        "body": "La información publicada sobre lotes, superficies, precios, amenities, plazos de obra y planes de financiación tiene carácter meramente informativo y comercial. No constituye una oferta contractual vinculante en los términos del Código Civil paraguayo, ni reemplaza a la documentación formal de la operación."
+      },
+      {
+        "title": "3. Disponibilidad y precios",
+        "body": "La disponibilidad de los lotes y sus precios están sujetos a cambio sin previo aviso y se confirman únicamente al momento de la firma del boleto de compraventa. Las imágenes, renders y recorridos virtuales son ilustrativos: pueden diferir de la obra terminada en detalles de terminación, vegetación y equipamiento."
+      },
+      {
+        "title": "4. Uso permitido",
+        "body": "Podés navegar el sitio y consultar su contenido para fines personales e informativos. No está permitido extraer datos de forma automatizada, reproducir el contenido con fines comerciales, ni utilizar la marca AguaVista, sus logos o sus fotografías sin autorización escrita previa."
+      },
+      {
+        "title": "5. Propiedad intelectual",
+        "body": "Los textos, fotografías, videos, planos, renders, el diseño del sitio y la marca AguaVista son propiedad de AguaVista S.A. o se usan bajo licencia. Todos los derechos quedan reservados."
+      },
+      {
+        "title": "6. Formulario de contacto",
+        "body": "Al enviar el formulario declarás que los datos que aportás son verdaderos y que sos titular del email y del teléfono informados. Usamos esos datos según nuestra política de privacidad. El envío de una consulta no genera reserva alguna sobre un lote ni obligación de venta de nuestra parte."
+      },
+      {
+        "title": "7. Enlaces a terceros",
+        "body": "El sitio puede enlazar a servicios de terceros, como redes sociales o WhatsApp. No controlamos esos servicios ni respondemos por su contenido, disponibilidad o políticas de privacidad."
+      },
+      {
+        "title": "8. Disponibilidad del servicio",
+        "body": "Procuramos que el sitio esté disponible de forma continua, pero no garantizamos que funcione sin interrupciones ni errores. Podemos suspenderlo temporalmente por mantenimiento o por causas de fuerza mayor, sin que ello genere derecho a indemnización."
+      },
+      {
+        "title": "9. Limitación de responsabilidad",
+        "body": "En la medida en que la ley lo permita, AguaVista S.A. no responde por daños indirectos derivados del uso del sitio o de la imposibilidad de usarlo. Nada de lo dispuesto acá limita los derechos que la legislación de defensa del consumidor te reconoce como usuario."
+      },
+      {
+        "title": "10. Modificaciones",
+        "body": "Podemos actualizar estos términos en cualquier momento. La versión vigente es siempre la publicada en esta página, con la fecha de última actualización indicada al inicio. Te sugerimos revisarla periódicamente."
+      },
+      {
+        "title": "11. Ley aplicable y jurisdicción",
+        "body": "Estos términos se rigen por las leyes de la República del Paraguay. Cualquier controversia se somete a los tribunales ordinarios de la ciudad de Asunción, con renuncia a cualquier otro fuero."
+      }
+    ]
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Esta página no existe",
+    "body": "Puede que el enlace esté roto o que la página se haya mudado.",
+    "cta": "Volver al inicio"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "body": "Tuvimos un problema al cargar esta sección. Probá de nuevo en unos segundos.",
+    "retry": "Reintentar"
+  },
+  "metadata": {
+    "title": "AguaVista | Condominio privado sobre el Río Paraná",
+    "titleTemplate": "%s | AguaVista",
+    "description": "Condominio privado de 1.200 hectáreas sobre el Río Paraná. Golf profesional, náutica, aeropuerto ejecutivo y lotes desde 800 m² con financiación a 84 cuotas.",
+    "privacyTitle": "Política de privacidad",
+    "privacyDescription": "Cómo AguaVista recolecta, usa y protege tus datos personales.",
+    "termsTitle": "Términos y condiciones",
+    "termsDescription": "Condiciones de uso del sitio de AguaVista y alcance de la información comercial publicada."
+  }
+}
