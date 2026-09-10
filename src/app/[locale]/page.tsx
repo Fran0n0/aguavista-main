@@ -8,7 +8,7 @@ import { Amenities } from "@/components/sections/Amenities";
 import { Lotes } from "@/components/sections/Lotes";
 import { Contact } from "@/components/sections/Contact";
 import { Faq } from "@/components/sections/Faq";
-import { ZoomParallax } from "@/components/ui/zoom-parallax";
+import { ExperienceScroll } from "@/components/sections/ExperienceScroll";
 import VerticalReels from "@/components/lifestyle/VerticalReels";
 import { ComingSoon } from "@/components/sections/ComingSoon";
 import { MapSkeleton } from "@/components/ui/Skeleton";
@@ -127,18 +127,7 @@ export default async function HomePage({
         posterMobile={media.hero_poster_mobile}
       />
 
-      <ZoomParallax
-        images={[
-          // Esta es la imagen central que se oscurece
-          { src: "/collagemed.webp", alt: "Experiencia AguaVista", isCenter: true },
-          // Estas son las 5 imágenes periféricas que salen volando
-          { src: "/amenities-golf.webp", alt: "Cancha de Golf en AguaVista" },
-          { src: "/amenities-nautica.webp", alt: "Marina Privada AguaVista" },
-          { src: "/amenities-playa.webp", alt: "Playa Privada" },
-          { src: "/amenities-spa.webp", alt: "Spa y Relax" },
-          { src: "/amenities-eventos.webp", alt: "Eventos exclusivos" },
-        ]}
-      />
+      <ExperienceScroll />
 
       <Amenities locale={locale as Locale} />
       <VerticalReels reels={reels} posters={reels.map(posterFor)} />
