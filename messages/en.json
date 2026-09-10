@@ -113,19 +113,34 @@
   "comingSoon": {
     "badge": "Coming soon",
     "title": "Explore AguaVista in 360°",
-    "body": "We're putting the finishing touches on the virtual masterplan tour: you'll be able to fly over the grounds, step into every block and check real lot availability without leaving home.",
-    "highlights": {
-      "tour": {
-        "title": "360° tour",
-        "body": "Navigate the whole property from the air and from street level."
+    "body": "Here's an early look at the masterplan — tap any sector to explore it. Meanwhile we're finishing the virtual tour, so you'll be able to fly over the grounds and check real lot availability without leaving home.",
+    "mapAlt": "Illustrated model of the AguaVista masterplan showing its five sectors",
+    "hint": "Pick a sector",
+    "sector": "Sector",
+    "reset": "View full plan",
+    "idleTitle": "Five worlds, one estate",
+    "idleBody": "Every sector of AguaVista has a character of its own. Tap a point on the plan — or pick one from the list — to see what waits in each.",
+    "disclaimer": "Illustrative rendering for presentation purposes only. Not a sales plan or contractual document.",
+    "zones": {
+      "botanico": {
+        "title": "Botanical garden",
+        "body": "Nearly ten acres of riverfront garden with native species, shaded trails and a tea house by the water. It's the lungs of the estate and where the morning walks begin."
       },
-      "lots": {
-        "title": "Live lot data",
-        "body": "Size, price and status for every lot, updated daily."
+      "nautica": {
+        "title": "Marina",
+        "body": "Navigable canals running to the back of the lots, a private marina with moorings, a boat ramp and covered dry storage. Leave your own dock and you're on open Paraná water in twenty minutes."
       },
-      "explore": {
-        "title": "Home tours",
-        "body": "Step inside the finished residences and walk through them room by room."
+      "aeropuerto": {
+        "title": "Airfield",
+        "body": "A private executive runway with hangars and apron inside the grounds. Asunción is a short hop away, and the region's capitals are within a morning's reach."
+      },
+      "greenbar": {
+        "title": "Green Bar",
+        "body": "The club house above the 18th, with a terrace over the green, an open kitchen and club storage. The round ends here, with the sun setting over the course."
+      },
+      "tekoha": {
+        "title": "Tekoha Park",
+        "body": "The gathering park: barbecue pavilions, long tables, a playground and a grove built for Sunday asado. Tekoha, in Guaraní, is the place where you live among your own."
       }
     },
     "cta": "Notify me"

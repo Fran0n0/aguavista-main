@@ -113,19 +113,34 @@
   "comingSoon": {
     "badge": "Próximamente",
     "title": "Recorré AguaVista en 360°",
-    "body": "Estamos terminando el recorrido virtual del masterplan: vas a poder volar sobre el predio, entrar a cada manzana y ver la disponibilidad real de cada lote sin moverte de tu casa.",
-    "highlights": {
-      "tour": {
-        "title": "Recorrido 360°",
-        "body": "Navegá el predio completo desde el aire y desde el nivel de calle."
+    "body": "Este es el anticipo del masterplan: tocá cada sector para conocerlo. Mientras tanto terminamos el recorrido virtual, para que puedas volar sobre el predio y ver la disponibilidad real de cada lote sin moverte de tu casa.",
+    "mapAlt": "Maqueta ilustrada del masterplan de AguaVista con sus cinco sectores",
+    "hint": "Elegí un sector",
+    "sector": "Sector",
+    "reset": "Ver plano completo",
+    "idleTitle": "Cinco mundos, un mismo predio",
+    "idleBody": "Cada sector de AguaVista tiene su propio carácter. Tocá un punto del plano —o elegí de la lista— para ver qué te espera en cada uno.",
+    "disclaimer": "Imagen ilustrativa con fines de presentación. No constituye plano de venta ni documento contractual.",
+    "zones": {
+      "botanico": {
+        "title": "Botánico",
+        "body": "Un jardín de casi cuatro hectáreas sobre la costa, con especies nativas, senderos sombreados y una casa de té junto al agua. Es el pulmón del predio y el lugar donde arrancan las caminatas de la mañana."
       },
-      "lots": {
-        "title": "Lotes en vivo",
-        "body": "Superficie, precio y estado de cada lote, actualizados al día."
+      "nautica": {
+        "title": "Náutica",
+        "body": "Canales navegables que llegan hasta el fondo de los lotes, marina privada con amarras, rampa de botado y guardería techada. Salís de tu muelle y en veinte minutos estás en aguas abiertas del Paraná."
       },
-      "explore": {
-        "title": "Tours de casas",
-        "body": "Entrá a las residencias terminadas y recorrelas habitación por habitación."
+      "aeropuerto": {
+        "title": "Aeropuerto",
+        "body": "Pista ejecutiva propia con hangares y plataforma dentro del predio. Asunción queda a un vuelo corto y las capitales de la región, al alcance de una mañana."
+      },
+      "greenbar": {
+        "title": "Green Bar",
+        "body": "El club house sobre el hoyo 18, con terraza al green, cocina abierta y guardapalos. Después de la vuelta la conversación sigue acá, con el atardecer sobre la cancha."
+      },
+      "tekoha": {
+        "title": "Parque Tekoha",
+        "body": "El parque de encuentro: quinchos, mesas largas, juegos para los chicos y una arboleda pensada para el asado del domingo. Tekoha, en guaraní, es el lugar donde uno vive con los suyos."
       }
     },
     "cta": "Quiero que me avisen"

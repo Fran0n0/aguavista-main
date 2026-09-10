@@ -113,19 +113,34 @@
   "comingSoon": {
     "badge": "Em breve",
     "title": "Percorra o AguaVista em 360°",
-    "body": "Estamos finalizando o tour virtual do masterplan: você vai poder sobrevoar o condomínio, entrar em cada quadra e ver a disponibilidade real de cada lote sem sair de casa.",
-    "highlights": {
-      "tour": {
-        "title": "Tour 360°",
-        "body": "Navegue por todo o condomínio do alto e no nível da rua."
+    "body": "Esta é a prévia do masterplan: toque em cada setor para conhecê-lo. Enquanto isso finalizamos o tour virtual, para você sobrevoar o condomínio e ver a disponibilidade real de cada lote sem sair de casa.",
+    "mapAlt": "Maquete ilustrada do masterplan do AguaVista com seus cinco setores",
+    "hint": "Escolha um setor",
+    "sector": "Setor",
+    "reset": "Ver planta completa",
+    "idleTitle": "Cinco mundos, um só condomínio",
+    "idleBody": "Cada setor do AguaVista tem caráter próprio. Toque em um ponto da planta — ou escolha na lista — para ver o que espera por você em cada um.",
+    "disclaimer": "Imagem ilustrativa para fins de apresentação. Não constitui planta de venda nem documento contratual.",
+    "zones": {
+      "botanico": {
+        "title": "Botânico",
+        "body": "Um jardim de quase quatro hectares à beira do rio, com espécies nativas, trilhas sombreadas e uma casa de chá junto à água. É o pulmão do condomínio e onde começam as caminhadas da manhã."
       },
-      "lots": {
-        "title": "Lotes ao vivo",
-        "body": "Área, preço e situação de cada lote, atualizados diariamente."
+      "nautica": {
+        "title": "Náutica",
+        "body": "Canais navegáveis que chegam ao fundo dos lotes, marina privativa com vagas, rampa de lançamento e garagem náutica coberta. Você sai do seu píer e em vinte minutos está em águas abertas do Paraná."
       },
-      "explore": {
-        "title": "Tours das casas",
-        "body": "Entre nas residências prontas e percorra cômodo por cômodo."
+      "aeropuerto": {
+        "title": "Aeroporto",
+        "body": "Pista executiva própria com hangares e pátio dentro do condomínio. Assunção fica a um voo curto e as capitais da região, ao alcance de uma manhã."
+      },
+      "greenbar": {
+        "title": "Green Bar",
+        "body": "O club house sobre o buraco 18, com terraço para o green, cozinha aberta e guarda de tacos. Depois da volta a conversa continua aqui, com o pôr do sol sobre o campo."
+      },
+      "tekoha": {
+        "title": "Parque Tekoha",
+        "body": "O parque de convivência: quiosques, mesas longas, playground e uma arvoredo pensado para o churrasco de domingo. Tekoha, em guarani, é o lugar onde se vive com os seus."
       }
     },
     "cta": "Quero ser avisado"
