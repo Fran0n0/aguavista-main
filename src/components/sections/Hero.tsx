@@ -154,13 +154,29 @@ export function Hero({
           {t("kicker")}
         </motion.span>
 
-        <h1 className="font-display text-[clamp(2.5rem,8vw,5.5rem)] font-light leading-[1.02] tracking-[-0.01em] text-white drop-shadow-[0_2px_20px_rgba(5,13,9,0.55)]">
-          <SplitText text={t("title")} immediate delay={0.35} className="block" />
+        {/* Título en tres líneas, todo Montserrat (font-display) y en caja
+            normal — nada de `uppercase`:
+              1ª  negrita
+              2ª  regular, un punto más chica
+              3ª  negrita itálica  */}
+        <h1 className="font-display text-[clamp(2.1rem,6.6vw,4.5rem)] leading-[1.08] tracking-[-0.015em] text-white drop-shadow-[0_2px_20px_rgba(5,13,9,0.55)]">
           <SplitText
-            text={t("titleAccent")}
+            text={t("titleLine1")}
             immediate
-            delay={0.55}
-            className="block italic text-[#C8E88A]"
+            delay={0.35}
+            className="block font-bold"
+          />
+          <SplitText
+            text={t("titleLine2")}
+            immediate
+            delay={0.5}
+            className="block text-[0.86em] font-normal"
+          />
+          <SplitText
+            text={t("titleLine3")}
+            immediate
+            delay={0.65}
+            className="block font-bold italic"
           />
         </h1>
 

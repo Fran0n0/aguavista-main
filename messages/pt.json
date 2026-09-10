@@ -29,8 +29,9 @@
   },
   "hero": {
     "kicker": "UMA CATEGORIA PRÓPRIA",
-    "title": "Existem lugares para morar.",
-    "titleAccent": "E lugares que definem como você quer viver.",
+    "titleLine1": "Existem lugares para morar.",
+    "titleLine2": "E lugares que definem",
+    "titleLine3": "Como você quer viver.",
     "subtitle": "Golfe profissional, náutica privada e aeroporto executivo a 40 minutos de Assunção.",
     "videoAlt": "Vista aérea do condomínio AguaVista às margens do Rio Paraná"
   },

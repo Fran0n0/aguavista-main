@@ -29,8 +29,9 @@
   },
   "hero": {
     "kicker": "A CLASS OF ITS OWN",
-    "title": "There are places to live.",
-    "titleAccent": "And places that define how you want to live.",
+    "titleLine1": "There are places to live.",
+    "titleLine2": "And places that define",
+    "titleLine3": "How you want to live.",
     "subtitle": "Championship golf, a private marina and an executive airstrip, 40 minutes from Asunción.",
     "videoAlt": "Aerial view of the AguaVista community on the Paraná River"
   },

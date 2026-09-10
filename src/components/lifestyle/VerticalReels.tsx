@@ -120,7 +120,7 @@ export default function VerticalReels({
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              className="text-[var(--av-lux)] uppercase tracking-[0.2em] text-sm mb-4 font-semibold drop-shadow-md"
+              className="font-sans text-[var(--av-lux)] uppercase tracking-[0.2em] text-sm mb-4 font-semibold drop-shadow-md"
             >
               EL NUEVO LUJO
             </motion.h2>
@@ -130,7 +130,7 @@ export default function VerticalReels({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: 0.1 }}
-              className="text-4xl lg:text-6xl text-white font-serif leading-tight drop-shadow-2xl"
+              className="text-4xl lg:text-6xl text-white font-display font-light leading-tight tracking-[-0.015em] drop-shadow-2xl"
             >
               Tener tiempo. Tener espacio.<br/>Tener libertad para elegir<br/>cómo vivir cada día.
             </motion.h3>
@@ -140,7 +140,7 @@ export default function VerticalReels({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: 0.2 }}
-              className="text-white/60 mt-6 text-base lg:text-lg max-w-md font-light leading-relaxed"
+              className="font-sans text-white/60 mt-6 text-base lg:text-lg max-w-md font-light leading-relaxed"
             >
               Eso es AguaVista.
             </motion.p>
@@ -152,7 +152,7 @@ export default function VerticalReels({
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              className="text-[var(--av-lux)] uppercase tracking-[0.2em] text-xs mb-3 font-semibold drop-shadow-md"
+              className="font-sans text-[var(--av-lux)] uppercase tracking-[0.2em] text-xs mb-3 font-semibold drop-shadow-md"
             >
               EL NUEVO LUJO
             </motion.h2>
@@ -162,7 +162,7 @@ export default function VerticalReels({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: 0.1 }}
-              className="text-3xl text-white font-serif leading-tight drop-shadow-2xl"
+              className="text-3xl text-white font-display font-light leading-tight tracking-[-0.015em] drop-shadow-2xl"
             >
               Tener tiempo. Tener espacio.<br/>Tener libertad para elegir<br/>cómo vivir cada día.
             </motion.h3>
@@ -172,7 +172,7 @@ export default function VerticalReels({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: 0.2 }}
-              className="text-white/60 mt-4 text-sm max-w-md font-light leading-relaxed"
+              className="font-sans text-white/60 mt-4 text-sm max-w-md font-light leading-relaxed"
             >
               Eso es AguaVista.
             </motion.p>

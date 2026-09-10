@@ -28,6 +28,18 @@ const BACKGROUND_IMAGE = "/areo.webp";
 const BACKGROUND_ALT =
   "Vista aérea del predio de AguaVista sobre el Río Paraná";
 
+/**
+ * Mapa ilustrado del masterplan, usado como filigrana detrás del texto.
+ *
+ * Va como `background-image` de un div decorativo y no como <Image>: si el
+ * archivo todavía no está en /public la sección se ve exactamente igual que
+ * antes, sin imagen rota ni error en consola.
+ *
+ * PARA ACTIVARLO: guardá la ilustración en /public con este nombre
+ * (ideal .webp, ~1600px de ancho) y corré `npm run optimize:media`.
+ */
+const ILLUSTRATED_MAP = "/masterplan-ilustrado.webp";
+
 const HIGHLIGHTS = [
   { key: "tour", Icon: Move3d },
   { key: "lots", Icon: ScanEye },
@@ -70,6 +82,23 @@ export function ComingSoon() {
             style={{
               background:
                 "radial-gradient(55% 50% at 20% 10%, var(--av-glow-vivo) 0%, transparent 65%), radial-gradient(45% 40% at 85% 95%, var(--av-glow-lux) 0%, transparent 70%)",
+            }}
+          />
+
+          {/* Mapa ilustrado como filigrana: desaturado, en modo luminosidad y
+              con los bordes disueltos por una máscara radial, para que se
+              intuya el predio sin competir con el titular. */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 bg-center bg-no-repeat opacity-[0.16] mix-blend-luminosity md:opacity-20"
+            style={{
+              backgroundImage: `url("${ILLUSTRATED_MAP}")`,
+              backgroundSize: "cover",
+              filter: "saturate(0.3) contrast(1.05)",
+              maskImage:
+                "radial-gradient(68% 62% at 50% 50%, #000 0%, rgba(0,0,0,0.45) 58%, transparent 84%)",
+              WebkitMaskImage:
+                "radial-gradient(68% 62% at 50% 50%, #000 0%, rgba(0,0,0,0.45) 58%, transparent 84%)",
             }}
           />
 

@@ -29,8 +29,9 @@
   },
   "hero": {
     "kicker": "",
-    "title": "",
-    "titleAccent": "Hay lugares para vivir. Y lugares que definen cómo querés vivir.",
+    "titleLine1": "Hay lugares para vivir.",
+    "titleLine2": "Y lugares que definen",
+    "titleLine3": "Cómo querés vivir.",
     "subtitle": "",
     "videoAlt": "Vista aérea del condominio AguaVista sobre el Río Paraná"
   },
