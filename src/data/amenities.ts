@@ -33,23 +33,29 @@ export interface Amenity {
   featured?: boolean;
 }
 
+/*
+ * Portadas en /public/amenities: son las fotos que mandó el cliente
+ * (public/secciones), pasadas a webp de 1600px de ancho máximo. Los
+ * originales pesaban hasta 12 MB y el de tenis venía en HEIC, que Chrome
+ * no muestra. Aeropuerto no tiene foto nueva y conserva la suya.
+ */
 export const AMENITIES: readonly Amenity[] = [
   {
     id: "golf",
-    image: "/golf1.webp",
+    image: "/amenities/golf.webp",
     gallery: ["/golf.webp", "/golf2.webp"],
     video: "/golfreel.mp4",
     featured: true,
   },
-  { id: "nautica", image: "/nautica.webp", gallery: ["/foto-4.webp", "/foto-2.webp"] },
-  { id: "playa", image: "/playa.webp", gallery: ["/foto-7.webp", "/foto-2.webp"] },
+  { id: "nautica", image: "/amenities/nautica.webp", gallery: ["/foto-4.webp", "/foto-2.webp"] },
+  { id: "playa", image: "/amenities/playa.webp", gallery: ["/foto-7.webp", "/foto-2.webp"] },
   {
     id: "tenis",
-    image: "/tenis1.webp",
+    image: "/amenities/tenis.webp",
     gallery: ["/tenis.webp", "/tenis2.webp"],
     video: "/tenisreel.mp4",
   },
-  { id: "spa", image: "/spa.webp", gallery: ["/foto-5.webp"] },
+  { id: "spa", image: "/amenities/spa.webp", gallery: ["/foto-5.webp"] },
   {
     id: "aeropuerto",
     image: "/aero1.webp",
@@ -57,6 +63,10 @@ export const AMENITIES: readonly Amenity[] = [
     video: "/aeropuertoreel.mp4",
     featured: true,
   },
-  { id: "jardin", image: "/foto-5.webp", gallery: ["/foto-6.webp"] },
-  { id: "agua", image: "/foto-7.webp", gallery: ["/foto-2.webp", "/playa.webp"] },
+  { id: "jardin", image: "/amenities/jardin-japones.webp", gallery: ["/foto-6.webp"] },
+  {
+    id: "agua",
+    image: "/amenities/planta-potabilizadora.webp",
+    gallery: ["/foto-2.webp", "/playa.webp"],
+  },
 ] as const;
