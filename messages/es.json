@@ -40,20 +40,24 @@
     "title": "TU PRÓXIMA DECISIÓN PUEDE CAMBIAR TU FORMA DE VIVIR.",
     "titleAccent": "Invertí en AguaVista.",
     "surface": {
-      "value": "800 m²",
-      "label": "Superficie mínima"
+      "value": "800 a 1.000 m²",
+      "label": "Superficie del lote"
     },
     "installments": {
-      "value": "72",
-      "label": "Cuotas sin interés"
+      "value": "84",
+      "label": "Cuotas financiadas"
     },
     "downpayment": {
       "value": "5%",
       "label": "Entrega inicial"
     },
     "hectares": {
-      "value": "1.200",
+      "value": "426",
       "label": "Hectáreas de predio"
+    },
+    "lots": {
+      "value": "+1.600",
+      "label": "Lotes"
     },
     "cta": "Ver lotes disponibles"
   },
@@ -65,22 +69,22 @@
       "golf": {
         "title": "Golf",
         "description": "Cancha profesional de 18 hoyos con driving range y academia.",
-        "descriptionLong": "Dieciocho hoyos par 72 diseñados para aprovechar el desnivel natural del terreno hacia el río. Driving range iluminado, putting green, academia con profesores certificados y club house con vestuarios y guardapalos. Los propietarios juegan sin green fee y sin reserva previa entre semana."
+        "descriptionLong": "Dieciocho hoyos diseñados para aprovechar el desnivel natural del terreno hacia el río. Driving range iluminado, putting green, academia con profesores certificados y club house con vestuarios y guardapalos. Los propietarios juegan sin reserva previa entre semana."
       },
       "nautica": {
         "title": "Náutica",
         "description": "Marina privada con amarras y acceso directo al Río Paraná.",
-        "descriptionLong": "Marina privada con amarras para embarcaciones de hasta 12 metros, rampa de botado propia, guardería náutica techada y surtidor de combustible dentro del predio. Acceso directo al canal principal del Paraná: en veinte minutos estás navegando aguas abiertas."
+        "descriptionLong": "Marina privada con amarras para embarcaciones de hasta 12 metros, rampa de botado propia, guardería náutica techada y surtidor de combustible dentro del predio. Acceso directo al canal principal del Paraná: en minutos estás navegando aguas abiertas."
       },
       "playa": {
         "title": "Playa",
         "description": "Playa privada de arena sobre el río, con servicio de bar.",
-        "descriptionLong": "Trescientos metros de arena traída y mantenida sobre la costa del río, con sombrillas, reposeras y servicio de bar y comidas durante la temporada. Zona de baño delimitada, guardavidas en verano y un sector separado para juegos de los chicos."
+        "descriptionLong": "Trescientos metros de arena mantenida sobre la costa del río, con sombrillas, reposeras y servicio de bar y comidas durante la temporada. Zona de baño delimitada, guardavidas en verano y un sector separado para juegos de los chicos."
       },
       "tenis": {
         "title": "House del Tenis",
-        "description": "Canchas de polvo de ladrillo iluminadas y club house propio.",
-        "descriptionLong": "Cuatro canchas de polvo de ladrillo con iluminación LED para jugar de noche y dos de superficie rápida. El club house tiene vestuarios, gimnasio funcional, cantina y una terraza que da directamente sobre las canchas centrales."
+        "description": "Canchas de polvo de ladrillo y pádel iluminadas, con club house propio.",
+        "descriptionLong": "Dos canchas de polvo de ladrillo con iluminación LED para jugar de noche, dos canchas de pádel, una cancha multiuso, piscina y parque para chicos. El club house tiene vestuarios, gimnasio funcional, cantina y una terraza que da directamente sobre las canchas centrales."
       },
       "spa": {
         "title": "Spa & Bienestar",
@@ -129,7 +133,7 @@
       },
       "nautica": {
         "title": "Náutica",
-        "body": "Canales navegables que llegan hasta el fondo de los lotes, marina privada con amarras, rampa de botado y guardería techada. Salís de tu muelle y en veinte minutos estás en aguas abiertas del Paraná."
+        "body": "Canales navegables que llegan hasta el fondo de los lotes, marina privada con amarras, rampa de botado y guardería techada. Salís de tu muelle y en minutos estás en aguas abiertas del Paraná."
       },
       "aeropuerto": {
         "title": "Aeropuerto",
@@ -215,7 +219,7 @@
     "items": [
       {
         "q": "¿Qué es AguaVista?",
-        "a": "AguaVista es un club de campo residencial en Paraguay que combina propiedades, golf, playa, náutica, deportes y aeropuerto ejecutivo. Si querés conocer las opciones disponibles, puedo ponerte en contacto con una asesora."
+        "a": "AguaVista es un condominio residencial en Paraguay que combina propiedades, golf, playa, náutica, deportes y aeropuerto ejecutivo. Si querés conocer las opciones disponibles, puedo ponerte en contacto con una asesora."
       },
       {
         "q": "¿Dónde está ubicado AguaVista?",
@@ -243,7 +247,7 @@
       },
       {
         "q": "¿Cuánto se paga de expensas?",
-        "a": "El valor puede depender de la propiedad y de las condiciones vigentes del club. Una asesora puede darte el importe actualizado y explicarte qué incluye."
+        "a": "El valor puede depender de la propiedad y de las condiciones vigentes del condominio. Una asesora puede darte el importe actualizado y explicarte qué incluye."
       },
       {
         "q": "¿AguaVista tiene campo de golf?",
@@ -255,7 +259,7 @@
       },
       {
         "q": "¿Tiene playa y acceso al río?",
-        "a": "Sí. AguaVista ofrece un estilo de vida vinculado al río Paraná, con playa y actividades náuticas. Si querés conocer personalmente el club, podemos coordinar una visita."
+        "a": "Sí. AguaVista ofrece un estilo de vida vinculado al río Paraná, con playa y actividades náuticas. Si querés conocer personalmente el condominio, podemos coordinar una visita."
       },
       {
         "q": "¿Puedo alquilar mi propiedad?",
@@ -267,7 +271,7 @@
       },
       {
         "q": "¿Puedo visitar AguaVista antes de comprar?",
-        "a": "Sí. Podemos coordinar una visita para que conozcas el club, sus amenities y las propiedades disponibles. Decime qué día te gustaría venir y te contacto con una asesora."
+        "a": "Sí. Podemos coordinar una visita para que conozcas el condominio, sus amenities y las propiedades disponibles. Decime qué día te gustaría venir y te contacto con una asesora."
       },
       {
         "q": "¿Quiero comprar o invertir, con quién hablo?",
@@ -276,7 +280,7 @@
     ]
   },
   "footer": {
-    "tagline": "Condominio privado de 1.200 hectáreas sobre el Río Paraná.",
+    "tagline": "Condominio privado de 426 hectáreas sobre el Río Paraná.",
     "navTitle": "Navegación",
     "contactTitle": "Contacto",
     "legalTitle": "Legal",
@@ -398,7 +402,7 @@
   "metadata": {
     "title": "AguaVista | Condominio privado sobre el Río Paraná",
     "titleTemplate": "%s | AguaVista",
-    "description": "Condominio privado de 1.200 hectáreas sobre el Río Paraná. Golf profesional, náutica, aeropuerto ejecutivo y lotes desde 800 m² con financiación a 84 cuotas.",
+    "description": "Condominio privado de 426 hectáreas sobre el Río Paraná. Golf profesional, náutica, aeropuerto ejecutivo y lotes desde 800 m² con financiación a 84 cuotas.",
     "privacyTitle": "Política de privacidad",
     "privacyDescription": "Cómo AguaVista recolecta, usa y protege tus datos personales.",
     "termsTitle": "Términos y condiciones",

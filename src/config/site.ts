@@ -13,7 +13,7 @@ export const siteConfig = {
   legalName: "AguaVista S.A.",
   tagline: "Condominio privado a orillas del Río Paraná",
   description:
-    "Condominio privado de 1.200 hectáreas sobre el Río Paraná. Golf profesional, náutica, aeropuerto ejecutivo y lotes desde 800 m² con financiación a 72 cuotas.",
+    "Condominio privado de 426 hectáreas sobre el Río Paraná. Golf profesional, náutica, aeropuerto ejecutivo y lotes desde 800 m² con financiación a 84 cuotas.",
 
   /* Sin barra final: se concatena con las rutas. Configurable por entorno
      para que los OG y el sitemap apunten bien en preview y en producción. */

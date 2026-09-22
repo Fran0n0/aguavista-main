@@ -40,20 +40,24 @@
     "title": "YOUR NEXT DECISION",
     "titleAccent": "CAN CHANGE HOW YOU LIVE.",
     "surface": {
-      "value": "800 m²",
-      "label": "Minimum lot size"
+      "value": "800 to 1,000 m²",
+      "label": "Lot size"
     },
     "installments": {
-      "value": "72",
-      "label": "Interest-free instalments"
+      "value": "84",
+      "label": "Financed instalments"
     },
     "downpayment": {
       "value": "5%",
       "label": "Down payment"
     },
     "hectares": {
-      "value": "1,200",
+      "value": "426",
       "label": "Hectares of land"
+    },
+    "lots": {
+      "value": "+1,600",
+      "label": "Lots"
     },
     "cta": "View available lots"
   },
@@ -65,22 +69,22 @@
       "golf": {
         "title": "Golf",
         "description": "Championship 18-hole course with driving range and academy.",
-        "descriptionLong": "Eighteen par-72 holes designed around the natural slope of the land towards the river. Floodlit driving range, putting green, academy with certified instructors, and a club house with changing rooms and club storage. Owners play with no green fee and no booking required on weekdays."
+        "descriptionLong": "Eighteen holes designed around the natural slope of the land towards the river. Floodlit driving range, putting green, academy with certified instructors, and a club house with changing rooms and club storage. Owners play with no booking required on weekdays."
       },
       "nautica": {
         "title": "Marina",
         "description": "Private marina with moorings and direct access to the Paraná River.",
-        "descriptionLong": "Private marina with moorings for vessels up to 12 metres, its own launch ramp, covered dry storage and a fuel pump inside the grounds. Direct access to the main Paraná channel: twenty minutes and you are in open water."
+        "descriptionLong": "Private marina with moorings for vessels up to 12 metres, its own launch ramp, covered dry storage and a fuel pump inside the grounds. Direct access to the main Paraná channel: minutes and you are in open water."
       },
       "playa": {
         "title": "Beach",
         "description": "Private sand beach on the river, with full bar service.",
-        "descriptionLong": "Three hundred metres of imported, maintained sand along the riverbank, with parasols, loungers and full bar and food service in season. Marked swimming area, lifeguards in summer and a separate zone for children's play."
+        "descriptionLong": "Three hundred metres of maintained sand along the riverbank, with parasols, loungers and full bar and food service in season. Marked swimming area, lifeguards in summer and a separate zone for children's play."
       },
       "tenis": {
         "title": "Tennis House",
-        "description": "Floodlit clay courts and a dedicated club house.",
-        "descriptionLong": "Four clay courts with LED floodlighting for night play and two hard courts. The club house has changing rooms, a functional gym, a canteen and a terrace looking straight onto the centre courts."
+        "description": "Floodlit clay and padel courts with a dedicated club house.",
+        "descriptionLong": "Two clay courts with LED floodlighting for night play, two padel courts, a multi-use court, a swimming pool and a children's playground. The club house has changing rooms, a functional gym, a canteen and a terrace looking straight onto the centre courts."
       },
       "spa": {
         "title": "Spa & Wellness",
@@ -129,7 +133,7 @@
       },
       "nautica": {
         "title": "Marina",
-        "body": "Navigable canals running to the back of the lots, a private marina with moorings, a boat ramp and covered dry storage. Leave your own dock and you're on open Paraná water in twenty minutes."
+        "body": "Navigable canals running to the back of the lots, a private marina with moorings, a boat ramp and covered dry storage. Leave your own dock and you're on open Paraná water in minutes."
       },
       "aeropuerto": {
         "title": "Airfield",
@@ -215,7 +219,7 @@
     "items": [
       {
         "q": "What is AguaVista?",
-        "a": "AguaVista is a residential country club in Paraguay combining real estate, golf, beach, marina, sports, and an executive airport. If you'd like to explore available options, I can put you in touch with an advisor."
+        "a": "AguaVista is a residential condominium in Paraguay combining real estate, golf, beach, marina, sports, and an executive airport. If you'd like to explore available options, I can put you in touch with an advisor."
       },
       {
         "q": "Where is AguaVista located?",
@@ -243,7 +247,7 @@
       },
       {
         "q": "How much are the HOA/maintenance fees?",
-        "a": "The amount can depend on the property and current club conditions. An advisor can give you the updated fee and explain what it includes."
+        "a": "The amount can depend on the property and current condominium conditions. An advisor can give you the updated fee and explain what it includes."
       },
       {
         "q": "Does AguaVista have a golf course?",
@@ -255,7 +259,7 @@
       },
       {
         "q": "Does it have a beach and river access?",
-        "a": "Yes. AguaVista offers a lifestyle linked to the Paraná River, with a beach and nautical activities. If you want to see the club in person, we can arrange a visit."
+        "a": "Yes. AguaVista offers a lifestyle linked to the Paraná River, with a beach and nautical activities. If you want to see the condominium in person, we can arrange a visit."
       },
       {
         "q": "Can I rent out my property?",
@@ -267,7 +271,7 @@
       },
       {
         "q": "Can I visit AguaVista before buying?",
-        "a": "Yes. We can arrange a visit so you can see the club, its amenities, and available properties. Let me know what day you'd like to come, and I'll connect you with an advisor."
+        "a": "Yes. We can arrange a visit so you can see the condominium, its amenities, and available properties. Let me know what day you'd like to come, and I'll connect you with an advisor."
       },
       {
         "q": "I want to buy or invest, who do I talk to?",
@@ -276,7 +280,7 @@
     ]
   },
   "footer": {
-    "tagline": "A 1,200-hectare private community on the Paraná River.",
+    "tagline": "A 426-hectare private community on the Paraná River.",
     "navTitle": "Navigation",
     "contactTitle": "Contact",
     "legalTitle": "Legal",
@@ -398,7 +402,7 @@
   "metadata": {
     "title": "AguaVista | Private community on the Paraná River",
     "titleTemplate": "%s | AguaVista",
-    "description": "A 1,200-hectare private community on the Paraná River. Championship golf, marina, executive airport and lots from 800 m² with 72-instalment financing.",
+    "description": "A 426-hectare private community on the Paraná River. Championship golf, marina, executive airport and lots from 800 m² with 84-instalment financing.",
     "privacyTitle": "Privacy policy",
     "privacyDescription": "How AguaVista collects, uses and protects your personal data.",
     "termsTitle": "Terms and conditions",

@@ -1,24 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import { Layers, Percent, Ruler, Trees } from "lucide-react";
+import { LandPlot, Layers, Percent, Ruler, Trees } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { Reveal, StaggerGroup, staggerChild } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { motion } from "framer-motion";
 
+/* `wide` marca la cifra que ocupa las dos columnas: al ser cinco, la
+   última quedaría sola y desalineada en la grilla de dos. */
 const STATS = [
-  { key: "surface", Icon: Ruler },
-  { key: "installments", Icon: Layers },
-  { key: "downpayment", Icon: Percent },
-  { key: "hectares", Icon: Trees },
+  { key: "surface", Icon: Ruler, wide: false },
+  { key: "installments", Icon: Layers, wide: false },
+  { key: "downpayment", Icon: Percent, wide: false },
+  { key: "hectares", Icon: Trees, wide: false },
+  { key: "lots", Icon: LandPlot, wide: true },
 ] as const;
 
 /**
  * Bloque de inversión: foto aérea a sangre con las cifras clave encima.
- * Los valores son strings traducidos ("800 m²", "1.200") y no números,
- * porque el separador de miles cambia entre es/pt (1.200) e en (1,200).
+ * Los valores son strings traducidos ("800 a 1.000 m²", "+1.600") y no
+ * números, porque el separador de miles cambia entre es/pt (1.600) e en (1,600).
  */
 export function Lotes() {
   const t = useTranslations("stats");
@@ -85,11 +88,13 @@ export function Lotes() {
               {/* ── Cifras ── */}
               <StaggerGroup className="flex items-center">
                 <dl className="grid w-full grid-cols-2 gap-3 md:gap-4">
-                  {STATS.map(({ key, Icon }) => (
+                  {STATS.map(({ key, Icon, wide }) => (
                     <motion.div
                       key={key}
                       variants={staggerChild}
-                      className="group rounded-2xl border border-white/12 bg-[#050D09]/55 p-5 backdrop-blur-md transition-colors duration-500 hover:border-[color:var(--av-vivo)]/50 md:p-6"
+                      className={`group rounded-2xl border border-white/12 bg-[#050D09]/55 p-5 backdrop-blur-md transition-colors duration-500 hover:border-[color:var(--av-vivo)]/50 md:p-6 ${
+                        wide ? "col-span-2" : ""
+                      }`}
                     >
                       <Icon
                         className="size-5 text-[#C8E88A] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5"

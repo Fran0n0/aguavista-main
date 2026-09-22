@@ -40,20 +40,24 @@
     "title": "SUA PRÓXIMA DECISÃO",
     "titleAccent": "PODE MUDAR SUA FORMA DE VIVER.",
     "surface": {
-      "value": "800 m²",
-      "label": "Área mínima"
+      "value": "800 a 1.000 m²",
+      "label": "Área do lote"
     },
     "installments": {
-      "value": "72",
-      "label": "Parcelas sem juros"
+      "value": "84",
+      "label": "Parcelas financiadas"
     },
     "downpayment": {
       "value": "5%",
       "label": "Entrada"
     },
     "hectares": {
-      "value": "1.200",
+      "value": "426",
       "label": "Hectares de área"
+    },
+    "lots": {
+      "value": "+1.600",
+      "label": "Lotes"
     },
     "cta": "Ver lotes disponíveis"
   },
@@ -65,22 +69,22 @@
       "golf": {
         "title": "Golfe",
         "description": "Campo profissional de 18 buracos com driving range e academia.",
-        "descriptionLong": "Dezoito buracos par 72 desenhados para aproveitar o desnível natural do terreno em direção ao rio. Driving range iluminado, putting green, academia com professores certificados e club house com vestiários e guarda-tacos. Os proprietários jogam sem green fee e sem reserva prévia durante a semana."
+        "descriptionLong": "Dezoito buracos desenhados para aproveitar o desnível natural do terreno em direção ao rio. Driving range iluminado, putting green, academia com professores certificados e club house com vestiários e guarda-tacos. Os proprietários jogam sem reserva prévia durante a semana."
       },
       "nautica": {
         "title": "Náutica",
         "description": "Marina privada com atracadouros e acesso direto ao Rio Paraná.",
-        "descriptionLong": "Marina privada com atracadouros para embarcações de até 12 metros, rampa de lançamento própria, garagem náutica coberta e bomba de combustível dentro do condomínio. Acesso direto ao canal principal do Paraná: em vinte minutos você está navegando em águas abertas."
+        "descriptionLong": "Marina privada com atracadouros para embarcações de até 12 metros, rampa de lançamento própria, garagem náutica coberta e bomba de combustível dentro do condomínio. Acesso direto ao canal principal do Paraná: em minutos você está navegando em águas abertas."
       },
       "playa": {
         "title": "Praia",
         "description": "Praia privada de areia às margens do rio, com serviço de bar.",
-        "descriptionLong": "Trezentos metros de areia trazida e mantida na margem do rio, com guarda-sóis, espreguiçadeiras e serviço de bar e refeições na temporada. Área de banho delimitada, salva-vidas no verão e um setor separado para a brincadeira das crianças."
+        "descriptionLong": "Trezentos metros de areia mantida na margem do rio, com guarda-sóis, espreguiçadeiras e serviço de bar e refeições na temporada. Área de banho delimitada, salva-vidas no verão e um setor separado para a brincadeira das crianças."
       },
       "tenis": {
         "title": "House do Tênis",
-        "description": "Quadras de saibro iluminadas e club house exclusivo.",
-        "descriptionLong": "Quatro quadras de saibro com iluminação LED para jogar à noite e duas de piso rápido. O club house tem vestiários, academia funcional, lanchonete e um terraço com vista direta para as quadras centrais."
+        "description": "Quadras de saibro e padel iluminadas, com club house exclusivo.",
+        "descriptionLong": "Duas quadras de saibro com iluminação LED para jogar à noite, duas quadras de padel, uma quadra multiuso, piscina e parque infantil. O club house tem vestiários, academia funcional, lanchonete e um terraço com vista direta para as quadras centrais."
       },
       "spa": {
         "title": "Spa & Bem-estar",
@@ -129,7 +133,7 @@
       },
       "nautica": {
         "title": "Náutica",
-        "body": "Canais navegáveis que chegam ao fundo dos lotes, marina privativa com vagas, rampa de lançamento e garagem náutica coberta. Você sai do seu píer e em vinte minutos está em águas abertas do Paraná."
+        "body": "Canais navegáveis que chegam ao fundo dos lotes, marina privativa com vagas, rampa de lançamento e garagem náutica coberta. Você sai do seu píer e em minutos está em águas abertas do Paraná."
       },
       "aeropuerto": {
         "title": "Aeroporto",
@@ -243,7 +247,7 @@
       },
       {
         "q": "Quanto se paga de taxa de condomínio (expensas)?",
-        "a": "O valor pode depender da propriedade e das condições vigentes do clube. Um consultor pode fornecer o valor atualizado e explicar o que está incluído."
+        "a": "O valor pode depender da propriedade e das condições vigentes do condomínio. Um consultor pode fornecer o valor atualizado e explicar o que está incluído."
       },
       {
         "q": "O AguaVista tem campo de golfe?",
@@ -267,7 +271,7 @@
       },
       {
         "q": "Posso visitar o AguaVista antes de comprar?",
-        "a": "Sim. Podemos agendar uma visita para que você conheça o clube, seus amenities e as propriedades disponíveis. Me diga qual dia gostaria de vir e coloco você em contato com um consultor."
+        "a": "Sim. Podemos agendar uma visita para que você conheça o condomínio, seus amenities e as propriedades disponíveis. Me diga qual dia gostaria de vir e coloco você em contato com um consultor."
       },
       {
         "q": "Quero comprar ou investir, com quem eu falo?",
@@ -276,7 +280,7 @@
     ]
   },
   "footer": {
-    "tagline": "Condomínio privado de 1.200 hectares às margens do Rio Paraná.",
+    "tagline": "Condomínio privado de 426 hectares às margens do Rio Paraná.",
     "navTitle": "Navegação",
     "contactTitle": "Contato",
     "legalTitle": "Jurídico",
@@ -398,7 +402,7 @@
   "metadata": {
     "title": "AguaVista | Condomínio privado no Rio Paraná",
     "titleTemplate": "%s | AguaVista",
-    "description": "Condomínio privado de 1.200 hectares às margens do Rio Paraná. Golfe profissional, náutica, aeroporto executivo e lotes a partir de 800 m² com financiamento em 72 parcelas.",
+    "description": "Condomínio privado de 426 hectares às margens do Rio Paraná. Golfe profissional, náutica, aeroporto executivo e lotes a partir de 800 m² com financiamento em 84 parcelas.",
     "privacyTitle": "Política de privacidade",
     "privacyDescription": "Como o AguaVista coleta, usa e protege seus dados pessoais.",
     "termsTitle": "Termos e condições",
