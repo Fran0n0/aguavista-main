@@ -17,3 +17,14 @@
  */
 export const SHOW_SALES_SECTION = false;
 
+/**
+ * Antesala del masterplan ("Conocé el predio desde el aire").
+ *
+ * APAGADA por pedido del cliente: con el plano todavía en preparación,
+ * la sección se oculta entera en vez de mostrar el placeholder.
+ *
+ * Para volver a prenderla: poner `true`. Igual que arriba, el
+ * componente sigue compilando mientras está apagado.
+ */
+export const SHOW_COMING_SOON = false;
+

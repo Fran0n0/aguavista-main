@@ -12,7 +12,7 @@ import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import VerticalReels from "@/components/lifestyle/VerticalReels";
 import { ComingSoon } from "@/components/sections/ComingSoon";
 import { MapSkeleton } from "@/components/ui/Skeleton";
-import { SHOW_SALES_SECTION } from "@/config/features";
+import { SHOW_COMING_SOON, SHOW_SALES_SECTION } from "@/config/features";
 import { posterFor } from "@/config/media";
 import { getSettings } from "@/lib/settings";
 
@@ -146,14 +146,18 @@ export default async function HomePage({
 
       {/* Masterplan interactivo: apagado hasta integrar la navegación
           360. El código sigue vivo y tipado detrás del flag; para volver
-          a prenderlo alcanza con SHOW_SALES_SECTION = true. */}
+          a prenderlo alcanza con SHOW_SALES_SECTION = true.
+
+          Su antesala (<ComingSoon />) también está oculta por pedido del
+          cliente mientras el plano esté en preparación: SHOW_COMING_SOON
+          = true la vuelve a mostrar. */}
       {SHOW_SALES_SECTION ? (
         <section id="masterplan" aria-label="Masterplan">
           <InteractiveMap />
         </section>
-      ) : (
+      ) : SHOW_COMING_SOON ? (
         <ComingSoon />
-      )}
+      ) : null}
 
       <Contact />
       <Faq />
