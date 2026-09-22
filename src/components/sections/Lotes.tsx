@@ -20,7 +20,7 @@ const STATS = [
 
 /**
  * Bloque de inversión: foto aérea a sangre con las cifras clave encima.
- * Los valores son strings traducidos ("800 a 1.000 m²", "+1.600") y no
+ * Los valores son strings traducidos ("1.000 m²", "+1.600") y no
  * números, porque el separador de miles cambia entre es/pt (1.600) e en (1,600).
  */
 export function Lotes() {

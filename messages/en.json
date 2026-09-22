@@ -40,8 +40,8 @@
     "title": "YOUR NEXT DECISION",
     "titleAccent": "CAN CHANGE HOW YOU LIVE.",
     "surface": {
-      "value": "800 to 1,000 m²",
-      "label": "Lot size"
+      "value": "1,000 m²",
+      "label": "Minimum lot size"
     },
     "installments": {
       "value": "84",
@@ -402,7 +402,7 @@
   "metadata": {
     "title": "AguaVista | Private community on the Paraná River",
     "titleTemplate": "%s | AguaVista",
-    "description": "A 426-hectare private community on the Paraná River. Championship golf, marina, executive airport and lots from 800 m² with 84-instalment financing.",
+    "description": "A 426-hectare private community on the Paraná River. Championship golf, marina, executive airport and lots from 1,000 m² with 84-instalment financing.",
     "privacyTitle": "Privacy policy",
     "privacyDescription": "How AguaVista collects, uses and protects your personal data.",
     "termsTitle": "Terms and conditions",

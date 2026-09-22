@@ -40,8 +40,8 @@
     "title": "SUA PRÓXIMA DECISÃO",
     "titleAccent": "PODE MUDAR SUA FORMA DE VIVER.",
     "surface": {
-      "value": "800 a 1.000 m²",
-      "label": "Área do lote"
+      "value": "1.000 m²",
+      "label": "Área mínima"
     },
     "installments": {
       "value": "84",
@@ -402,7 +402,7 @@
   "metadata": {
     "title": "AguaVista | Condomínio privado no Rio Paraná",
     "titleTemplate": "%s | AguaVista",
-    "description": "Condomínio privado de 426 hectares às margens do Rio Paraná. Golfe profissional, náutica, aeroporto executivo e lotes a partir de 800 m² com financiamento em 84 parcelas.",
+    "description": "Condomínio privado de 426 hectares às margens do Rio Paraná. Golfe profissional, náutica, aeroporto executivo e lotes a partir de 1.000 m² com financiamento em 84 parcelas.",
     "privacyTitle": "Política de privacidade",
     "privacyDescription": "Como o AguaVista coleta, usa e protege seus dados pessoais.",
     "termsTitle": "Termos e condições",
