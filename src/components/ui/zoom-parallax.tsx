@@ -11,6 +11,7 @@ import Image from 'next/image';
 
 import { SplitText } from '@/components/motion/SplitText';
 import { SlideUp } from '@/components/motion/SlideUp';
+import { ScrollTiltedGrid } from '@/components/ui/scroll-tilted-grid';
 
 interface ImgData {
     src: string;
@@ -139,6 +140,11 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
 
     const tiles = images.slice(0, 7);
 
+    /* En MOBILE se cae la imagen central —la que hace el zoom— y quedan
+       solo las de alrededor, que suben en la grilla inclinada. El collage
+       con zoom sigue intacto de `md:` para arriba. */
+    const mobileTiles = tiles.slice(1);
+
     /*
     |--------------------------------------------------------------------------
     | SIN MOVIMIENTO (prefers-reduced-motion)
@@ -149,7 +155,8 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
         return (
             <section className="relative w-full bg-[color:var(--av-base)]">
                 <Intro />
-                <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-4">
+                <MobileScene tiles={mobileTiles} />
+                <div className="relative hidden min-h-screen w-full items-center justify-center overflow-hidden px-4 md:flex">
                     <div className="relative h-[62vh] w-full max-w-[1100px] overflow-hidden rounded-2xl shadow-av-lg">
                         {hero && (
                             <Image
@@ -180,7 +187,12 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
         <section className="relative w-full bg-[color:var(--av-base)]">
             <Intro />
 
-            <div ref={galleryRef} className="relative z-20 h-[260vh]">
+            <MobileScene tiles={mobileTiles} />
+
+            <div
+                ref={galleryRef}
+                className="relative z-20 hidden h-[260vh] md:block"
+            >
                 <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden bg-[color:var(--av-base)]">
                     {tiles.map((img, i) => (
                         <motion.div
@@ -200,7 +212,10 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
                                     src={img.src}
                                     alt={img.alt || ''}
                                     fill
-                                    priority={i === 0}
+                                    /* Sin `priority`: en mobile este bloque
+                                       está oculto y la central se bajaría al
+                                       pedo. Queda en diferido, que llega de
+                                       sobra: arriba hay dos pantallas. */
                                     quality={75}
                                     className="object-cover"
                                     sizes={i === 0 ? '100vw' : '45vw'}
@@ -240,6 +255,25 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
     );
 }
 
+/* ── Escena MOBILE: grilla inclinada en lugar del collage ────────────────
+   Las fotos suben de a pares, se enderezan al pasar por el centro y se
+   vuelcan al salir; el titular cierra la sección abajo, ya no encima de
+   la imagen central (que en teléfono no se muestra). */
+function MobileScene({ tiles }: { tiles: ImgData[] }) {
+    /* `overflow-hidden` va acá y no en la <section>: la rama de escritorio
+       usa position:sticky, que un ancestro con overflow recortado rompe. */
+    return (
+        <div className="overflow-hidden md:hidden">
+            <ScrollTiltedGrid images={tiles} />
+            {/* Banda opaca y por encima de los tiles: la última foto sale
+                desplazándose hacia abajo y, si no, asoma detrás del texto. */}
+            <div className="relative z-20 flex justify-center bg-[color:var(--av-base)] px-6 pb-[16vh] pt-[8vh]">
+                <Headline onDark={false} />
+            </div>
+        </div>
+    );
+}
+
 /* ── Intro: la antesala antes del zoom ─────────────────────────────────── */
 function Intro() {
     return (
@@ -270,23 +304,49 @@ function Intro() {
 /* ── Headline: el texto que aparece sobre la imagen central ──────────────
    Mismo juego de color que el hero (blanco + lima en itálica), pero en
    Montserrat y en peso liviano: la escala hace el contraste, no el grosor. */
-function Headline({ className = '' }: { className?: string }) {
+function Headline({
+    className = '',
+    onDark = true,
+}: {
+    className?: string;
+    /** `false` cuando el texto va sobre el fondo de la sección y no sobre
+        el scrim negro: ahí manda el tema y las sombras sobran. */
+    onDark?: boolean;
+}) {
     return (
         <div
             className={`flex max-w-5xl flex-col items-center text-center ${className}`}
         >
-            {/* Colores fijos (no tokens): esta capa siempre va sobre el
-                scrim negro al 60%, así que el lima del tema claro —que es
-                oscuro— acá desaparecería. Mismo lima que el hero. */}
-            <span className="mb-5 text-[9px] font-medium uppercase tracking-[0.42em] text-[#C8E88A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:mb-7 md:text-[11px] md:tracking-[0.5em]">
+            {/* Sobre el scrim negro al 60% los colores van fijos (no tokens):
+                el lima del tema claro —que es oscuro— ahí desaparecería.
+                Mismo lima que el hero. */}
+            <span
+                className={`mb-5 text-[9px] font-medium uppercase tracking-[0.42em] md:mb-7 md:text-[11px] md:tracking-[0.5em] ${
+                    onDark
+                        ? 'text-[#C8E88A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]'
+                        : 'text-[color:var(--av-vivo)]'
+                }`}
+            >
                 Una experiencia integral
             </span>
 
-            <h3 className="text-balance font-light leading-[1.08] drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
-                <span className="block text-[clamp(1.6rem,4.6vw,3.5rem)] font-light tracking-[-0.01em] text-white">
+            <h3
+                className={`text-balance font-light leading-[1.08] ${
+                    onDark ? 'drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]' : ''
+                }`}
+            >
+                <span
+                    className={`block text-[clamp(1.6rem,4.6vw,3.5rem)] font-light tracking-[-0.01em] ${
+                        onDark ? 'text-white' : 'text-[color:var(--av-text)]'
+                    }`}
+                >
                     Encontrá todo
                 </span>
-                <span className="mt-1 block text-[clamp(2.1rem,6.4vw,5rem)] font-light italic tracking-[-0.02em] text-[#C8E88A] md:mt-2">
+                <span
+                    className={`mt-1 block text-[clamp(2.1rem,6.4vw,5rem)] font-light italic tracking-[-0.02em] md:mt-2 ${
+                        onDark ? 'text-[#C8E88A]' : 'text-[color:var(--av-vivo)]'
+                    }`}
+                >
                     en un mismo lugar
                 </span>
             </h3>

@@ -47,7 +47,18 @@ export const AMENITIES: readonly Amenity[] = [
     video: "/golfreel.mp4",
     featured: true,
   },
-  { id: "nautica", image: "/amenities/nautica.webp", gallery: ["/foto-4.webp", "/foto-2.webp"] },
+  {
+    id: "nautica",
+    image: "/amenities/nautica.webp",
+    /* Las dos primeras son las fotos nuevas de la marina que mandó el
+       cliente: quedan 2ª y 3ª del carrusel porque la portada se antepone. */
+    gallery: [
+      "/nautica-marina.webp",
+      "/nautica-rio.webp",
+      "/foto-4.webp",
+      "/foto-2.webp",
+    ],
+  },
   { id: "playa", image: "/amenities/playa.webp", gallery: ["/foto-7.webp", "/foto-2.webp"] },
   {
     id: "tenis",

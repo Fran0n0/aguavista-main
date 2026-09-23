@@ -40,8 +40,8 @@
     "title": "TU PRÓXIMA DECISIÓN PUEDE CAMBIAR TU FORMA DE VIVIR.",
     "titleAccent": "Invertí en AguaVista.",
     "surface": {
-      "value": "1.000 m²",
-      "label": "Superficie mínima"
+      "value": "800 a 1.000 m²",
+      "label": "Superficie del lote"
     },
     "installments": {
       "value": "84",
@@ -402,7 +402,7 @@
   "metadata": {
     "title": "AguaVista | Condominio privado sobre el Río Paraná",
     "titleTemplate": "%s | AguaVista",
-    "description": "Condominio privado de 426 hectáreas sobre el Río Paraná. Golf profesional, náutica, aeropuerto ejecutivo y lotes desde 1.000 m² con financiación a 84 cuotas.",
+    "description": "Condominio privado de 426 hectáreas sobre el Río Paraná. Golf profesional, náutica, aeropuerto ejecutivo y lotes desde 800 m² con financiación a 84 cuotas.",
     "privacyTitle": "Política de privacidad",
     "privacyDescription": "Cómo AguaVista recolecta, usa y protege tus datos personales.",
     "termsTitle": "Términos y condiciones",
