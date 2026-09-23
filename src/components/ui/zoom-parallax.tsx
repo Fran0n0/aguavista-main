@@ -11,6 +11,7 @@ import Image from 'next/image';
 
 import { SplitText } from '@/components/motion/SplitText';
 import { SlideUp } from '@/components/motion/SlideUp';
+import { EASE_LUX } from '@/components/motion/Reveal';
 import { ScrollTiltedGrid } from '@/components/ui/scroll-tilted-grid';
 
 interface ImgData {
@@ -313,29 +314,134 @@ function MobileScene({ tiles }: { tiles: ImgData[] }) {
     );
 }
 
-/* ── Intro: la antesala antes del zoom ─────────────────────────────────── */
-function Intro() {
-    return (
-        <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-6 text-center md:px-10">
-            <SlideUp
-                className="relative"
-                innerClassName="mb-7 text-[9px] font-medium uppercase tracking-[0.42em] text-[color:var(--av-vivo)] md:mb-9 md:text-[11px] md:tracking-[0.5em]"
-            >
-                Una categoría propia
-            </SlideUp>
+/* ── Intro: la antesala antes del zoom ───────────────────────────────────
+   La frase en itálica es el remate de la sección y antes entraba sin
+   animación, mientras la de arriba sí se revelaba: quedaba muerta. Ahora
+   el bloque se arma en capas —volanta, línea que se dibuja, primera
+   frase palabra por palabra y remate que sube detrás de una máscara— y
+   cuando termina de asentarse le cruza un destello por encima de las
+   letras. Abajo, un pulso descendente invita a seguir bajando. */
 
-            <div className="relative mx-auto flex max-w-[95%] flex-col items-center md:max-w-4xl">
-                <SplitText
-                    as="h2"
-                    text="No se trata de tenerlo todo."
-                    delay={0.15}
-                    className="relative text-balance text-[clamp(1.6rem,4.6vw,3.5rem)] font-light leading-[1.08] tracking-[-0.01em] text-[color:var(--av-text)]"
+const INTRO_CLOSER = 'Se trata de vivir donde todo es posible.';
+
+/* Mismas clases en la capa base y en la del destello: son el mismo texto
+   superpuesto, y cualquier diferencia los desalinearía. */
+const CLOSER_TYPE =
+    'text-balance text-[clamp(2.1rem,6.4vw,5rem)] font-light italic leading-[1.08] tracking-[-0.02em]';
+
+function Intro() {
+    const reduceMotion = useReducedMotion();
+    const introRef = useRef<HTMLDivElement>(null);
+
+    /* Deriva atada al scroll: el bloque se va elevando y apagando a medida
+       que la sección sale. Sin esto el texto queda clavado y la pantalla
+       se siente congelada. */
+    const { scrollYProgress } = useScroll({
+        target: introRef,
+        offset: ['start start', 'end start'],
+    });
+    const driftY = useTransform(scrollYProgress, [0, 1], [0, -70]);
+    const driftOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+    const cueOpacity = useTransform(scrollYProgress, [0, 0.22], [1, 0]);
+
+    return (
+        <div
+            ref={introRef}
+            className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-6 text-center md:px-10"
+        >
+            <motion.div
+                style={
+                    reduceMotion ? undefined : { y: driftY, opacity: driftOpacity }
+                }
+                className="flex flex-col items-center"
+            >
+                <SlideUp
+                    className="relative"
+                    innerClassName="text-[9px] font-medium uppercase tracking-[0.42em] text-[color:var(--av-vivo)] md:text-[11px] md:tracking-[0.5em]"
+                >
+                    Una categoría propia
+                </SlideUp>
+
+                {/* Hilo que se dibuja desde el centro: separa la volanta del
+                    titular y da el primer movimiento de la secuencia. */}
+                <motion.span
+                    aria-hidden="true"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    whileInView={{ scaleX: 1, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 1.2, ease: EASE_LUX, delay: 0.25 }}
+                    className="mt-6 h-px w-16 bg-gradient-to-r from-transparent via-[color:var(--av-vivo)] to-transparent md:mt-8 md:w-24"
                 />
 
-                <p className="mt-2 text-balance text-[clamp(2.1rem,6.4vw,5rem)] font-light italic leading-[1.08] tracking-[-0.02em] text-[color:var(--av-vivo)] md:mt-3">
-                    Se trata de vivir donde todo es posible.
-                </p>
-            </div>
+                <div className="relative mx-auto mt-7 flex max-w-[95%] flex-col items-center md:mt-9 md:max-w-4xl">
+                    <SplitText
+                        as="h2"
+                        text="No se trata de tenerlo todo."
+                        delay={0.45}
+                        className="relative text-balance text-[clamp(1.6rem,4.6vw,3.5rem)] font-light leading-[1.08] tracking-[-0.01em] text-[color:var(--av-text)]"
+                    />
+
+                    {/* El remate sube entero detrás de la máscara, después de
+                        la primera frase: primero la premisa, después la
+                        respuesta. */}
+                    <SlideUp
+                        className="mt-2 md:mt-3"
+                        delay={1.05}
+                        duration={1.15}
+                        amount={0.4}
+                        innerClassName="relative"
+                    >
+                        <p className={`${CLOSER_TYPE} text-[color:var(--av-vivo)]`}>
+                            {INTRO_CLOSER}
+                        </p>
+
+                        {/* Destello: una copia exacta del texto recortada
+                            contra un degradado que lo cruza. Al ir con
+                            `bg-clip-text` la luz pasa por las letras y no por
+                            una caja, que es lo que lo haría ver barato. */}
+                        {!reduceMotion && (
+                            <motion.p
+                                aria-hidden="true"
+                                className={`${CLOSER_TYPE} pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,transparent_38%,rgba(255,255,255,0.92)_50%,transparent_62%)] bg-[length:260%_100%] bg-clip-text text-transparent`}
+                                initial={{ backgroundPosition: '170% 0%' }}
+                                whileInView={{ backgroundPosition: '-70% 0%' }}
+                                viewport={{ once: true, amount: 0.4 }}
+                                transition={{
+                                    duration: 1.9,
+                                    ease: 'easeInOut',
+                                    delay: 2.1,
+                                }}
+                            >
+                                {INTRO_CLOSER}
+                            </motion.p>
+                        )}
+                    </SlideUp>
+                </div>
+
+                {/* Señal de scroll: un pulso que baja por un hilo. Se apaga
+                    apenas la persona empieza a bajar, así no compite con el
+                    contenido. */}
+                <motion.span
+                    aria-hidden="true"
+                    style={reduceMotion ? undefined : { opacity: cueOpacity }}
+                    className="relative mt-14 block h-14 w-px overflow-hidden bg-[color:var(--av-text)]/12 md:mt-16"
+                >
+                    {!reduceMotion && (
+                        <motion.span
+                            className="absolute inset-x-0 block h-5 bg-[color:var(--av-vivo)]"
+                            initial={{ y: '-100%' }}
+                            animate={{ y: '280%' }}
+                            transition={{
+                                duration: 2.2,
+                                ease: 'easeInOut',
+                                repeat: Infinity,
+                                repeatDelay: 0.5,
+                                delay: 2.4,
+                            }}
+                        />
+                    )}
+                </motion.span>
+            </motion.div>
         </div>
     );
 }

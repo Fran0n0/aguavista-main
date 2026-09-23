@@ -137,6 +137,10 @@ export default async function HomePage({
           { src: "/amenities-playa.webp", alt: "Playa Privada" },
           { src: "/amenities-spa.webp", alt: "Spa y Relax" },
           { src: "/amenities-eventos.webp", alt: "Eventos exclusivos" },
+          {
+            src: "/amenities-deportes.webp",
+            alt: "Canchas de tenis, pádel y piscina de AguaVista desde el aire",
+          },
         ]}
       />
 
