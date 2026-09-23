@@ -47,18 +47,10 @@ export const AMENITIES: readonly Amenity[] = [
     video: "/golfreel.mp4",
     featured: true,
   },
-  {
-    id: "nautica",
-    image: "/amenities/nautica.webp",
-    /* Las dos primeras son las fotos nuevas de la marina que mandó el
-       cliente: quedan 2ª y 3ª del carrusel porque la portada se antepone. */
-    gallery: [
-      "/nautica-marina.webp",
-      "/nautica-rio.webp",
-      "/foto-4.webp",
-      "/foto-2.webp",
-    ],
-  },
+  /* Dos fotos y nada más: la portada (la marina al atardecer) y la del
+     acceso al río. La otra que mandó el cliente era la misma que la
+     portada y salía repetida al abrir el carrusel. */
+  { id: "nautica", image: "/amenities/nautica.webp", gallery: ["/nautica-rio.webp"] },
   { id: "playa", image: "/amenities/playa.webp", gallery: ["/foto-7.webp", "/foto-2.webp"] },
   {
     id: "tenis",

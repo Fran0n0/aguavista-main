@@ -184,12 +184,18 @@ export function ScrollTiltedGrid({
     }
 
     return (
+        /* `overflow-hidden` acá adentro y no en el contenedor de la escena:
+           los tiles se desplazan fuera de su celda y, sin recorte, asoman
+           en la sección siguiente. Va en la <section> para no romper el
+           position:sticky del titular, que es hermano de este bloque. */
         <section
-            className={['relative w-full', className].filter(Boolean).join(' ')}
+            className={['relative w-full overflow-hidden', className]
+                .filter(Boolean)
+                .join(' ')}
         >
             {/* py alto a propósito: cada tile necesita recorrido de scroll
                 para completar el ciclo entrar → enfocar → volcarse. */}
-            <div className="mx-auto grid w-full max-w-lg grid-cols-2 gap-6 px-5 py-[18vh]">
+            <div className="mx-auto grid w-full max-w-lg grid-cols-2 gap-6 px-5 py-[26vh]">
                 {images.map((image, i) => (
                     <Tile
                         key={image.src}

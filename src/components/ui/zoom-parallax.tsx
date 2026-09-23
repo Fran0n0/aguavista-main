@@ -257,18 +257,54 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
 
 /* ── Escena MOBILE: grilla inclinada en lugar del collage ────────────────
    Las fotos suben de a pares, se enderezan al pasar por el centro y se
-   vuelcan al salir; el titular cierra la sección abajo, ya no encima de
-   la imagen central (que en teléfono no se muestra). */
+   vuelcan al salir. El titular no va debajo: queda fijo en el medio de la
+   pantalla y aparece ENCIMA de las fotos, igual que en escritorio pasa
+   sobre la imagen central. Primero se ven imágenes, después entra el
+   texto, y se va antes de que termine la sección. */
 function MobileScene({ tiles }: { tiles: ImgData[] }) {
-    /* `overflow-hidden` va acá y no en la <section>: la rama de escritorio
-       usa position:sticky, que un ancestro con overflow recortado rompe. */
+    const sceneRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: sceneRef,
+        offset: ['start start', 'end end'],
+    });
+
+    const textOpacity = useTransform(
+        scrollYProgress,
+        [0, 0.22, 0.78, 0.96],
+        [0, 1, 1, 0]
+    );
+    const textY = useTransform(scrollYProgress, [0, 0.22], [28, 0]);
+
     return (
-        <div className="overflow-hidden md:hidden">
+        <div ref={sceneRef} className="relative md:hidden">
             <ScrollTiltedGrid images={tiles} />
-            {/* Banda opaca y por encima de los tiles: la última foto sale
-                desplazándose hacia abajo y, si no, asoma detrás del texto. */}
-            <div className="relative z-20 flex justify-center bg-[color:var(--av-base)] px-6 pb-[16vh] pt-[8vh]">
-                <Headline onDark={false} />
+
+            {/* El bloque se ancla a 36vh en vez de ocupar la pantalla entera:
+                así queda pegado más tiempo (la escena mide poco más que un
+                viewport) y nunca se sale de la sección, con lo cual no puede
+                pisar lo que viene abajo. */}
+            <div className="pointer-events-none absolute inset-0 z-20">
+                <motion.div
+                    style={{ opacity: textOpacity, y: textY }}
+                    className="sticky top-[36vh] flex justify-center px-6"
+                >
+                    {/* Halo propio, no un velo a pantalla completa: oscurece
+                        y desenfoca lo justo detrás del texto —el mismo juego
+                        que en escritorio— y deja las fotos a la vista
+                        alrededor. El degradado hace de máscara para que el
+                        borde no se note. */}
+                    <div
+                        aria-hidden="true"
+                        className="absolute -inset-x-10 -inset-y-28 backdrop-blur-[5px] [mask-image:radial-gradient(62%_52%_at_50%_50%,#000_0%,#000_42%,transparent_100%)]"
+                    />
+                    <div
+                        aria-hidden="true"
+                        className="absolute -inset-x-10 -inset-y-28 bg-[radial-gradient(62%_52%_at_50%_50%,rgba(3,10,7,0.96)_0%,rgba(3,10,7,0.8)_42%,rgba(3,10,7,0)_100%)]"
+                    />
+                    <div className="relative">
+                        <Headline />
+                    </div>
+                </motion.div>
             </div>
         </div>
     );
@@ -304,49 +340,24 @@ function Intro() {
 /* ── Headline: el texto que aparece sobre la imagen central ──────────────
    Mismo juego de color que el hero (blanco + lima en itálica), pero en
    Montserrat y en peso liviano: la escala hace el contraste, no el grosor. */
-function Headline({
-    className = '',
-    onDark = true,
-}: {
-    className?: string;
-    /** `false` cuando el texto va sobre el fondo de la sección y no sobre
-        el scrim negro: ahí manda el tema y las sombras sobran. */
-    onDark?: boolean;
-}) {
+function Headline({ className = '' }: { className?: string }) {
     return (
         <div
             className={`flex max-w-5xl flex-col items-center text-center ${className}`}
         >
-            {/* Sobre el scrim negro al 60% los colores van fijos (no tokens):
-                el lima del tema claro —que es oscuro— ahí desaparecería.
-                Mismo lima que el hero. */}
-            <span
-                className={`mb-5 text-[9px] font-medium uppercase tracking-[0.42em] md:mb-7 md:text-[11px] md:tracking-[0.5em] ${
-                    onDark
-                        ? 'text-[#C8E88A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]'
-                        : 'text-[color:var(--av-vivo)]'
-                }`}
-            >
+            {/* Colores fijos (no tokens): esta capa siempre va sobre un velo
+                oscuro —el scrim del zoom en escritorio, el degradado radial
+                en mobile—, así que el lima del tema claro, que es oscuro,
+                acá desaparecería. Mismo lima que el hero. */}
+            <span className="mb-5 text-[9px] font-medium uppercase tracking-[0.42em] text-[#C8E88A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:mb-7 md:text-[11px] md:tracking-[0.5em]">
                 Una experiencia integral
             </span>
 
-            <h3
-                className={`text-balance font-light leading-[1.08] ${
-                    onDark ? 'drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]' : ''
-                }`}
-            >
-                <span
-                    className={`block text-[clamp(1.6rem,4.6vw,3.5rem)] font-light tracking-[-0.01em] ${
-                        onDark ? 'text-white' : 'text-[color:var(--av-text)]'
-                    }`}
-                >
+            <h3 className="text-balance font-light leading-[1.08] drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+                <span className="block text-[clamp(1.6rem,4.6vw,3.5rem)] font-light tracking-[-0.01em] text-white">
                     Encontrá todo
                 </span>
-                <span
-                    className={`mt-1 block text-[clamp(2.1rem,6.4vw,5rem)] font-light italic tracking-[-0.02em] md:mt-2 ${
-                        onDark ? 'text-[#C8E88A]' : 'text-[color:var(--av-vivo)]'
-                    }`}
-                >
+                <span className="mt-1 block text-[clamp(2.1rem,6.4vw,5rem)] font-light italic tracking-[-0.02em] text-[#C8E88A] md:mt-2">
                     en un mismo lugar
                 </span>
             </h3>
