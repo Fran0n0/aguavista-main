@@ -42,10 +42,13 @@ export function WhatsAppButton() {
           className="group fixed bottom-5 right-5 z-[120] inline-flex h-12 items-center gap-2 rounded-full bg-[#25D366] pl-3 pr-4 shadow-av-lg md:bottom-8 md:right-8"
         >
           {/* Anillo que pulsa hacia afuera: llama la atención sin animar
-              el botón en sí (que quedaría inestable bajo el cursor). */}
+              el botón en sí (que quedaría inestable bajo el cursor).
+              Usa la variante `-wide` porque el anillo crece desde la
+              píldora entera: con el crecimiento del original se pasaba del
+              borde de la pantalla y el botón se veía cortado. */}
           <span
             aria-hidden="true"
-            className="absolute inset-0 rounded-full bg-[#25D366] motion-safe:animate-[av-pulse-ring_2.6s_ease-out_infinite]"
+            className="absolute inset-0 rounded-full bg-[#25D366] motion-safe:animate-[av-pulse-ring-wide_2.6s_ease-out_infinite]"
           />
           <svg
             viewBox="0 0 24 24"

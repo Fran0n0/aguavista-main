@@ -297,13 +297,17 @@ function MobileScene({ tiles }: { tiles: ImgData[] }) {
                         a propósito: apenas despega el texto de la foto, sin
                         tapar lo que hay detrás. El degradado hace de máscara
                         para que el borde no se note. */}
+                    {/* `inset-x-0` y no un inset negativo: sobresalir a los
+                        costados ensanchaba el documento, y en algunos
+                        celulares eso deja la página desplazable de lado y los
+                        elementos fijos quedan fuera de la pantalla. */}
                     <div
                         aria-hidden="true"
-                        className="absolute -inset-x-10 -inset-y-28 backdrop-blur-[2px] [mask-image:radial-gradient(62%_52%_at_50%_50%,#000_0%,#000_42%,transparent_100%)]"
+                        className="absolute inset-x-0 -inset-y-28 backdrop-blur-[2px] [mask-image:radial-gradient(62%_52%_at_50%_50%,#000_0%,#000_42%,transparent_100%)]"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute -inset-x-10 -inset-y-28 bg-[radial-gradient(62%_52%_at_50%_50%,rgba(3,10,7,0.55)_0%,rgba(3,10,7,0.3)_42%,rgba(3,10,7,0)_100%)]"
+                        className="absolute inset-x-0 -inset-y-28 bg-[radial-gradient(62%_52%_at_50%_50%,rgba(3,10,7,0.55)_0%,rgba(3,10,7,0.3)_42%,rgba(3,10,7,0)_100%)]"
                     />
                     <div className="relative">
                         <Headline />

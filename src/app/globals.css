@@ -247,7 +247,11 @@ body {
 .av-glow::before {
   content: "";
   position: absolute;
-  inset: -20% -10%;
+  /* Sin sangrado horizontal: con -10% el resplandor se salía 49px del
+     ancho en un celular y la página quedaba desplazable de costado, lo
+     que empuja los elementos fijos (el botón de WhatsApp) fuera de la
+     pantalla. El sangrado vertical no molesta y se conserva. */
+  inset: -20% 0;
   z-index: -1;
   pointer-events: none;
   background:
@@ -412,6 +416,26 @@ body {
   70%,
   100% {
     transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/*
+ * Variante para el anillo del botón flotante de WhatsApp.
+ *
+ * El de arriba sirve para puntos chicos, pero sobre una píldora de ~155px
+ * un scale(1.6) crece 46px hacia cada lado: con el botón a 20px del borde,
+ * el anillo se cortaba contra el canto de la pantalla y parecía que el
+ * botón estaba tajeado. 1.22 crece 17px y entra siempre.
+ */
+@keyframes av-pulse-ring-wide {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+  70%,
+  100% {
+    transform: scale(1.22);
     opacity: 0;
   }
 }
