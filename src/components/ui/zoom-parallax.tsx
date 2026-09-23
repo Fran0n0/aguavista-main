@@ -263,17 +263,21 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
    texto, y se va antes de que termine la sección. */
 function MobileScene({ tiles }: { tiles: ImgData[] }) {
     const sceneRef = useRef<HTMLDivElement>(null);
+    /* El recorrido se mide desde que la escena asoma por abajo hasta que
+       termina de salir por arriba, y no solo mientras está pegada: así el
+       texto puede entrar antes de que la grilla llegue al tope y quedarse
+       hasta que las últimas fotos se están yendo. */
     const { scrollYProgress } = useScroll({
         target: sceneRef,
-        offset: ['start start', 'end end'],
+        offset: ['start end', 'end start'],
     });
 
     const textOpacity = useTransform(
         scrollYProgress,
-        [0, 0.22, 0.78, 0.96],
+        [0.12, 0.24, 0.7, 0.84],
         [0, 1, 1, 0]
     );
-    const textY = useTransform(scrollYProgress, [0, 0.22], [28, 0]);
+    const textY = useTransform(scrollYProgress, [0.12, 0.24], [28, 0]);
 
     return (
         <div ref={sceneRef} className="relative md:hidden">
@@ -288,18 +292,17 @@ function MobileScene({ tiles }: { tiles: ImgData[] }) {
                     style={{ opacity: textOpacity, y: textY }}
                     className="sticky top-[36vh] flex justify-center px-6"
                 >
-                    {/* Halo propio, no un velo a pantalla completa: oscurece
-                        y desenfoca lo justo detrás del texto —el mismo juego
-                        que en escritorio— y deja las fotos a la vista
-                        alrededor. El degradado hace de máscara para que el
-                        borde no se note. */}
+                    {/* Halo propio, no un velo a pantalla completa. Va suave
+                        a propósito: apenas despega el texto de la foto, sin
+                        tapar lo que hay detrás. El degradado hace de máscara
+                        para que el borde no se note. */}
                     <div
                         aria-hidden="true"
-                        className="absolute -inset-x-10 -inset-y-28 backdrop-blur-[5px] [mask-image:radial-gradient(62%_52%_at_50%_50%,#000_0%,#000_42%,transparent_100%)]"
+                        className="absolute -inset-x-10 -inset-y-28 backdrop-blur-[2px] [mask-image:radial-gradient(62%_52%_at_50%_50%,#000_0%,#000_42%,transparent_100%)]"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute -inset-x-10 -inset-y-28 bg-[radial-gradient(62%_52%_at_50%_50%,rgba(3,10,7,0.96)_0%,rgba(3,10,7,0.8)_42%,rgba(3,10,7,0)_100%)]"
+                        className="absolute -inset-x-10 -inset-y-28 bg-[radial-gradient(62%_52%_at_50%_50%,rgba(3,10,7,0.55)_0%,rgba(3,10,7,0.3)_42%,rgba(3,10,7,0)_100%)]"
                     />
                     <div className="relative">
                         <Headline />
