@@ -51,14 +51,17 @@ export const AMENITIES: readonly Amenity[] = [
      acceso al río. La otra que mandó el cliente era la misma que la
      portada y salía repetida al abrir el carrusel. */
   { id: "nautica", image: "/amenities/nautica.webp", gallery: ["/nautica-rio.webp"] },
-  { id: "playa", image: "/amenities/playa.webp", gallery: ["/foto-7.webp", "/foto-2.webp"] },
+  /* Playa, spa, jardín y planta quedan con la portada sola: las fotos que
+     las acompañaban eran genéricas o se repetían entre secciones. Sin
+     `gallery`, el detalle muestra una imagen y esconde los controles. */
+  { id: "playa", image: "/amenities/playa.webp" },
   {
     id: "tenis",
     image: "/amenities/tenis.webp",
     gallery: ["/tenis.webp", "/tenis2.webp"],
     video: "/tenisreel.mp4",
   },
-  { id: "spa", image: "/amenities/spa.webp", gallery: ["/foto-5.webp"] },
+  { id: "spa", image: "/amenities/spa.webp" },
   {
     id: "aeropuerto",
     image: "/aero1.webp",
@@ -66,10 +69,6 @@ export const AMENITIES: readonly Amenity[] = [
     video: "/aeropuertoreel.mp4",
     featured: true,
   },
-  { id: "jardin", image: "/amenities/jardin-japones.webp", gallery: ["/foto-6.webp"] },
-  {
-    id: "agua",
-    image: "/amenities/planta-potabilizadora.webp",
-    gallery: ["/foto-2.webp", "/playa.webp"],
-  },
+  { id: "jardin", image: "/amenities/jardin-japones.webp" },
+  { id: "agua", image: "/amenities/planta-potabilizadora.webp" },
 ] as const;
