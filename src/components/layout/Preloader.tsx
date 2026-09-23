@@ -128,17 +128,21 @@ export function Preloader() {
               />
             </motion.div>
 
-            {/* ── TEXTOS Y BARRA DE PROGRESO ── */}
-            <motion.p
-              className="max-w-xs font-[family-name:var(--font-josefin)] text-[10px] md:text-xs font-light uppercase leading-relaxed tracking-[0.3em] text-[color:var(--av-lux)]"
+            {/* ── TEXTOS Y BARRA DE PROGRESO ──
+                Dos párrafos y no uno con <br>: con el interletrado alto
+                cada frase ocupa dos renglones y, pegadas, se leían como un
+                bloque corrido. Separadas y con `text-balance` los renglones
+                quedan parejos, y la segunda va un punto más tenue para que
+                se note cuál es la principal. */}
+            <motion.div
+              className="flex max-w-[19rem] flex-col items-center gap-3 font-[family-name:var(--font-josefin)] text-[10px] font-light uppercase leading-[2] tracking-[0.24em] text-[color:var(--av-lux)] md:max-w-md md:gap-3.5 md:text-xs md:tracking-[0.3em]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.5 }}
             >
-              {t("line1")}
-              <br />
-              {t("line2")}
-            </motion.p>
+              <p className="text-balance">{t("line1")}</p>
+              <p className="text-balance opacity-70">{t("line2")}</p>
+            </motion.div>
 
             {/* Barra de progreso */}
             <div className="mt-2 h-px w-40 overflow-hidden bg-white/10 md:w-56">

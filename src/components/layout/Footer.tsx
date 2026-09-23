@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -23,27 +24,18 @@ export async function Footer() {
         <div className="grid gap-12 md:grid-cols-12 md:gap-8">
           {/* ── Marca ── */}
           <div className="md:col-span-4">
-            <div className="flex items-center gap-2.5">
-              <svg width="30" height="30" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                <circle cx="50" cy="50" r="44" stroke="var(--av-lux)" strokeWidth="3" opacity="0.7" />
-                <path
-                  d="M26 58c8-9 16-9 24 0s16 9 24 0"
-                  stroke="var(--av-vivo)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M32 42l18-14 18 14"
-                  stroke="var(--av-lux-light)"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="font-display text-xl font-light uppercase tracking-[0.3em] text-ink">
-                AguaVista
-              </span>
-            </div>
+            {/* El logo real, el mismo del encabezado. Antes había un SVG
+                decorativo —una marca inventada— al lado de la palabra
+                "AguaVista"; el logo ya trae el nombre, así que reemplaza a
+                los dos y no queda repetido. */}
+            <Image
+              src="/logo-solari.avif"
+              alt="AguaVista · Solari Bienes Raíces"
+              width={256}
+              height={48}
+              sizes="(max-width: 768px) 170px, 200px"
+              className="av-logo h-9 w-auto object-contain md:h-10"
+            />
 
             <p className="mt-5 max-w-xs font-sans text-sm font-light leading-relaxed text-ink-muted">
               {t("tagline")}
