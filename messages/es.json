@@ -45,7 +45,7 @@
     },
     "installments": {
       "value": "84",
-      "label": "Cuotas financiadas"
+      "label": "Cuotas con financiación propia"
     },
     "downpayment": {
       "value": "5%",

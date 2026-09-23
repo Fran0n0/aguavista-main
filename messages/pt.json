@@ -45,7 +45,7 @@
     },
     "installments": {
       "value": "84",
-      "label": "Parcelas financiadas"
+      "label": "Parcelas com financiamento próprio"
     },
     "downpayment": {
       "value": "5%",

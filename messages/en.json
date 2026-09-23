@@ -45,7 +45,7 @@
     },
     "installments": {
       "value": "84",
-      "label": "Financed instalments"
+      "label": "Instalments with in-house financing"
     },
     "downpayment": {
       "value": "5%",
