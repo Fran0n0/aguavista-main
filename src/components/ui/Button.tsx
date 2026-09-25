@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef, useState, type ReactNode, type MouseEvent } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 type Variant = "primary" | "secondary" | "ghost" | "lux";
@@ -61,7 +62,7 @@ export function Button({
 }: ButtonProps) {
   const hostRef = useRef<HTMLElement>(null);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = usePrefersReducedMotion();
   const magnetic = !noMagnet && !reduceMotion && !disabled;
 
   /**

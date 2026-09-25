@@ -4,8 +4,8 @@ import {
     useScroll,
     useTransform,
     motion,
-    useReducedMotion,
 } from 'framer-motion';
+import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 
@@ -72,7 +72,7 @@ const MAX_SCALE = [5, 5, 6, 5, 6, 8, 9];
 const ZOOM_END = 0.62;
 
 export function ZoomParallax({ images }: ZoomParallaxProps) {
-    const reduceMotion = useReducedMotion();
+    const reduceMotion = usePrefersReducedMotion();
 
     const galleryRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -334,7 +334,7 @@ const CLOSER_TYPE =
     'text-balance text-[clamp(2.1rem,6.4vw,5rem)] font-light italic leading-[1.08] tracking-[-0.02em]';
 
 function Intro() {
-    const reduceMotion = useReducedMotion();
+    const reduceMotion = usePrefersReducedMotion();
     const introRef = useRef<HTMLDivElement>(null);
 
     /* Deriva atada al scroll: el bloque se va elevando y apagando a medida

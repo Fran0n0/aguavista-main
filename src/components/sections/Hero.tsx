@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { useTranslations } from "next-intl";
 import { SplitText } from "@/components/motion/SplitText";
 import { EASE_LUX } from "@/components/motion/Reveal";
@@ -34,7 +35,7 @@ export function Hero({
   const t = useTranslations("hero");
   const tc = useTranslations("common");
   const sectionRef = useRef<HTMLElement>(null);
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = usePrefersReducedMotion();
 
   /* El <video> se elige en JS y no con <source media>: los navegadores
      evalúan `media` una sola vez al cargar y no reaccionan al rotar el

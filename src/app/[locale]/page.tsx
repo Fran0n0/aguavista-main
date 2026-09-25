@@ -152,9 +152,8 @@ export default async function HomePage({
           360. El código sigue vivo y tipado detrás del flag; para volver
           a prenderlo alcanza con SHOW_SALES_SECTION = true.
 
-          Su antesala (<ComingSoon />) también está oculta por pedido del
-          cliente mientras el plano esté en preparación: SHOW_COMING_SOON
-          = true la vuelve a mostrar. */}
+          Mientras tanto se muestra su antesala (<ComingSoon />), con el
+          mapa animado del predio; SHOW_COMING_SOON = false la oculta. */}
       {SHOW_SALES_SECTION ? (
         <section id="masterplan" aria-label="Masterplan">
           <InteractiveMap />

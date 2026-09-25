@@ -4,10 +4,10 @@ import {
     cubicBezier,
     motion,
     useMotionTemplate,
-    useReducedMotion,
     useScroll,
     useTransform,
 } from 'framer-motion';
+import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
@@ -151,7 +151,7 @@ export function ScrollTiltedGrid({
     aspectRatio = '4/5',
     className,
 }: ScrollTiltedGridProps) {
-    const reduceMotion = useReducedMotion();
+    const reduceMotion = usePrefersReducedMotion();
 
     /* Sin movimiento: la misma grilla, quieta y sin filtros. */
     if (reduceMotion) {
