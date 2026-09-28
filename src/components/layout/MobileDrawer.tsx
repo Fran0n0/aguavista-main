@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { siteConfig, whatsappUrl } from "@/config/site";
+import { lockScroll } from "@/lib/scroll-lock";
 import { EASE_LUX } from "@/components/motion/Reveal";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
@@ -32,14 +33,8 @@ export function MobileDrawer({ links, active, onClose }: MobileDrawerProps) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const { body } = document;
-    // Compensar el ancho de la scrollbar evita el salto lateral del
-    // contenido al bloquear el scroll.
-    const scrollbar = window.innerWidth - document.documentElement.clientWidth;
-    const prevOverflow = body.style.overflow;
-    const prevPadding = body.style.paddingRight;
-    body.style.overflow = "hidden";
-    if (scrollbar > 0) body.style.paddingRight = `${scrollbar}px`;
+    // Corta el scroll del documento y pausa Lenis (ver lib/scroll-lock).
+    const unlock = lockScroll();
 
     closeRef.current?.focus();
 
@@ -70,8 +65,7 @@ export function MobileDrawer({ links, active, onClose }: MobileDrawerProps) {
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      body.style.overflow = prevOverflow;
-      body.style.paddingRight = prevPadding;
+      unlock();
     };
   }, [onClose]);
 

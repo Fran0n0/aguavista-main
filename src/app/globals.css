@@ -162,8 +162,6 @@
      definen más abajo para los componentes que aún referencian esos nombres. */
   --font-display: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  /* Acento serif: clase `font-accent`. */
-  --font-accent: var(--font-playfair), "Playfair Display", Georgia, serif;
 
   --shadow-av-sm:   var(--av-shadow-sm);
   --shadow-av-md:   var(--av-shadow-md);

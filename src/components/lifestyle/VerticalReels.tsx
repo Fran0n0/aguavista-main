@@ -6,6 +6,8 @@ import InkReveal from '@/components/ui/ink-reveal';
 import { LoopVideo } from '@/components/ui/LoopVideo';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { EASE_LUX } from '@/components/motion/Reveal';
+import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 
 /** Fallback: los cuatro micro-loops que viven en /public. */
 const DEFAULT_REELS = ['/reel.mp4', '/reel-1.mp4', '/reel-2.mp4', '/reel-3.mp4'];
@@ -132,7 +134,7 @@ export default function VerticalReels({
               transition={{ delay: 0.1 }}
               className="text-4xl lg:text-6xl text-white font-display font-light leading-tight tracking-[-0.015em] drop-shadow-2xl"
             >
-              Tener <Accent>tiempo</Accent>. Tener <Accent>espacio</Accent>.<br/>Tener <Accent>libertad</Accent> para elegir<br/>cómo vivir cada día.
+              Tener <Accent index={0}>tiempo</Accent>. Tener <Accent index={1}>espacio</Accent>.<br/>Tener <Accent index={2}>libertad</Accent> para elegir<br/>cómo vivir cada día.
             </motion.h3>
 
             <motion.p
@@ -164,7 +166,7 @@ export default function VerticalReels({
               transition={{ delay: 0.1 }}
               className="text-3xl text-white font-display font-light leading-tight tracking-[-0.015em] drop-shadow-2xl"
             >
-              Tener <Accent>tiempo</Accent>. Tener <Accent>espacio</Accent>.<br/>Tener <Accent>libertad</Accent> para elegir<br/>cómo vivir cada día.
+              Tener <Accent index={0}>tiempo</Accent>. Tener <Accent index={1}>espacio</Accent>.<br/>Tener <Accent index={2}>libertad</Accent> para elegir<br/>cómo vivir cada día.
             </motion.h3>
 
             <motion.p
@@ -285,10 +287,53 @@ export default function VerticalReels({
   );
 }
 
-/* Palabra destacada del titular: serif itálica y verde del sitio, para que
-   "tiempo", "espacio" y "libertad" se lean como la idea central. */
-function Accent({ children }: { children: string }) {
+/*
+ * Palabra destacada del titular ("tiempo", "espacio", "libertad").
+ *
+ * Montserrat semibold itálica, como el resto del sitio pero con peso para
+ * que resalte. Al entrar en pantalla cada palabra arranca en blanco, se
+ * "pinta" de verde de izquierda a derecha y se le dibuja un subrayado; las
+ * tres van en cadena, en el orden en que se leen.
+ *
+ * Son dos capas del mismo texto: la blanca de base (la que lee el lector de
+ * pantalla) y la verde encima, recortada con clip-path. Los insets
+ * negativos dejan margen para la inclinación de la itálica, que si no se
+ * cortaba en la última letra.
+ */
+function Accent({ children, index }: { children: string; index: number }) {
+  const reduceMotion = usePrefersReducedMotion();
+  const delay = 0.45 + index * 0.3;
+
+  if (reduceMotion) {
+    return (
+      <span className="relative inline-block font-semibold italic text-[color:var(--av-vivo)]">
+        {children}
+        <span aria-hidden="true" className="absolute -bottom-0.5 left-0 h-[3px] w-full rounded-full bg-[color:var(--av-vivo)]" />
+      </span>
+    );
+  }
+
   return (
-    <span className="font-accent italic text-[color:var(--av-vivo)]">{children}</span>
+    <span className="relative inline-block font-semibold italic">
+      <span className="text-white">{children}</span>
+      <motion.span
+        aria-hidden="true"
+        className="absolute inset-0 text-[color:var(--av-vivo)]"
+        initial={{ clipPath: 'inset(-20% 100% -20% -4%)' }}
+        whileInView={{ clipPath: 'inset(-20% -12% -20% -4%)' }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.9, delay, ease: EASE_LUX }}
+      >
+        {children}
+      </motion.span>
+      <motion.span
+        aria-hidden="true"
+        className="absolute -bottom-0.5 left-0 h-[3px] w-full origin-left rounded-full bg-[color:var(--av-vivo)]"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.7, delay: delay + 0.35, ease: EASE_LUX }}
+      />
+    </span>
   );
 }

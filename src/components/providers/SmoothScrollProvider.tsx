@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import Lenis from "lenis";
+import { SCROLL_LOCK_EVENT } from "@/lib/scroll-lock";
 import { usePathname } from "next/navigation";
 
 /**
@@ -67,7 +68,16 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
 
     document.addEventListener("click", onClick);
 
+    /* Modales y drawers piden pausar el scroll (lib/scroll-lock). Sin esto
+       Lenis seguía moviendo la página por detrás de un modal abierto. */
+    const onLock = (e: Event) => {
+      if ((e as CustomEvent<boolean>).detail) lenis.stop();
+      else lenis.start();
+    };
+    window.addEventListener(SCROLL_LOCK_EVENT, onLock);
+
     return () => {
+      window.removeEventListener(SCROLL_LOCK_EVENT, onLock);
       document.removeEventListener("click", onClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();

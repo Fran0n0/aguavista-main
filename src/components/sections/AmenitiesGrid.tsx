@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Plus, X } from "lucide-react";
@@ -11,6 +12,7 @@ import { EASE_LUX } from "@/components/motion/Reveal";
 import { organicDelay } from "@/components/motion/SlideUp";
 import { useDragScroll } from "@/hooks/use-drag-scroll";
 import { cn } from "@/lib/utils";
+import { lockScroll } from "@/lib/scroll-lock";
 
 /** Curva del morph entre riel y detalle. Más lenta que un hover normal:
  *  el elemento recorre media pantalla y necesita tiempo para leerse. */
@@ -322,12 +324,8 @@ function ExpandedCard({
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const { body } = document;
-    const scrollbar = window.innerWidth - document.documentElement.clientWidth;
-    const prevOverflow = body.style.overflow;
-    const prevPadding = body.style.paddingRight;
-    body.style.overflow = "hidden";
-    if (scrollbar > 0) body.style.paddingRight = `${scrollbar}px`;
+    // Corta el scroll del documento y pausa Lenis (ver lib/scroll-lock).
+    const unlock = lockScroll();
 
     closeRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
@@ -337,12 +335,14 @@ function ExpandedCard({
 
     return () => {
       document.removeEventListener("keydown", onKey);
-      body.style.overflow = prevOverflow;
-      body.style.paddingRight = prevPadding;
+      unlock();
     };
   }, [onClose]);
 
-  return (
+  /* Portal al <body>: dentro de la sección, el `isolation: isolate` de
+     .av-glow encerraba el z-index del modal y las secciones de más abajo
+     (los reels) se pintaban por encima. */
+  return createPortal(
     <div className="fixed inset-0 z-[140] flex items-center justify-center p-4 md:p-8">
       {/* Fondo. Clic afuera cierra. */}
       <motion.div
@@ -416,7 +416,8 @@ function ExpandedCard({
           <X className="size-4" strokeWidth={1.5} aria-hidden="true" />
         </motion.button>
       </motion.div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

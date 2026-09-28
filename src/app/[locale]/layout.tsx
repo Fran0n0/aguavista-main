@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Toaster } from "sonner";
@@ -31,18 +31,6 @@ const montserrat = Montserrat({
   style: ["normal", "italic"],
   display: "swap",
   preload: true,
-});
-
-/* Serif itálica de acento, solo para palabras sueltas que tienen que
-   resaltar ("tiempo", "espacio", "libertad"). Un único peso y estilo para
-   que pese poco, y sin precarga: aparece recién a mitad de página. */
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin", "latin-ext"],
-  weight: ["500"],
-  style: ["italic"],
-  display: "swap",
-  preload: false,
 });
 
 /** Prerenderiza los tres idiomas en build: nada se genera on-demand. */
@@ -167,7 +155,7 @@ export default async function LocaleLayout({
       // El data-theme lo escribe themeInitScript antes del primer paint;
       // React no debe quejarse de que el HTML del servidor no lo tenga.
       suppressHydrationWarning
-      className={`${montserrat.variable} ${playfair.variable} h-full`}
+      className={`${montserrat.variable} h-full`}
     >
       <head>
         {/* Antes de cualquier CSS: evita el flash de tema equivocado. */}
