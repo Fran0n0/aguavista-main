@@ -56,11 +56,13 @@ export type ZoneMeta = { id: ZoneId; Icon: LucideIcon; accent: string };
 
 /** El orden es el de la lista del panel y el de encendido en el mapa. */
 export const ZONES: readonly ZoneMeta[] = [
-    { id: 'botanico', Icon: Leaf, accent: '#34D399' },
-    { id: 'nautica', Icon: Sailboat, accent: '#38BDF8' },
-    { id: 'aeropuerto', Icon: Plane, accent: '#FACC15' },
-    { id: 'greenbar', Icon: Flag, accent: '#A3E635' },
-    { id: 'tekoha', Icon: TreePine, accent: '#FB923C' },
+    /* Paleta de maqueta: tonos luminosos y bien distintos entre sí, para
+       que cada sector se lea de un vistazo como en un plano ilustrado. */
+    { id: 'botanico', Icon: Leaf, accent: '#2ED3B7' },
+    { id: 'nautica', Icon: Sailboat, accent: '#62C8F2' },
+    { id: 'aeropuerto', Icon: Plane, accent: '#E8C872' },
+    { id: 'greenbar', Icon: Flag, accent: '#7ED957' },
+    { id: 'tekoha', Icon: TreePine, accent: '#F5A04E' },
 ];
 
 /** Cuánto acerca el mapa al elegir un sector. 1 = sin zoom. */
@@ -194,6 +196,11 @@ const CRUISER = route([[1090, 420], [980, 395], [720, 330], [570, 298]]);
 const WAVES: readonly Pt[] = [
     [40, 300], [150, 300], [100, 390], [30, 470], [120, 520], [70, 640],
     [140, 610], [30, 720], [100, 700], [60, 800], [20, 880], [10, 960],
+];
+
+/** Destellos sobre el río, todos sobre el agua. */
+const GLINTS: readonly Pt[] = [
+    [60, 350], [130, 430], [45, 540], [110, 640], [70, 760], [30, 900], [140, 330], [95, 480],
 ];
 
 /* ─── Piezas ───────────────────────────────────────────────────────────── */
@@ -447,6 +454,7 @@ export function PredioMap({
         water: `predio-water-${uid}`,
         waterFill: `predio-water-fill-${uid}`,
         blur: `predio-blur-${uid}`,
+        sun: `predio-sun-${uid}`,
     };
 
     const [hovered, setHovered] = useState<ZoneId | null>(null);
@@ -537,8 +545,8 @@ export function PredioMap({
     const zoneAlpha = (id: ZoneId) => {
         /* 0.5 y no más: con el tinte más fuerte, las calles de golf del
            sector elegido se perdían contra el fondo. */
-        if (activeId) return id === activeId ? 0.5 : 0.1;
-        return hovered === id ? 0.5 : 0.27;
+        if (activeId) return id === activeId ? 0.82 : 0.22;
+        return hovered === id ? 0.86 : 0.64;
     };
 
     return (
@@ -588,9 +596,15 @@ export function PredioMap({
                             <path d={WATER_PATH} fill="#000" />
                             <path d={LAND_PATH} fill="#000" />
                         </g>
-                        <g transform="translate(0 12)">
-                            <path d={WATER_PATH} fill="#062330" />
-                            <path d={LAND_PATH} fill="#08140d" />
+                        {/* Espesor del tablero en dos capas, como el corte de
+                            tierra de una maqueta: oscuro abajo, más claro arriba. */}
+                        <g transform="translate(0 20)">
+                            <path d={WATER_PATH} fill="#0a3f52" />
+                            <path d={LAND_PATH} fill="#3b2a1b" />
+                        </g>
+                        <g transform="translate(0 10)">
+                            <path d={WATER_PATH} fill="#11627c" />
+                            <path d={LAND_PATH} fill="#6d4f31" />
                         </g>
                     </svg>
 
@@ -602,8 +616,16 @@ export function PredioMap({
                     >
                         <defs>
                             <linearGradient id={ids.waterFill} x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0" stopColor="#0e3b4f" />
-                                <stop offset="1" stopColor="#15566f" />
+                                <stop offset="0" stopColor="#1f8fb3" />
+                                <stop offset="1" stopColor="#2fb4d2" />
+                            </linearGradient>
+                            {/* Luz de sol: entra por arriba a la izquierda y cae
+                                en sombra abajo a la derecha. Da volumen sin tocar
+                                los colores de los sectores. */}
+                            <linearGradient id={ids.sun} x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stopColor="#ffffff" stopOpacity={0.22} />
+                                <stop offset="0.5" stopColor="#ffffff" stopOpacity={0} />
+                                <stop offset="1" stopColor="#000000" stopOpacity={0.22} />
                             </linearGradient>
                             <clipPath id={ids.land}>
                                 <path d={LAND_PATH} />
@@ -625,18 +647,37 @@ export function PredioMap({
                                         key={`${x}-${y}`}
                                         d={`M${x} ${y}q7 -4 14 0t14 0`}
                                         fill="none"
-                                        stroke="#bfe6f5"
-                                        strokeWidth={1.2}
+                                        stroke="#e6f8ff"
+                                        strokeWidth={1.3}
                                         strokeLinecap="round"
-                                        opacity={0.28}
+                                        opacity={0.5}
                                     />
                                 ))}
                             </motion.g>
+                            {/* Destellos de sol sobre el agua: titilan a
+                                destiempo, nunca todos juntos. */}
+                            {GLINTS.map(([x, y], i) => (
+                                <motion.circle
+                                    key={`${x}-${y}`}
+                                    cx={x}
+                                    cy={y}
+                                    r={2.2}
+                                    fill="#ffffff"
+                                    initial={{ opacity: 0.15 }}
+                                    animate={reduceMotion ? undefined : { opacity: [0.15, 0.95, 0.15] }}
+                                    transition={{
+                                        duration: 2.6,
+                                        repeat: Infinity,
+                                        delay: i * 0.55,
+                                        ease: 'easeInOut',
+                                    }}
+                                />
+                            ))}
                         </g>
                         <text
                             transform="translate(46 612) rotate(-80)"
-                            fill="#cdeaf6"
-                            fillOpacity={0.4}
+                            fill="#ffffff"
+                            fillOpacity={0.5}
                             fontSize={15}
                             letterSpacing={9}
                             fontWeight={300}
@@ -646,7 +687,7 @@ export function PredioMap({
                         </text>
 
                         {/* ── Terreno y sectores ── */}
-                        <path d={LAND_PATH} fill="#1d3527" />
+                        <path d={LAND_PATH} fill="#3e6b3f" />
                         <g clipPath={`url(#${ids.land})`}>
                             {ZONES.map((zone, i) => (
                                 <ZoneFill
@@ -660,6 +701,11 @@ export function PredioMap({
                                 />
                             ))}
                         </g>
+                        <path
+                            d={LAND_PATH}
+                            fill={`url(#${ids.sun})`}
+                            pointerEvents="none"
+                        />
 
                         {/* ── Detalles del plano ── */}
                         <motion.g
@@ -670,8 +716,8 @@ export function PredioMap({
                                 <polygon
                                     key={points.slice(0, 16)}
                                     points={points}
-                                    fill="#7cc757"
-                                    stroke="#b1e68a"
+                                    fill="#b4ec8a"
+                                    stroke="#e2fbcf"
                                     strokeWidth={0.8}
                                     strokeOpacity={0.55}
                                 />
@@ -680,8 +726,8 @@ export function PredioMap({
                                 <polygon
                                     key={points.slice(0, 16)}
                                     points={points}
-                                    fill="#2f8fcf"
-                                    stroke="#8fd3f5"
+                                    fill="#35aee6"
+                                    stroke="#c4ecfb"
                                     strokeWidth={0.8}
                                     strokeOpacity={0.7}
                                 />
@@ -689,8 +735,8 @@ export function PredioMap({
                             {/* Laguna central de Parque Tekoha */}
                             <path
                                 d={LAGOON_PATH}
-                                fill="#2a8ccd"
-                                stroke="#9ddcf6"
+                                fill="#35aee6"
+                                stroke="#c4ecfb"
                                 strokeWidth={1.4}
                                 strokeOpacity={0.8}
                             />
@@ -715,15 +761,12 @@ export function PredioMap({
                             ))}
                             {TREES.map(([x, y, r], i) => (
                                 <g key={`${x}-${y}`}>
-                                    <circle cx={x + 1.6} cy={y + 2.2} r={r} fill="#07120b" opacity={0.5} />
-                                    <circle cx={x} cy={y} r={r} fill={i % 3 ? '#2f6e45' : '#3a8052'} />
-                                    <circle
-                                        cx={x - r * 0.3}
-                                        cy={y - r * 0.3}
-                                        r={r * 0.45}
-                                        fill="#6fbf85"
-                                        opacity={0.45}
-                                    />
+                                    {/* Copa en tres tonos + sombra proyectada:
+                                        se leen como árboles, no como puntos. */}
+                                    <ellipse cx={x + 2.4} cy={y + 3.4} rx={r * 1.15} ry={r * 0.9} fill="#0b1f10" opacity={0.45} />
+                                    <circle cx={x} cy={y} r={r * 1.15} fill={i % 3 ? '#2f8a4b' : '#3c9c57'} />
+                                    <circle cx={x - r * 0.25} cy={y - r * 0.3} r={r * 0.75} fill={i % 3 ? '#4fb468' : '#5cc274'} />
+                                    <circle cx={x - r * 0.45} cy={y - r * 0.5} r={r * 0.32} fill="#a6e6b2" opacity={0.7} />
                                 </g>
                             ))}
                             <Runway />
