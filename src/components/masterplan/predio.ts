@@ -50,7 +50,9 @@ export const ZONE_ANCHORS: Record<ZoneId, { x: number; y: number }> = {
   nautica: { x: 296, y: 683 },
   aeropuerto: { x: 745, y: 679 },
   greenbar: { x: 329, y: 920 },
-  tekoha: { x: 771, y: 853 },
+  /* Corrida al sudeste del centroide: en el centro está la laguna y la
+     etiqueta la tapaba. */
+  tekoha: { x: 832, y: 900 },
 };
 
 /** Calles de golf (15), detectadas por color en el plano. */
@@ -101,8 +103,13 @@ export const TREES: readonly (readonly [number, number, number])[] = [
   [158, 883, 7], [257, 779, 6], [124, 885, 6], [487, 939, 7], [440, 934, 6], [223, 973, 8],
   [304, 1113, 7], [155, 808, 7], [382, 789, 6], [310, 884, 5], [116, 1010, 5], [268, 998, 6],
   [180, 795, 7], [251, 949, 5], [868, 804, 8], [861, 914, 8], [748, 804, 6], [666, 830, 6],
-  [717, 789, 6], [786, 822, 8], [777, 882, 6], [811, 787, 5], [828, 904, 6], [662, 856, 6],
-  [855, 852, 7], [691, 858, 8], [666, 798, 7], [699, 913, 8], [755, 834, 5], [871, 830, 6],
-  [795, 919, 5], [895, 796, 6], [748, 907, 7], [807, 886, 6], [648, 895, 8], [836, 827, 6],
-  [696, 827, 8], [682, 884, 7], [715, 879, 8], [842, 786, 8],
+  [717, 789, 6], [777, 882, 6], [811, 787, 5], [828, 904, 6], [662, 856, 6], [855, 852, 7],
+  [691, 858, 8], [666, 798, 7], [699, 913, 8], [871, 830, 6], [795, 919, 5], [895, 796, 6],
+  [748, 907, 7], [807, 886, 6], [648, 895, 8], [836, 827, 6], [696, 827, 8], [682, 884, 7],
+  [715, 879, 8], [842, 786, 8],
 ];
+
+/** Laguna central de Parque Tekoha: el gran claro rodeado de senderos en el
+ *  centro del parque. En el plano solo figuran las lagunitas del borde; esta
+ *  se agregó a pedido del cliente y se dibuja más grande y con orilla. */
+export const TEKOHA_LAGOON = "750,813.8 765,807.5 785,807 800,812.5 808.8,823.8 810,840 803.8,853.8 788.8,861.2 767.5,862 752.5,856.2 746.2,842.5 746.2,825";

@@ -19,6 +19,7 @@ import {
     LAKES,
     LAND,
     RUNWAY,
+    TEKOHA_LAGOON,
     TREES,
     VIEWBOX,
     VIEWBOX_ATTR,
@@ -74,6 +75,25 @@ const BOARD_SCALE = 0.93;
 /** "x,y x,y …" → path cerrado. */
 const toPath = (points: string) => `M${points.trim().split(/\s+/).join('L')}Z`;
 const LAND_PATH = toPath(LAND);
+
+/**
+ * "x,y x,y …" → path cerrado y SUAVE (Catmull-Rom pasado a Bézier). Para
+ * orillas de agua: con vértices rectos una laguna parece un polígono.
+ */
+const toSmoothPath = (points: string) => {
+    const p = points.trim().split(/\s+/).map((xy) => xy.split(',').map(Number));
+    const n = p.length;
+    const at = (i: number) => p[(i + n) % n];
+    let d = `M${p[0][0]} ${p[0][1]}`;
+    for (let i = 0; i < n; i++) {
+        const [p0, p1, p2, p3] = [at(i - 1), at(i), at(i + 1), at(i + 2)];
+        const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+        const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+        d += `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0]} ${p2[1]}`;
+    }
+    return `${d}Z`;
+};
+const LAGOON_PATH = toSmoothPath(TEKOHA_LAGOON);
 const WATER_PATH = toPath(WATER);
 
 /** Coordenada del plano → % del recuadro, para ubicar las etiquetas HTML. */
@@ -159,6 +179,13 @@ const MOTORBOAT = route([
 const YACHT = route([
     [12, 1110], [16, 1000], [22, 900], [38, 780], [62, 700], [88, 630],
 ]);
+/* Carrito de golf: vuelta cerrada entre las calles de la zona de golf,
+   siempre sobre césped y lejos de las lagunas. */
+const GOLF_CART = route(
+    [[262, 870], [305, 915], [350, 968], [398, 1004], [452, 976], [500, 930],
+     [470, 895], [410, 905], [350, 900], [300, 880], [262, 870]],
+    true
+);
 /* Avión de paso por el cielo vacío del noreste, lejos de la pista para no
    competir con el que despega. */
 const CRUISER = route([[1090, 420], [980, 395], [720, 330], [570, 298]]);
@@ -240,6 +267,21 @@ function YachtShape() {
             <path d="M18 0C14 -5.6 0 -6.2 -14 -5L-14 5C0 6.2 14 5.6 18 0Z" fill="#fbfcfb" />
             <path d="M8 0C6 -3.2 -2 -3.6 -9 -3L-9 3C-2 3.6 6 3.2 8 0Z" fill="#dfe6e9" />
             <rect x={-6} y={-1.8} width={8} height={3.6} rx={1} fill="#1b3440" />
+        </g>
+    );
+}
+
+function GolfCartShape() {
+    return (
+        <g>
+            <rect x={-12} y={-10} width={24} height={20} fill="none" />
+            {[[-8, -7], [4, -7], [-8, 5], [4, 5]].map(([x, y]) => (
+                <rect key={`${x}${y}`} x={x} y={y} width={4.5} height={2.2} rx={0.8} fill="#1a1f1c" />
+            ))}
+            <rect x={-10} y={-5} width={20} height={10} rx={2.2} fill="#f4f6f1" />
+            <rect x={-5.5} y={-5.6} width={11} height={11.2} rx={1.6} fill="#dfe7dc" stroke="#aebdad" strokeWidth={0.6} />
+            {/* Bolsa de palos atrás */}
+            <rect x={-10.5} y={-3} width={3.4} height={6} rx={1} fill="#2d6a3e" />
         </g>
     );
 }
@@ -644,6 +686,33 @@ export function PredioMap({
                                     strokeOpacity={0.7}
                                 />
                             ))}
+                            {/* Laguna central de Parque Tekoha */}
+                            <path
+                                d={LAGOON_PATH}
+                                fill="#2a8ccd"
+                                stroke="#9ddcf6"
+                                strokeWidth={1.4}
+                                strokeOpacity={0.8}
+                            />
+                            <path
+                                d={LAGOON_PATH}
+                                fill="none"
+                                stroke="#1b6fa6"
+                                strokeWidth={5}
+                                strokeOpacity={0.35}
+                                transform="translate(1.5 2)"
+                            />
+                            {[[762, 826], [782, 842], [760, 848]].map(([x, y]) => (
+                                <path
+                                    key={`${x}-${y}`}
+                                    d={`M${x} ${y}q4 -2.5 8 0t8 0`}
+                                    fill="none"
+                                    stroke="#d2f0fb"
+                                    strokeWidth={1}
+                                    strokeLinecap="round"
+                                    opacity={0.55}
+                                />
+                            ))}
                             {TREES.map(([x, y, r], i) => (
                                 <g key={`${x}-${y}`}>
                                     <circle cx={x + 1.6} cy={y + 2.2} r={r} fill="#07120b" opacity={0.5} />
@@ -705,6 +774,11 @@ export function PredioMap({
                         </Mover>
                         <Mover path={YACHT} duration={34} delay={5} repeatDelay={2} still={reduceMotion}>
                             <YachtShape />
+                        </Mover>
+
+                        {/* ── Carrito de golf ── */}
+                        <Mover path={GOLF_CART} duration={28} closed scale={1.8} still={reduceMotion}>
+                            <GolfCartShape />
                         </Mover>
 
                         {/* ── Aviones ── */}

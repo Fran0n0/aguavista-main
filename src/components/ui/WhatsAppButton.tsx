@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { whatsappUrl } from "@/config/site";
 import { EASE_LUX } from "@/components/motion/Reveal";
 
 /** Aparece recién pasado el hero, para no competir con los CTAs de arriba. */
@@ -27,7 +27,7 @@ export function WhatsAppButton() {
     <AnimatePresence>
       {visible && (
         <motion.a
-          href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+          href={whatsappUrl(t("whatsappMessage"))}
           target="_blank"
           rel="noopener noreferrer"
           // El texto visible es solo "Consultar"; al lector de pantalla se

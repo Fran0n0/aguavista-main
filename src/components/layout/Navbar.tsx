@@ -12,6 +12,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { MobileDrawer } from "./MobileDrawer";
 import { EASE_LUX } from "@/components/motion/Reveal";
 import { NAV_LINKS } from "@/config/navigation";
+import { whatsappUrl } from "@/config/site";
 
 const SOLID_AT = 80;
 
@@ -123,7 +124,7 @@ export function Navbar() {
               <LanguageSwitcher />
             </div>
 
-            <Button href="#contacto" variant="primary" size="sm" noMagnet className="hidden md:inline-flex">
+            <Button href={whatsappUrl(tc("whatsappMessage"))} external variant="primary" size="sm" noMagnet className="hidden md:inline-flex">
               {t("cta")}
             </Button>
 

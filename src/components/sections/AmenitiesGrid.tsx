@@ -127,7 +127,7 @@ function RailCard({
             draggable={false}
             loading={index < 3 ? "eager" : "lazy"}
             sizes="(max-width: 640px) 68vw, (max-width: 768px) 43vw, (max-width: 1024px) 31vw, 292px"
-            quality={70}
+            quality={80}
             onLoad={() => setLoaded(true)}
             className={cn(
               "object-cover transition-[transform,opacity] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
@@ -236,7 +236,7 @@ function AmenityGallery({ amenity }: { amenity: ResolvedAmenity }) {
               // debería costar cuatro descargas por abrirla.
               loading={i === 0 ? "eager" : "lazy"}
               sizes="(max-width: 768px) 100vw, 640px"
-              quality={78}
+              quality={85}
               className="object-cover"
             />
 
@@ -247,6 +247,10 @@ function AmenityGallery({ amenity }: { amenity: ResolvedAmenity }) {
                 src={amenity.video}
                 poster={src}
                 className="absolute inset-0 size-full"
+                /* Los reels son verticales y el marco es apaisado: centrado,
+                   el recorte se comía las cabezas de la gente. Anclado
+                   arriba queda el plano de las caras. */
+                videoClassName="object-[center_18%]"
               />
             )}
           </div>

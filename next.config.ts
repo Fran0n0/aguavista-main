@@ -21,7 +21,9 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 365,
     // Next 16 solo acepta los valores de `quality` declarados aca; cualquier
     // otro cae silenciosamente a 75. Estos son los que usan los componentes.
-    qualities: [55, 62, 70, 72, 75],
+    // Subidos de 55–75 a 75–85: con AVIF, por debajo de ~80 el detalle fino
+    // (follaje, agua, texturas) se "lava" y las fotos se veían borrosas.
+    qualities: [75, 80, 85],
     // Imagenes subidas desde el panel: viven en el Storage de Supabase.
     // Sin esta entrada, next/image rechaza la URL remota.
     remotePatterns: [

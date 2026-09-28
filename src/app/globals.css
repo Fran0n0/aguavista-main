@@ -29,12 +29,15 @@
   /* Acentos */
   --av-vivo:       #A3D45B; /* lima — CTAs, subrayados, energía */
   --av-vivo-deep:  #7FB53A; /* hover del lima */
-  --av-lux:        #C9A962; /* oro — detalles finos, serif */
-  --av-lux-light:  #E8D5A3;
+  /* Ex dorado. El cliente pidió que no quede nada amarillo: los tokens
+     "lux" se conservan (los usan decenas de componentes) pero ahora
+     apuntan a la familia de verdes del sitio. */
+  --av-lux:        #A3D45B;
+  --av-lux-light:  #C8E88A;
 
   /* Luces de fondo (glows) — dan profundidad, matan el "fondo liso" */
   --av-glow-vivo: rgba(163, 212, 91, 0.10);
-  --av-glow-lux:  rgba(201, 169, 98, 0.07);
+  --av-glow-lux:  rgba(163, 212, 91, 0.07);
   --av-glow-cool: rgba(47, 168, 156, 0.06);
 
   /* Vidrio / blur */
@@ -76,11 +79,11 @@
 
   --av-vivo:      #4F7F16; /* lima oscurecido: contraste AA sobre crema */
   --av-vivo-deep: #3D6410;
-  --av-lux:       #9C7B33;
-  --av-lux-light: #C9A962;
+  --av-lux:       #4F7F16;
+  --av-lux-light: #7FB53A;
 
   --av-glow-vivo: rgba(79, 127, 22, 0.06);
-  --av-glow-lux:  rgba(156, 123, 51, 0.05);
+  --av-glow-lux:  rgba(79, 127, 22, 0.05);
   --av-glow-cool: rgba(47, 168, 156, 0.04);
 
   /* Velo del navbar mientras sobrevuela el hero. Son rgba literales y
@@ -118,10 +121,10 @@
     --av-text-faint: #8B978D;
     --av-vivo: #4F7F16;
     --av-vivo-deep: #3D6410;
-    --av-lux: #9C7B33;
-    --av-lux-light: #C9A962;
+    --av-lux: #4F7F16;
+    --av-lux-light: #7FB53A;
     --av-glow-vivo: rgba(79, 127, 22, 0.06);
-    --av-glow-lux: rgba(156, 123, 51, 0.05);
+    --av-glow-lux: rgba(79, 127, 22, 0.05);
     --av-glow-cool: rgba(47, 168, 156, 0.04);
     --av-scrim-strong: rgba(247, 244, 236, 0.90);
     --av-scrim-soft: rgba(247, 244, 236, 0.52);
@@ -159,6 +162,8 @@
      definen más abajo para los componentes que aún referencian esos nombres. */
   --font-display: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  /* Acento serif: clase `font-accent`. */
+  --font-accent: var(--font-playfair), "Playfair Display", Georgia, serif;
 
   --shadow-av-sm:   var(--av-shadow-sm);
   --shadow-av-md:   var(--av-shadow-md);

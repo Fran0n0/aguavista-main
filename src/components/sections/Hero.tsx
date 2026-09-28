@@ -40,8 +40,13 @@ export function Hero({
   /* El <video> se elige en JS y no con <source media>: los navegadores
      evalúan `media` una sola vez al cargar y no reaccionan al rotar el
      teléfono ni al redimensionar. El poster, en cambio, se alterna con
-     CSS para que el LCP salga ya pintado desde el servidor. */
-  const [isMobile, setIsMobile] = useState(false);
+     CSS para que el LCP salga ya pintado desde el servidor.
+
+     Arranca en `null` (todavía no se sabe) y el <video> no se monta hasta
+     saberlo: si arrancara en `false`, el celular empezaba a bajar el video
+     de escritorio (8 MB) antes de enterarse de que tenía que usar el suyo,
+     y terminaba descargando los dos. Mientras tanto se ve el poster. */
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
     const mq = window.matchMedia(MOBILE_QUERY);
@@ -51,7 +56,8 @@ export function Hero({
     return () => mq.removeEventListener("change", sync);
   }, []);
 
-  const activeVideo = isMobile && videoMobile ? videoMobile : video;
+  const activeVideo =
+    isMobile === null ? null : isMobile && videoMobile ? videoMobile : video;
   const hasMobilePoster = Boolean(posterMobile && posterMobile !== poster);
 
   const { scrollYProgress } = useScroll({
@@ -94,7 +100,7 @@ export function Hero({
             priority
             fetchPriority="high"
             sizes="100vw"
-            quality={72}
+            quality={80}
             className={hasMobilePoster ? "hidden object-cover md:block" : "object-cover"}
           />
 
@@ -107,7 +113,7 @@ export function Hero({
               priority
               fetchPriority="high"
               sizes="100vw"
-              quality={72}
+              quality={80}
               className="object-cover md:hidden"
             />
           )}
@@ -115,18 +121,20 @@ export function Hero({
           {/* ── VIDEO NATIVO OPTIMIZADO PARA RENDIMIENTO EXTREMO ──
               `key` fuerza el remontaje al cambiar de fuente: sin él el
               navegador se queda con el <source> que ya había cargado. */}
-          <video
-            key={activeVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="none"
-            poster={poster}
-            className="absolute inset-0 size-full object-cover"
-          >
-            <source src={activeVideo} type="video/mp4" />
-          </video>
+          {activeVideo && (
+            <video
+              key={activeVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="none"
+              poster={isMobile && posterMobile ? posterMobile : poster}
+              className="absolute inset-0 size-full object-cover"
+            >
+              <source src={activeVideo} type="video/mp4" />
+            </video>
+          )}
         </div>
 
         <div aria-hidden="true" className="absolute inset-0 bg-[#050D09]/25" />

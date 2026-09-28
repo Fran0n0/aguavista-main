@@ -4,6 +4,7 @@ import Image from "next/image";
 import { LandPlot, Layers, Percent, Ruler, Trees } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
+import { whatsappUrl } from "@/config/site";
 import { Reveal, StaggerGroup, staggerChild } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { motion } from "framer-motion";
@@ -25,6 +26,7 @@ const STATS = [
  */
 export function Lotes() {
   const t = useTranslations("stats");
+  const tc = useTranslations("common");
 
   return (
     <section
@@ -42,7 +44,7 @@ export function Lotes() {
             fill
             loading="lazy"
             sizes="(max-width: 1024px) 100vw, 1340px"
-            quality={72}
+            quality={80}
             /* La foto es cuadrada y la banda es apaisada: anclando el
                encuadre abajo se conserva el barrio y el golf en vez de
                quedarse con la franja de agua y cielo. */
@@ -79,7 +81,7 @@ export function Lotes() {
                 </h2>
 
                 <Reveal delay={0.3} className="mt-9">
-                  <Button href="#contacto" variant="primary" size="lg">
+                  <Button href={whatsappUrl(tc("whatsappMessage"))} external variant="primary" size="lg">
                     {t("cta")}
                   </Button>
                 </Reveal>

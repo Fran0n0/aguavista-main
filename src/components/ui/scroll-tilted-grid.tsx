@@ -136,7 +136,7 @@ function Tile({
                         src={image.src}
                         alt={image.alt || ''}
                         fill
-                        quality={72}
+                        quality={80}
                         sizes="45vw"
                         className="object-cover"
                     />
@@ -172,7 +172,7 @@ export function ScrollTiltedGrid({
                                 src={image.src}
                                 alt={image.alt || ''}
                                 fill
-                                quality={72}
+                                quality={80}
                                 sizes="45vw"
                                 className="object-cover"
                             />

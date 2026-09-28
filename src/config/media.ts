@@ -17,19 +17,22 @@
  * scripts/optimize-media.mjs: si nadie tocó el panel, el sitio sirve
  * exactamente los mismos bytes que antes de existir el CMS.
  */
-/** Banner alojado fuera del proyecto: no suma peso al repo ni al deploy. */
-const HERO_VIDEO_URL =
-  "https://video.dalmobile.com.ar/VIDEO%20BANNER%20WEB%20AGUA%20VISTA.mp4";
-
+/*
+ * Banner principal. Antes se servía el archivo de edición desde
+ * video.dalmobile.com.ar: 69 MB a 42 Mbps, lo primero que bajaba cada
+ * visitante. Estas son versiones para web hechas desde ese mismo original
+ * (H.264 CRF 21, faststart, sin audio): 8 MB a 1920×1080 para escritorio y
+ * 3,5 MB para celular, que es el recorte central vertical (608×1080) — lo
+ * único que se ve con object-cover en un teléfono. SSIM 0,97 contra el
+ * original.
+ */
 export const SETTING_DEFAULTS = {
-  hero_video: HERO_VIDEO_URL,
-  hero_poster: "/banner-poster.webp",
-  /* Variante vertical del banner para celular. Hoy apunta al mismo video
-     que la de escritorio; cuando exista el corte vertical se cambia acá
-     (o desde /admin/media) sin tocar nada más. Acepta rutas de /public,
-     URLs del Storage de Supabase o cualquier URL pública. */
-  hero_video_mobile: HERO_VIDEO_URL,
-  hero_poster_mobile: "/banner-poster.webp",
+  hero_video: "/hero-1080.mp4",
+  hero_poster: "/hero-poster.webp",
+  /* Acepta rutas de /public, URLs del Storage de Supabase o cualquier URL
+     pública; se puede reemplazar desde /admin/media sin tocar código. */
+  hero_video_mobile: "/hero-mobile.mp4",
+  hero_poster_mobile: "/hero-poster-mobile.webp",
   reel_1: "/reel.mp4",
   reel_2: "/reel-1.mp4",
   reel_3: "/reel-2.mp4",

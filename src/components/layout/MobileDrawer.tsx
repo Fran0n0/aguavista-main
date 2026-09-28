@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { siteConfig, whatsappUrl } from "@/config/site";
 import { EASE_LUX } from "@/components/motion/Reveal";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
@@ -162,7 +162,9 @@ export function MobileDrawer({ links, active, onClose }: MobileDrawerProps) {
         </ul>
 
         <motion.a
-          href="#contacto"
+          href={whatsappUrl(tc("whatsappMessage"))}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={onClose}
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}

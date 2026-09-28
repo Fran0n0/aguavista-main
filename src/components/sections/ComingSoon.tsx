@@ -7,6 +7,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { PredioMap, ZONES } from "@/components/masterplan/PredioMap";
 import type { ZoneId } from "@/components/masterplan/predio";
+import { whatsappUrl } from "@/config/site";
 
 /**
  * Masterplan ilustrado e interactivo.
@@ -20,6 +21,7 @@ import type { ZoneId } from "@/components/masterplan/predio";
 
 export function ComingSoon() {
   const t = useTranslations("comingSoon");
+  const tc = useTranslations("common");
 
   /** `null` = mapa completo, sin zoom. Arranca así a propósito: lo
       primero que tiene que ver el visitante es el predio entero. */
@@ -178,7 +180,7 @@ export function ComingSoon() {
                   </ul>
 
                   <Reveal delay={0.1} className="mt-7">
-                    <Button href="#contacto" variant="lux" size="lg" className="w-full">
+                    <Button href={whatsappUrl(tc("whatsappMessage"))} external variant="primary" size="lg" className="w-full">
                       {t("cta")}
                     </Button>
                   </Reveal>

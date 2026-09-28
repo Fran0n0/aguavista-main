@@ -64,7 +64,7 @@ export const siteConfig = {
     },
     {
       name: "Facebook",
-      href: "https://www.facebook.com/aguavista/?locale=es_LA",
+      href: "https://www.facebook.com/solari.bienesraices/",
       icon: "facebook",
     },
   ] as const,
@@ -81,3 +81,12 @@ export const siteConfig = {
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+
+/**
+ * Enlace a WhatsApp con el mensaje ya escrito. Todos los CTA del sitio
+ * llevan acá: la conversación arranca con contexto en vez de un chat vacío.
+ */
+export function whatsappUrl(message?: string): string {
+  const base = `https://wa.me/${siteConfig.contact.whatsapp}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}

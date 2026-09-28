@@ -2,7 +2,7 @@
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { siteConfig, whatsappUrl } from "@/config/site";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
@@ -13,7 +13,8 @@ const DIRECT = [
     key: "phone" as const,
     Icon: Phone,
     value: siteConfig.contact.phone,
-    href: `tel:${siteConfig.contact.phoneRaw}`,
+    /* Mismo número que WhatsApp: abre el chat en vez de una llamada. */
+    href: whatsappUrl(),
   },
   {
     key: "email" as const,
@@ -78,7 +79,13 @@ export function Contact() {
                   return (
                     <li key={key}>
                       {href ? (
-                        <a href={href} className="group flex items-center gap-4">
+                        <a
+                          href={href}
+                          className="group flex items-center gap-4"
+                          {...(href.startsWith("http")
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                        >
                           {body}
                         </a>
                       ) : (

@@ -217,7 +217,7 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
                                        está oculto y la central se bajaría al
                                        pedo. Queda en diferido, que llega de
                                        sobra: arriba hay dos pantallas. */
-                                    quality={75}
+                                    quality={85}
                                     className="object-cover"
                                     sizes={i === 0 ? '100vw' : '45vw'}
                                 />

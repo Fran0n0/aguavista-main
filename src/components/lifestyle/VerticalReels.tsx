@@ -74,7 +74,7 @@ export default function VerticalReels({
           fill
           loading="lazy"
           sizes="100vw"
-          quality={55}
+          quality={75}
           className="object-cover object-center opacity-40"
         />
         <InkReveal
@@ -132,7 +132,7 @@ export default function VerticalReels({
               transition={{ delay: 0.1 }}
               className="text-4xl lg:text-6xl text-white font-display font-light leading-tight tracking-[-0.015em] drop-shadow-2xl"
             >
-              Tener tiempo. Tener espacio.<br/>Tener libertad para elegir<br/>cómo vivir cada día.
+              Tener <Accent>tiempo</Accent>. Tener <Accent>espacio</Accent>.<br/>Tener <Accent>libertad</Accent> para elegir<br/>cómo vivir cada día.
             </motion.h3>
 
             <motion.p
@@ -164,7 +164,7 @@ export default function VerticalReels({
               transition={{ delay: 0.1 }}
               className="text-3xl text-white font-display font-light leading-tight tracking-[-0.015em] drop-shadow-2xl"
             >
-              Tener tiempo. Tener espacio.<br/>Tener libertad para elegir<br/>cómo vivir cada día.
+              Tener <Accent>tiempo</Accent>. Tener <Accent>espacio</Accent>.<br/>Tener <Accent>libertad</Accent> para elegir<br/>cómo vivir cada día.
             </motion.h3>
 
             <motion.p
@@ -282,5 +282,13 @@ export default function VerticalReels({
 
       </div>
     </section>
+  );
+}
+
+/* Palabra destacada del titular: serif itálica y verde del sitio, para que
+   "tiempo", "espacio" y "libertad" se lean como la idea central. */
+function Accent({ children }: { children: string }) {
+  return (
+    <span className="font-accent italic text-[color:var(--av-vivo)]">{children}</span>
   );
 }

@@ -12,7 +12,8 @@
     "skipToContent": "Skip to main content",
     "backToTop": "Back to top",
     "scroll": "Scroll",
-    "whatsapp": "Message us on WhatsApp"
+    "whatsapp": "Message us on WhatsApp",
+    "whatsappMessage": "Hi, I'd like more information about AguaVista."
   },
   "preloader": {
     "line1": "Land, river and sky",
@@ -140,7 +141,7 @@
         "body": "A private executive runway with hangars and apron inside the grounds. Asunción is a short hop away, and the region's capitals are within a morning's reach."
       },
       "greenbar": {
-        "title": "Green Bar",
+        "title": "Golf Area",
         "body": "The club house above the 18th, with a terrace over the green, an open kitchen and club storage. The round ends here, with the sun setting over the course."
       },
       "tekoha": {
@@ -148,7 +149,7 @@
         "body": "The gathering park: barbecue pavilions, long tables, a playground and a grove built for Sunday asado. Tekoha, in Guaraní, is the place where you live among your own."
       }
     },
-    "cta": "Notify me"
+    "cta": "I want more info"
   },
   "contact": {
     "kicker": "Contact",

@@ -12,7 +12,8 @@
     "skipToContent": "Ir para o conteúdo principal",
     "backToTop": "Voltar ao topo",
     "scroll": "Rolar",
-    "whatsapp": "Fale conosco pelo WhatsApp"
+    "whatsapp": "Fale conosco pelo WhatsApp",
+    "whatsappMessage": "Olá, quero mais informações sobre o AguaVista."
   },
   "preloader": {
     "line1": "Terra, rio e ar",
@@ -140,7 +141,7 @@
         "body": "Pista executiva própria com hangares e pátio dentro do condomínio. Assunção fica a um voo curto e as capitais da região, ao alcance de uma manhã."
       },
       "greenbar": {
-        "title": "Green Bar",
+        "title": "Zona de Golfe",
         "body": "O club house sobre o buraco 18, com terraço para o green, cozinha aberta e guarda de tacos. Depois da volta a conversa continua aqui, com o pôr do sol sobre o campo."
       },
       "tekoha": {
@@ -148,7 +149,7 @@
         "body": "O parque de convivência: quiosques, mesas longas, playground e uma arvoredo pensado para o churrasco de domingo. Tekoha, em guarani, é o lugar onde se vive com os seus."
       }
     },
-    "cta": "Quero ser avisado"
+    "cta": "Quero mais informações"
   },
   "contact": {
     "kicker": "Contato",

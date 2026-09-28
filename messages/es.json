@@ -12,7 +12,8 @@
     "skipToContent": "Saltar al contenido principal",
     "backToTop": "Volver arriba",
     "scroll": "Scroll",
-    "whatsapp": "Escribinos por WhatsApp"
+    "whatsapp": "Escribinos por WhatsApp",
+    "whatsappMessage": "Hola, quiero consultar más info sobre AguaVista."
   },
   "preloader": {
     "line1": "Tierra, río y aire conectados en un mismo lugar",
@@ -140,7 +141,7 @@
         "body": "Pista ejecutiva propia con hangares y plataforma dentro del predio. Asunción queda a un vuelo corto y las capitales de la región, al alcance de una mañana."
       },
       "greenbar": {
-        "title": "Green Bar",
+        "title": "Zona Golf",
         "body": "El club house sobre el hoyo 18, con terraza al green, cocina abierta y guardapalos. Después de la vuelta la conversación sigue acá, con el atardecer sobre la cancha."
       },
       "tekoha": {
@@ -148,7 +149,7 @@
         "body": "El parque de encuentro: quinchos, mesas largas, juegos para los chicos y una arboleda pensada para el asado del domingo. Tekoha, en guaraní, es el lugar donde uno vive con los suyos."
       }
     },
-    "cta": "Quiero que me avisen"
+    "cta": "Quiero saber más info"
   },
   "contact": {
     "kicker": "Contacto",
