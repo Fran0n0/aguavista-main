@@ -74,28 +74,28 @@
       },
       "nautica": {
         "title": "Náutica",
-        "description": "Marina privada com atracadouros e acesso direto ao Rio Paraná.",
+        "description": "Marina privada com atracadouros e setor de guarda de embarcações.",
         "descriptionLong": "Marina privada com atracadouros para embarcações de até 12 metros, rampa de lançamento própria, garagem náutica coberta e bomba de combustível dentro do condomínio. Acesso direto ao canal principal do Paraná: em minutos você está navegando em águas abertas."
       },
       "playa": {
         "title": "Praia",
         "description": "Praia privada de areia às margens do rio, com serviço de bar.",
-        "descriptionLong": "Trezentos metros de areia mantida na margem do rio, com guarda-sóis, espreguiçadeiras e serviço de bar e refeições na temporada. Área de banho delimitada, salva-vidas no verão e um setor separado para a brincadeira das crianças."
+        "descriptionLong": "Quatrocentos metros de areia mantida na margem do rio, com guarda-sóis, espreguiçadeiras e serviço de bar e refeições na temporada. Área de banho delimitada, salva-vidas no verão e um setor separado para a brincadeira das crianças."
       },
       "tenis": {
         "title": "House do Tênis",
-        "description": "Quadras de saibro e padel iluminadas, com club house exclusivo.",
-        "descriptionLong": "Duas quadras de saibro com iluminação LED para jogar à noite, duas quadras de padel, uma quadra multiuso, piscina e parque infantil. O club house tem vestiários, academia funcional, lanchonete e um terraço com vista direta para as quadras centrais."
+        "description": "Quadras de saibro e padel iluminadas, club house e restaurante.",
+        "descriptionLong": "Duas quadras de saibro com iluminação LED para jogar à noite, duas quadras de padel, uma quadra multiuso, piscina e parque infantil. O club house tem vestiários, academia funcional e um restaurante com terraço com vista direta para as quadras centrais. Nos fins de semana abre o Floresta, o bar ao ar livre, e há estacionamento próprio."
       },
       "spa": {
-        "title": "Spa & Bem-estar",
-        "description": "Circuito de hidroterapia, salas de massagem e academia equipada.",
-        "descriptionLong": "Circuito de hidroterapia completo com piscina aquecida, sauna seca, banho de vapor e ducha escocesa. Três salas de massagem, sala de tratamentos faciais e uma academia equipada com aparelhos de última geração e espaço para aulas funcionais."
+        "title": "Spa e Salão de Beleza",
+        "description": "Cabeleireiro, manicure e pedicure, maquiagem e área de relaxamento.",
+        "descriptionLong": "Uma arquitetura de vanguarda que lembra a natureza em que o AguaVista está imerso. O spa conta com cabeleireiro, setor de manicure e pedicure, sala de maquiagem e área de relaxamento."
       },
       "aeropuerto": {
         "title": "Aeroporto executivo",
         "description": "Pista de pouso privada e hangares dentro do condomínio.",
-        "descriptionLong": "Pista asfaltada de 1.200 metros habilitada para aviação geral, com balizamento noturno, biruta e frequência própria. Hangares para aluguel ou venda e pátio de estacionamento. Doze minutos de voo desde Assunção."
+        "descriptionLong": "Pista asfaltada de 1.300 metros habilitada para aviação geral, com balizamento noturno, biruta e frequência própria. Hangares para aluguel ou venda e pátio de estacionamento. Doze minutos de voo desde Assunção."
       },
       "jardin": {
         "title": "Jardim japonês",
@@ -129,8 +129,8 @@
     "disclaimer": "Imagem ilustrativa para fins de apresentação. Não constitui planta de venda nem documento contratual.",
     "zones": {
       "botanico": {
-        "title": "Botânico",
-        "body": "Um jardim de quase quatro hectares à beira do rio, com espécies nativas, trilhas sombreadas e uma casa de chá junto à água. É o pulmão do condomínio e onde começam as caminhadas da manhã."
+        "title": "Jardim Japonês",
+        "body": "Paisagismo japonês à beira do rio: lago, ponte vermelha, trilhas de pedra e espécies escolhidas para florescer em cada estação. É o pulmão do condomínio e onde começam as caminhadas da manhã."
       },
       "nautica": {
         "title": "Náutica",

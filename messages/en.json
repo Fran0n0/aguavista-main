@@ -74,28 +74,28 @@
       },
       "nautica": {
         "title": "Marina",
-        "description": "Private marina with moorings and direct access to the Paraná River.",
+        "description": "Private marina with moorings and a boat storage area.",
         "descriptionLong": "Private marina with moorings for vessels up to 12 metres, its own launch ramp, covered dry storage and a fuel pump inside the grounds. Direct access to the main Paraná channel: minutes and you are in open water."
       },
       "playa": {
         "title": "Beach",
         "description": "Private sand beach on the river, with full bar service.",
-        "descriptionLong": "Three hundred metres of maintained sand along the riverbank, with parasols, loungers and full bar and food service in season. Marked swimming area, lifeguards in summer and a separate zone for children's play."
+        "descriptionLong": "Four hundred metres of maintained sand along the riverbank, with parasols, loungers and full bar and food service in season. Marked swimming area, lifeguards in summer and a separate zone for children's play."
       },
       "tenis": {
         "title": "Tennis House",
-        "description": "Floodlit clay and padel courts with a dedicated club house.",
-        "descriptionLong": "Two clay courts with LED floodlighting for night play, two padel courts, a multi-use court, a swimming pool and a children's playground. The club house has changing rooms, a functional gym, a canteen and a terrace looking straight onto the centre courts."
+        "description": "Floodlit clay and padel courts, club house and restaurant.",
+        "descriptionLong": "Two clay courts with LED floodlighting for night play, two padel courts, a multi-use court, a swimming pool and a children's playground. The club house has changing rooms, a functional gym and a restaurant with a terrace looking straight onto the centre courts. On weekends Floresta, the open-air bar, opens its doors, and there is on-site parking."
       },
       "spa": {
-        "title": "Spa & Wellness",
-        "description": "Hydrotherapy circuit, treatment rooms and a fully equipped gym.",
-        "descriptionLong": "Full hydrotherapy circuit with heated pool, dry sauna, steam room and Scottish shower. Three massage rooms, a facial treatment room and a gym fitted with latest-generation equipment plus space for functional classes."
+        "title": "Spa & Beauty Salon",
+        "description": "Hair salon, manicure and pedicure, make-up and relaxation area.",
+        "descriptionLong": "Cutting-edge architecture that echoes the natural setting AguaVista sits in. The spa offers a hair salon, a manicure and pedicure area, a make-up room and a relaxation area."
       },
       "aeropuerto": {
         "title": "Executive airport",
         "description": "Private airstrip and hangars inside the community.",
-        "descriptionLong": "A 1,200-metre paved runway approved for general aviation, with night lighting, wind sock and its own frequency. Hangars for rent or purchase and an apron for parking. Twelve minutes' flight from Asunción."
+        "descriptionLong": "A 1,300-metre paved runway approved for general aviation, with night lighting, wind sock and its own frequency. Hangars for rent or purchase and an apron for parking. Twelve minutes' flight from Asunción."
       },
       "jardin": {
         "title": "Japanese garden",
@@ -129,8 +129,8 @@
     "disclaimer": "Illustrative rendering for presentation purposes only. Not a sales plan or contractual document.",
     "zones": {
       "botanico": {
-        "title": "Botanical garden",
-        "body": "Nearly ten acres of riverfront garden with native species, shaded trails and a tea house by the water. It's the lungs of the estate and where the morning walks begin."
+        "title": "Japanese garden",
+        "body": "Japanese landscaping by the river: a lake, a red bridge, stone paths and species chosen to bloom in every season. It's the lungs of the estate and where the morning walks begin."
       },
       "nautica": {
         "title": "Marina",

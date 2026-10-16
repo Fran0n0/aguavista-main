@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { getSupabase, isSupabaseConfigured } from '@/lib/supabase';
+import { siteConfig } from '@/config/site';
 import type {
   Lote,
   MapConfig,
@@ -161,7 +162,9 @@ export default function InteractiveMap() {
     return () => { if (viewerRef.current) { viewerRef.current.destroy(); viewerRef.current = null; } };
   }, [viewState, mapConfig, activeRoom, activeLot]);
 
-  const WHATSAPP_NUMBER = "5493755000000";
+  /* Antes había un número de prueba ("5493755000000"): todo WhatsApp sale
+     de siteConfig para que haya un solo lugar donde cambiarlo. */
+  const WHATSAPP_NUMBER = siteConfig.contact.whatsapp;
 
   return (
     <section className="relative w-full block clear-both bg-[color:var(--av-base)] py-24 md:py-32" id="propiedades">

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/config/site";
+import { siteConfig, whatsappUrl } from "@/config/site";
 import { NAV_LINKS } from "@/config/navigation";
 import { SocialLinks } from "./SocialLinks";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -70,8 +70,11 @@ export async function Footer() {
             <h2 className="av-kicker">{t("contactTitle")}</h2>
             <ul className="mt-5 flex flex-col gap-4">
               <li>
+                {/* Mismo número que WhatsApp: abre el chat en vez de una llamada. */}
                 <a
-                  href={`tel:${siteConfig.contact.phoneRaw}`}
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-start gap-3 font-sans text-sm font-light text-ink-mid transition-colors duration-300 hover:text-vivo"
                 >
                   <Phone

@@ -69,33 +69,33 @@
     "items": {
       "golf": {
         "title": "Golf",
-        "description": "Cancha profesional de 18 hoyos con driving range y academia.",
+        "description": "Campo profesional de 18 hoyos con driving range y academia.",
         "descriptionLong": "Dieciocho hoyos diseñados para aprovechar el desnivel natural del terreno hacia el río. Driving range iluminado, putting green, academia con profesores certificados y club house con vestuarios y guardapalos. Los propietarios juegan sin reserva previa entre semana."
       },
       "nautica": {
         "title": "Náutica",
-        "description": "Marina privada con amarras y acceso directo al Río Paraná.",
-        "descriptionLong": "Marina privada con amarras para embarcaciones de hasta 12 metros, rampa de botado propia, guardería náutica techada y surtidor de combustible dentro del predio. Acceso directo al canal principal del Paraná: en minutos estás navegando aguas abiertas."
+        "description": "Marina privada con amarres y sector de guardería de embarcaciones.",
+        "descriptionLong": "Marina privada con amarres para embarcaciones de hasta 12 metros, rampa de botado propia, guardería de embarcaciones techada y surtidor de combustible dentro del predio. Acceso directo al canal principal del Paraná: en minutos estás navegando aguas abiertas."
       },
       "playa": {
         "title": "Playa",
         "description": "Playa privada de arena sobre el río, con servicio de bar.",
-        "descriptionLong": "Trescientos metros de arena mantenida sobre la costa del río, con sombrillas, reposeras y servicio de bar y comidas durante la temporada. Zona de baño delimitada, guardavidas en verano y un sector separado para juegos de los chicos."
+        "descriptionLong": "Cuatrocientos metros de arena mantenida sobre la costa del río, con sombrillas, reposeras y servicio de bar y comidas durante la temporada. Zona de baño delimitada, guardavidas en verano y un sector separado para juegos de los chicos."
       },
       "tenis": {
         "title": "House del Tenis",
-        "description": "Canchas de polvo de ladrillo y pádel iluminadas, con club house propio.",
-        "descriptionLong": "Dos canchas de polvo de ladrillo con iluminación LED para jugar de noche, dos canchas de pádel, una cancha multiuso, piscina y parque para chicos. El club house tiene vestuarios, gimnasio funcional, cantina y una terraza que da directamente sobre las canchas centrales."
+        "description": "Canchas de polvo de ladrillo y pádel iluminadas, club house y restaurante.",
+        "descriptionLong": "Dos canchas de polvo de ladrillo con iluminación LED para jugar de noche, dos canchas de pádel, una cancha multiuso, piscina y parque para chicos. El club house tiene vestuarios, gimnasio funcional y un restaurante con terraza que da directamente sobre las canchas centrales. Los fines de semana abre Floresta, el bar al aire libre, y hay estacionamiento propio."
       },
       "spa": {
-        "title": "Spa & Bienestar",
-        "description": "Circuito húmedo, sala de masajes y gimnasio equipado.",
-        "descriptionLong": "Circuito húmedo completo con piscina climatizada, sauna seco, baño de vapor y ducha escocesa. Tres salas de masajes, sala de tratamientos faciales y un gimnasio equipado con máquinas de última generación y espacio para clases funcionales."
+        "title": "Spa y Salón de Belleza",
+        "description": "Peluquería, manicura y pedicura, maquillaje y área relax.",
+        "descriptionLong": "Una arquitectura de vanguardia que recuerda la naturaleza en la que está inmersa AguaVista. El spa cuenta con peluquería, sector de manicura y pedicura, sala de maquillaje y área relax."
       },
       "aeropuerto": {
         "title": "Aeropuerto ejecutivo",
         "description": "Pista de aterrizaje privada y hangares dentro del predio.",
-        "descriptionLong": "Pista asfaltada de 1.200 metros habilitada para aviación general, con balizamiento nocturno, manga de viento y frecuencia propia. Hangares en alquiler o venta y plataforma de estacionamiento. Doce minutos de vuelo desde Asunción."
+        "descriptionLong": "Pista asfaltada de 1.300 metros habilitada para aviación general, con balizamiento nocturno, manga de viento y frecuencia propia. Hangares en alquiler o venta y plataforma de estacionamiento. Doce minutos de vuelo desde Asunción."
       },
       "jardin": {
         "title": "Jardín japonés",
@@ -129,8 +129,8 @@
     "disclaimer": "Imagen ilustrativa con fines de presentación. No constituye plano de venta ni documento contractual.",
     "zones": {
       "botanico": {
-        "title": "Botánico",
-        "body": "Un jardín de casi cuatro hectáreas sobre la costa, con especies nativas, senderos sombreados y una casa de té junto al agua. Es el pulmón del predio y el lugar donde arrancan las caminatas de la mañana."
+        "title": "Jardín Japonés",
+        "body": "Paisajismo japonés sobre la costa: lago, puente rojo, senderos de piedra y especies elegidas para florecer en cada estación. Es el pulmón del predio y el lugar donde arrancan las caminatas de la mañana."
       },
       "nautica": {
         "title": "Náutica",
