@@ -23,6 +23,12 @@ const DIRECT = [
     href: `mailto:${siteConfig.contact.email}`,
   },
   {
+    key: "email" as const,
+    Icon: Mail,
+    value: siteConfig.contact.emailSales,
+    href: `mailto:${siteConfig.contact.emailSales}`,
+  },
+  {
     key: "address" as const,
     Icon: MapPin,
     value: siteConfig.contact.address,
@@ -77,7 +83,7 @@ export function Contact() {
                   );
 
                   return (
-                    <li key={key}>
+                    <li key={value}>
                       {href ? (
                         <a
                           href={href}

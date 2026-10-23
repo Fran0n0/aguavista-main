@@ -98,6 +98,19 @@ export async function Footer() {
                   {siteConfig.contact.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`mailto:${siteConfig.contact.emailSales}`}
+                  className="group flex items-start gap-3 font-sans text-sm font-light text-ink-mid transition-colors duration-300 hover:text-vivo"
+                >
+                  <Mail
+                    className="mt-0.5 size-4 shrink-0 text-ink-faint transition-colors duration-300 group-hover:text-vivo"
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                  {siteConfig.contact.emailSales}
+                </a>
+              </li>
               <li className="flex items-start gap-3 font-sans text-sm font-light text-ink-mid">
                 <MapPin
                   className="mt-0.5 size-4 shrink-0 text-ink-faint"

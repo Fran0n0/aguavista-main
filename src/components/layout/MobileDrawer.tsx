@@ -189,6 +189,12 @@ export function MobileDrawer({ links, active, onClose }: MobileDrawerProps) {
         >
           {siteConfig.contact.email}
         </a>
+        <a
+          href={`mailto:${siteConfig.contact.emailSales}`}
+          className="mt-2 block font-sans text-[10px] uppercase tracking-[0.18em] text-ink-muted transition-colors duration-300 hover:text-vivo"
+        >
+          {siteConfig.contact.emailSales}
+        </a>
       </motion.div>
     </motion.div>
   );

@@ -171,6 +171,13 @@ export function LegalDocument({
                   >
                     {siteConfig.contact.email}
                   </a>
+                  <br />
+                  <a
+                    href={`mailto:${siteConfig.contact.emailSales}`}
+                    className="text-vivo underline underline-offset-4 transition-opacity hover:opacity-75"
+                  >
+                    {siteConfig.contact.emailSales}
+                  </a>
                 </p>
               </div>
             </Reveal>

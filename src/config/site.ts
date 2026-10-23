@@ -31,6 +31,8 @@ export const siteConfig = {
     /** Para wa.me/. Solo dígitos, sin + ni espacios. */
     whatsapp: "595984488000",
     email: "comercial@aguavista.com.py",
+    /** Segundo mail, el de ventas. Se muestra debajo del de comercial. */
+    emailSales: "ventas@aguavista.com.py",
     /**
      * Dirección de una línea, tal como la devuelve Google Maps. Es la que
      * se imprime en el footer, en la sección de contacto y en el pie de
