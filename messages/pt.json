@@ -154,7 +154,7 @@
   "contact": {
     "kicker": "Contato",
     "title": "Agende sua visita",
-    "subtitle": "Deixe seus dados e um consultor entra em contato em até 24 horas úteis.",
+    "subtitle": "Escreva para nós pelo WhatsApp ou e-mail e um consultor entra em contato em até 24 horas úteis.",
     "form": {
       "name": {
         "label": "Nome completo",
@@ -208,7 +208,7 @@
       "rateLimitBody": "Aguarde alguns minutos antes de enviar outra consulta."
     },
     "direct": {
-      "title": "Ou fale direto conosco",
+      "title": "Fale direto conosco",
       "phone": "Telefone",
       "email": "E-mail",
       "address": "Endereço"

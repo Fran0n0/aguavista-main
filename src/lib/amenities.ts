@@ -1,8 +1,5 @@
-import "server-only";
-
 import { getTranslations } from "next-intl/server";
 import { AMENITIES } from "@/data/amenities";
-import { getServiceClient } from "./supabase-admin";
 import { locales, type Locale } from "@/i18n/routing";
 
 /** Amenity ya resuelta para un idioma concreto, lista para renderizar. */
@@ -95,31 +92,6 @@ function pick(row: AmenityRow, field: string, locale: Locale): string {
  * deje la sección en blanco en producción.
  */
 export async function getAmenities(locale: Locale): Promise<ResolvedAmenity[]> {
-  const supabase = getServiceClient();
-
-  if (supabase) {
-    const { data, error } = await supabase
-      .from("amenities")
-      .select("*")
-      .eq("enabled", true)
-      .order("sort_order", { ascending: true });
-
-    if (error) {
-      console.warn("[amenities] Supabase falló, se usa el catálogo estático:", error.message);
-    } else if (data && data.length > 0) {
-      return (data as AmenityRow[]).map((row) => ({
-        id: row.id,
-        image: row.image,
-        images: buildImageList(row.image, row.gallery),
-        video: row.video,
-        featured: row.featured,
-        title: pick(row, "title", locale),
-        description: pick(row, "description", locale),
-        descriptionLong: pick(row, "description_long", locale),
-      }));
-    }
-  }
-
   const t = await getTranslations({ locale, namespace: "amenities.items" });
   return AMENITIES.map((a) => ({
     id: a.id,

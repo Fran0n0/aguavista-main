@@ -3,7 +3,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { siteConfig, whatsappUrl } from "@/config/site";
-import { ContactForm } from "@/components/forms/ContactForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { SocialLinks } from "@/components/layout/SocialLinks";
@@ -63,6 +62,13 @@ export function Contact() {
             </Reveal>
 
             <Reveal delay={0.25} className="mt-12">
+              <SocialLinks />
+            </Reveal>
+          </div>
+
+          {/* ── Datos de contacto ── */}
+          <Reveal delay={0.2} direction="up" className="lg:col-span-7">
+            <div className="av-glass rounded-3xl p-6 shadow-av-lg md:p-10">
               <h3 className="av-kicker text-ink-faint">{td("title")}</h3>
               <ul className="mt-5 flex flex-col gap-5">
                 {DIRECT.map(({ key, Icon, value, href }) => {
@@ -102,14 +108,6 @@ export function Contact() {
                 })}
               </ul>
 
-              <SocialLinks className="mt-9" />
-            </Reveal>
-          </div>
-
-          {/* ── Formulario ── */}
-          <Reveal delay={0.2} direction="up" className="lg:col-span-7">
-            <div className="av-glass rounded-3xl p-6 shadow-av-lg md:p-10">
-              <ContactForm />
             </div>
           </Reveal>
         </div>

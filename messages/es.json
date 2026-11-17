@@ -154,7 +154,7 @@
   "contact": {
     "kicker": "Contacto",
     "title": "Agendá tu visita",
-    "subtitle": "Dejanos tus datos y un asesor te contacta dentro de las 24 horas hábiles.",
+    "subtitle": "Escribinos por WhatsApp o email y un asesor te contacta dentro de las 24 horas hábiles.",
     "form": {
       "name": {
         "label": "Nombre y apellido",
@@ -208,7 +208,7 @@
       "rateLimitBody": "Esperá unos minutos antes de enviar otra consulta."
     },
     "direct": {
-      "title": "O escribinos directo",
+      "title": "Escribinos directo",
       "phone": "Teléfono",
       "email": "Email",
       "address": "Dirección"

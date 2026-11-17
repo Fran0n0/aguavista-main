@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -8,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         // El panel y las server actions no aportan nada al índice.
-        disallow: ["/admin", "/api/", "/*/admin"],
+        disallow: ["/admin", "/*/admin"],
       },
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,

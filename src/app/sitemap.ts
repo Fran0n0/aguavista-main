@@ -9,6 +9,8 @@ const ROUTES = [
   { path: "/terminos", priority: 0.3, changeFrequency: "yearly" as const },
 ];
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 

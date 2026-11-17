@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
@@ -21,9 +20,6 @@ export function Navbar() {
   const tc = useTranslations("common");
   const { scrollY } = useScroll();
   
-  // 1. Hook para saber en qué URL estamos
-  const pathname = usePathname();
-
   const [solid, setSolid] = useState(false);
   const [overHero, setOverHero] = useState(true);
   const [hidden, setHidden] = useState(false);
@@ -56,9 +52,6 @@ export function Navbar() {
     sections.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  // 2. ¡LA MAGIA! Si estamos en cualquier ruta del admin, el Navbar público se destruye.
-  if (pathname?.includes("/admin")) return null;
 
   return (
     <>

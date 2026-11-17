@@ -154,7 +154,7 @@
   "contact": {
     "kicker": "Contact",
     "title": "Book your visit",
-    "subtitle": "Leave your details and an advisor will get back to you within 24 business hours.",
+    "subtitle": "Message us on WhatsApp or email and an advisor will get back to you within 24 business hours.",
     "form": {
       "name": {
         "label": "Full name",
@@ -208,7 +208,7 @@
       "rateLimitBody": "Please wait a few minutes before sending another enquiry."
     },
     "direct": {
-      "title": "Or reach us directly",
+      "title": "Reach us directly",
       "phone": "Phone",
       "email": "Email",
       "address": "Address"
